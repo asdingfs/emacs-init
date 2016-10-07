@@ -1,3 +1,4 @@
+
 ;;;; NOTES
 ;; These init files are mostly self maintaining, however may stil need some dependency to work beautifully, as such:
 ;;  1. Install Inconsolata-14 on local system for most beautiful programming font out there IMO
@@ -23,12 +24,21 @@
   (require 'use-package))
 (require 'diminish)		;; enable :diminish options
 (require 'bind-key)		;; enable :bind options
+(setq use-package-always-ensure t) ;; always download if not available
 (setq use-package-verbose t)	;; don't fail silently
 
 ;;;;;;;;;;;;;;;; Packages and Customizations ;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/.init.d/")
-(load-library "customizations")     ;; global keybindings, settings, emacs looks
+(load-library "configurations")     ;; global settings, and themes
+(load-library "keybindings")        ;; global keybindings
 (load-library "packages")           ;; packages are documented here for now.
+
+;;;;;;;;;;;;;;;; List of packages yet to be installed ;;;;;;;;;;;;;;;;
+;; Magit
+;; Projectile
+;; emacs-w3m
+
+;;;;;;;;;;;;;;;; Auto-Generated Custom Variables ;;;;;;;;;;;;;;;;
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
