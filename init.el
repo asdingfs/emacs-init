@@ -32,10 +32,14 @@
 (load-library "configurations")     ;; global settings, and themes
 (load-library "keybindings")        ;; global keybindings
 (load-library "packages")           ;; packages are documented here for now.
+(load-library "specifics")          ;; machine specific configurations
 
 ;;;;;;;;;;;;;;;; List of packages yet to be installed ;;;;;;;;;;;;;;;;
 ;; Magit
-;; Projectile
+;; Winmove
+;; Winner mode
+;; Projectile (with rails)
+;; Ruby program setup
 ;; emacs-w3m
 
 ;;;;;;;;;;;;;;;; Auto-Generated Custom Variables ;;;;;;;;;;;;;;;;

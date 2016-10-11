@@ -9,7 +9,10 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(set-frame-parameter nil 'fullscreen 'fullboth)
+(setq inhibit-splash-screen t)
 (setq inhibit-startup-screen t)
+(setq inhibit-startup-message t)
 (setq initial-scratch-message "")
 
 ;; themes
