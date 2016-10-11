@@ -33,6 +33,8 @@
 (load-library "keybindings")        ;; global keybindings
 (load-library "packages")           ;; packages are documented here for now.
 (load-library "specifics")          ;; machine specific configurations
+(load-library "editings")           ;; packages that aids editing of texts/codes
+(load-library "programmings")       ;; config for programming languages
 
 ;;;;;;;;;;;;;;;; List of packages yet to be installed ;;;;;;;;;;;;;;;;
 ;; Magit
@@ -48,7 +50,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (helm zenburn-theme use-package))))
+ '(package-selected-packages
+   (quote
+    (exec-path-from-shell helm zenburn-theme use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
