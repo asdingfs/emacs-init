@@ -5,6 +5,10 @@
 (global-set-key (kbd "H-r") 'rename-buffer)
 (global-set-key (kbd "H-,") 'previous-buffer)
 (global-set-key (kbd "H-.") 'next-buffer)
+(global-set-key (kbd "H-[") 'windmove-up)
+(global-set-key (kbd "H-'") 'windmove-right)
+(global-set-key (kbd "H-/") 'windmove-down)
+(global-set-key (kbd "H-;") 'windmove-left)
 
 ;; custom key macros
 (global-set-key (kbd "C-c C-SPC") (kbd "C-a C-SPC C-n M-w C-y C-b"))    ;; duplicate a current line
