@@ -37,7 +37,7 @@
    ("C-h C-v" . counsel-describe-variable)
    ("C-c g" . counsel-git)
    ("C-c j" . counsel-git-grep)
-   ("C-c a" . counsel-ag))
+   ("C-c s" . counsel-ag))
   :config
   (use-package counsel-projectile
     :config
