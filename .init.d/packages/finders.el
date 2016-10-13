@@ -35,9 +35,9 @@
    ("C-x C-f" . counsel-find-file)
    ("C-h C-f" . counsel-describe-function)
    ("C-h C-v" . counsel-describe-variable)
-   ("C-c g" . counsel-git)
-   ("C-c j" . counsel-git-grep)
-   ("C-c s" . counsel-ag))
+   ("C-c SPC g" . counsel-git)
+   ("C-c SPC j" . counsel-git-grep)
+   ("C-c SPC s" . counsel-ag))
   :config
   (use-package counsel-projectile
     :config
