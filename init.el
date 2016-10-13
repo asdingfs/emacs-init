@@ -37,12 +37,13 @@
 
 ;;;;;;;;;;;;;;;; List of packages yet to be installed ;;;;;;;;;;;;;;;;
 ;; Magit
-;; Winmove
-;; Winner mode
 ;; Projectile (with rails)
 ;; Ruby program setup
 ;; emacs-w3m
-;; Ivy
+;; neotree
+;; ag: https://github.com/Wilfred/ag.el
+;; wgrep-ag: https://github.com/mhayashi1120/Emacs-wgrep
+;; powerline (better info-bar)
 
 ;;;;;;;;;;;;;;;; Auto-Generated Custom Variables ;;;;;;;;;;;;;;;;
 (custom-set-variables
@@ -52,7 +53,8 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (exec-path-from-shell helm zenburn-theme use-package))))
+    (counsel-projectile flx exec-path-from-shell helm zenburn-theme use-package)))
+ '(projectile-mode t nil (projectile)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -7,3 +7,9 @@
 session.*
 auto-save-list/*
 elpa/*
+
+# recentf file, since it might not be relevant accross machines
+recentf
+
+# project specific ignored files
+projectile-*

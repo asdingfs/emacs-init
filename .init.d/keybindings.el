@@ -1,7 +1,6 @@
 ;;;;;;;;;;;;;;;; Keybindings ;;;;;;;;;;;;;;;;
 
 ;; rebindings
-(global-set-key (kbd "s-SPC") 'just-one-space)
 (global-set-key (kbd "H-r") 'rename-buffer)
 (global-set-key (kbd "H-,") 'previous-buffer)
 (global-set-key (kbd "H-.") 'next-buffer)
