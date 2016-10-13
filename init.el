@@ -31,10 +31,9 @@
 (add-to-list 'load-path "~/.emacs.d/.init.d/")
 (load-library "configurations")     ;; global settings, and themes
 (load-library "keybindings")        ;; global keybindings
-(load-library "packages")           ;; packages are documented here for now.
-(load-library "specifics")          ;; machine specific configurations
-(load-library "editings")           ;; packages that aids editing of texts/codes
-(load-library "programmings")       ;; config for programming languages
+(load-library "specifics")          ;; machine/os specific configurations
+(load-library "packages")           ;; other packages, most bulk, and required most organizations
+
 
 ;;;;;;;;;;;;;;;; List of packages yet to be installed ;;;;;;;;;;;;;;;;
 ;; Magit
@@ -43,6 +42,7 @@
 ;; Projectile (with rails)
 ;; Ruby program setup
 ;; emacs-w3m
+;; Ivy
 
 ;;;;;;;;;;;;;;;; Auto-Generated Custom Variables ;;;;;;;;;;;;;;;;
 (custom-set-variables
