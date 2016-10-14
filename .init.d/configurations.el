@@ -13,7 +13,7 @@
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)
 (setq initial-scratch-message "")               
-(set-frame-parameter nil 'fullscreen 'fullboth) ;; auto full-screen
+;; (set-frame-parameter nil 'fullscreen 'fullboth) ;; enable this if you want full screen
 
 ;; themes
 (use-package zenburn-theme
