@@ -9,6 +9,9 @@
 (global-set-key (kbd "H-/") 'windmove-down)
 (global-set-key (kbd "H-;") 'windmove-left)
 
+;; actions
+(global-set-key (kbd "H-o") 'org-open-at-point-global)
+
 ;; custom key macros
 (global-set-key (kbd "C-c C-SPC") (kbd "C-a C-SPC C-n M-w C-y C-b"))    ;; duplicate a current line
 (global-set-key (kbd "C-c C-<return>") (kbd "C-a C-M-o TAB"))           ;; shift down line and begin with indentations
