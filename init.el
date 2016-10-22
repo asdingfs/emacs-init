@@ -35,9 +35,8 @@
 (load-library "packages")           ;; other packages, most bulk, and required most organizations
 
 
-;;;;;;;;;;;;;;;; List of packages yet to be installed ;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; List of packages yet to be further configured ;;;;;;;;;;;;;;;;
 ;; Magit
-;; Projectile (with rails)
 ;; Ruby program setup
 ;; emacs-w3m
 ;; neotree
@@ -53,7 +52,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (projectile-rails counsel-projectile flx exec-path-from-shell helm zenburn-theme use-package)))
+    (ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm zenburn-theme use-package)))
  '(projectile-mode t nil (projectile)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -1,24 +1,23 @@
 ;; fuzzy matching
-(use-package flx)
+(use-package flx
+  :defer t)
 
 ;; for searching files
-(use-package ag)
+(use-package ag
+  :defer t)
 
 ;; use projectile for project file finders
 (use-package projectile
   :init
-  (projectile-global-mode)
-  (setq projectile-completion-system 'ivy))
-
-(use-package projectile-rails
-  :init
-  (setq projectile-rails-add-keywords t)
-  (setq projectile-rails-expand-snippet t)
-  (add-hook 'projectile-mode-hook 'projectile-rails-on))
+  (setq projectile-completion-system 'ivy)
+  :config
+  (projectile-global-mode))
 
 ;; better search with swiper: installs ivy-mode too
 (use-package ivy
   :diminish ivy-mode
+  :bind
+  (("C-c C-r" . ivy-resume))
   :init
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
@@ -26,13 +25,14 @@
         '((swiper . ivy--regex-plus)
           (t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil)
-  (setq ivy-height 16)
-  (ivy-mode 1)
-  :bind
-  (("C-c C-r" . ivy-resume)))
+  (setq ivy-height 10)
+  :config
+  (ivy-mode 1))
 (use-package swiper
   :after (ivy)
-  :bind (("C-s" . swiper)))
+  :bind
+  (("C-s" . swiper)
+   ("C-r" . swiper)))
 
 ;; replace vanilla finders with counsel, closely tied to ivy-mode
 (use-package counsel
@@ -51,3 +51,14 @@
   :after (counsel projectile)
   :init
   (counsel-projectile-on))
+
+(use-package projectile-rails
+  :defer t
+  :after (counsel-projectile)
+  :init 
+  (setq projectile-rails-add-keywords t)
+  (setq projectile-rails-expand-snippet t)
+  (progn
+    (add-hook 'projectile-mode-hook 'projectile-rails-on)
+    (add-hook 'enh-ruby-mode-hook 'projectile-rails-on)))
+
