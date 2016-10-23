@@ -17,10 +17,3 @@
   (show-smartparens-global-mode t)
   )
 
-;; org-modes
-(use-package org
-  :defer t
-  :init
-  (setq org-export-with-sub-superscripts nil))
-(use-package ox-twbs
-  :defer t)
