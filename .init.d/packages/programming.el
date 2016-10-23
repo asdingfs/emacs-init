@@ -9,7 +9,7 @@
   :defer t
   :init
   (setq magit-completing-read-function 'ivy-completing-read)
-  (add-hook 'git-commit-mode-hook 'turn-off-auto-fill)
+  (add-hook 'git-commit-setup-hook 'turn-off-auto-fill t)
   :bind
   (("C-x g" . magit-status)))
 
