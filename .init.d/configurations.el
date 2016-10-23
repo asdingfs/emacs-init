@@ -26,6 +26,9 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil) ;; Use spaces for indentations
 
+;; customs
+(setq bookmark-default-file "~/.emacs.d/.personal.d/bookmarks")
+
 ;; quirks
 (setq system-uses-terminfo nil) ;; causing '4m' in shells
 
