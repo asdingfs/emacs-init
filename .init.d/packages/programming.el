@@ -1,3 +1,9 @@
+;; dash references for mac osx
+(use-package dash-at-point
+  :commands (dash-at-point)
+  :bind
+  (("H-d" . dash-at-point)))
+
 ;; git
 (use-package magit
   :defer t
