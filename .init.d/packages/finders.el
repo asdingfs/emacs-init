@@ -8,10 +8,11 @@
 
 ;; use projectile for project file finders
 (use-package projectile
+  :diminish projectile-mode
   :init
   (setq projectile-completion-system 'ivy)
   :config
-  (projectile-global-mode))
+  (projectile-global-mode t))
 
 ;; better search with swiper: installs ivy-mode too
 (use-package ivy
@@ -41,17 +42,20 @@
   (("M-x" . counsel-M-x)
    ("M-y" . counsel-yank-pop)
    ("C-x C-f" . counsel-find-file)
-   ("C-h C-f" . counsel-describe-function)
-   ("C-h C-v" . counsel-describe-variable)
+   ("C-h f" . counsel-describe-function)
+   ("C-h v" . counsel-describe-variable)
+   ("C-x C-d" . counsel-file-jump) 
+   ("C-x r l" . counsel-bookmark)
+   ("C-h x" . counsel-imenu)
    ("C-c SPC g" . counsel-git)
    ("C-c SPC j" . counsel-git-grep)
    ("C-c SPC s" . counsel-ag)))
-  
+
+;; inter package integrations
 (use-package counsel-projectile
   :after (counsel projectile)
   :init
   (counsel-projectile-on))
-
 (use-package projectile-rails
   :defer t
   :after (counsel-projectile)
