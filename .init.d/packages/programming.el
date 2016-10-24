@@ -33,3 +33,12 @@
   (add-hook 'enh-ruby-mode-hook 'robe-mode)
   :config
   (robe-start))
+
+;; yaml
+(use-package yaml-mode
+  :defer t
+  :bind
+  (("C-m" . newline-and-indent)
+   ("<return>" . newline-and-indent))
+  :mode
+  (("\\.yml\\'" . yaml-mode)))

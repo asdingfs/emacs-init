@@ -14,3 +14,4 @@ recentf
 # project specific ignored files
 projectile-*
 /tramp
+*.cache
