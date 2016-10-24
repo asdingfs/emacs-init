@@ -1,9 +1,9 @@
+;;;;;;;;;;;;;;;; meta ;;;;;;;;;;;;;;;;
 ;; dash references for mac osx
 (use-package dash-at-point
   :commands (dash-at-point)
   :bind
   (("H-d" . dash-at-point)))
-
 ;; git
 (use-package magit
   :defer t
@@ -12,7 +12,21 @@
   (add-hook 'git-commit-setup-hook 'turn-off-auto-fill t)
   :bind
   (("C-x g" . magit-status)))
+;; ssh client
+(use-package ssh
+  :defer t
+  :init
+  (setq ssh-directory-tracking-mode 'ftp)
+  (add-hook 'ssh-mode-hook
+            '(lambda ()
+               (shell-dirtrack-mode t)
+               (setq dirtrackp nil) )))
+(use-package ssh-config-mode
+  :defer t
+  :init
+  (add-hook 'ssh-config-mode-hook 'turn-on-font-lock))
 
+;;;;;;;;;;;;;;;; languages ;;;;;;;;;;;;;;;;
 ;; ruby
 (use-package enh-ruby-mode              
   :init
@@ -38,7 +52,8 @@
 (use-package yaml-mode
   :defer t
   :bind
-  (("C-m" . newline-and-indent)
+  (:map yaml-mode-map
+   ("C-m" . newline-and-indent)
    ("<return>" . newline-and-indent))
   :mode
   (("\\.yml\\'" . yaml-mode)))
