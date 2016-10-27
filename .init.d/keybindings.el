@@ -34,3 +34,10 @@
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 (global-set-key (kbd "C-x C-;") 'comment-or-uncomment-region)
 
+;; temporary convenience functions until better solutions can be found
+(defun connect-remote-alias (ssh-alias)
+  "Connect to remote with tramp, projectile alternative until it works"
+  (interactive (list
+                (read-buffer "Enter alias: ")))
+  (dired (format "/ssh:%s:" ssh-alias)))
+(global-set-key (kbd "H-c") 'connect-remote-alias)
