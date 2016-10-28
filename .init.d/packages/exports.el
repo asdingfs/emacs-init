@@ -5,6 +5,7 @@
   :init
   (setq org-src-fontify-natively t)     ;; make source code block prettier
   (setq org-export-with-sub-superscripts nil)
+  
   (defface org-block-begin-line
     '((t (:background "#383838" :foreground "#7F9F7F")))
     "Face used for the line delimiting the begin of source blocks.")
@@ -27,5 +28,7 @@
 (use-package org-bullets ;; bullets
   :after (org)
   :init
+  (setq org-bullets-bullet-list
+        '( "►" "✸" "◉" "○" "◆" "◇" "▸" "•"))
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :defer t)

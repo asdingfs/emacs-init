@@ -11,6 +11,7 @@
   :diminish projectile-mode
   :init
   (setq projectile-completion-system 'ivy)
+  (setq projectile-create-missing-test-files t)
   :config
   (projectile-global-mode t))
 
@@ -62,7 +63,5 @@
   :init 
   (setq projectile-rails-add-keywords t)
   (setq projectile-rails-expand-snippet t)
-  (progn
-    (add-hook 'projectile-mode-hook 'projectile-rails-on)
-    (add-hook 'enh-ruby-mode-hook 'projectile-rails-on)))
-
+  :config
+  (projectile-rails-global-mode))

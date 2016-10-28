@@ -6,12 +6,13 @@
   (setq mac-right-option-modifier 'super)
   (setq mac-option-modifier 'option)
   (setq mac-right-command-modifier 'hyper)
-  (setq mac-command-modifier 'meta)
+  (setq mac-command-modifier 'meta))
 
-  (use-package exec-path-from-shell
-    :init
-    (exec-path-from-shell-initialize)
-    :config
-    (exec-path-from-shell-copy-env "GEM_PATH")
-    (exec-path-from-shell-copy-env "GEM_HOME")))
+(use-package exec-path-from-shell
+  :defer 0.5
+  :if (memq window-system '(mac ns))
+  :config
+  (add-to-list 'exec-path-from-shell-variables "GEM_PATH")
+  (add-to-list 'exec-path-from-shell-variables "GEM_HOME")
+  (exec-path-from-shell-initialize))
 

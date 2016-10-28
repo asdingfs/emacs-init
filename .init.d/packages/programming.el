@@ -72,6 +72,12 @@
   (("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode))
   :config
   (unbind-key "C-d" enh-ruby-mode-map))
+(use-package rspec-mode
+  :commands (rspec-mode)
+  :init
+  (add-hook 'after-init-hook 'inf-ruby-switch-setup)
+  :config
+  (rspec-install-snippets))
 (use-package robe
   :defer t
   :init

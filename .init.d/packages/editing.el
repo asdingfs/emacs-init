@@ -17,3 +17,10 @@
   (show-smartparens-global-mode t)
   )
 
+;; snippets
+(use-package yasnippet
+  :init
+  (add-hook 'prog-mode-hook 'yas-minor-mode)
+  :config
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/.personal.d/snippets")
+  (yas-reload-all))
