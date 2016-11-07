@@ -14,7 +14,7 @@
 
 ;; custom key macros
 (global-set-key (kbd "C-c C-SPC") (kbd "C-a C-SPC C-n M-w C-y C-b"))    ;; duplicate a current line
-(global-set-key (kbd "C-c C-<return>") (kbd "C-a C-M-o TAB"))           ;; shift down line and begin with indentations
+(global-set-key (kbd "C-c C-<return>") (kbd "C-a C-j C-p TAB"))         ;; shift down line and begin with indentations
 (global-set-key (kbd "C-c C-<backspace>") (kbd "C-0 C-k TAB"))          ;; kill until beginning of line and indent
 
 ;; custom keybinding functions

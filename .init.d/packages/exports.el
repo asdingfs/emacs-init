@@ -20,7 +20,7 @@
 (use-package ox-twbs ;; pretty html
   :after (org)
   :defer t)
-(use-package htmlize
+(use-package htmlize ;; source code to follow formatting in org-mode src blk
   :after (org)
   :defer t)
 

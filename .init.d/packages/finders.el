@@ -4,7 +4,9 @@
 
 ;; for searching files
 (use-package ag
-  :defer t)
+  :defer t
+  :bind
+  (("H-s" . ag)))
 
 ;; use projectile for project file finders
 (use-package projectile
@@ -12,6 +14,7 @@
   :init
   (setq projectile-completion-system 'ivy)
   (setq projectile-create-missing-test-files t)
+  (setq projectile-enable-caching nil)
   :config
   (projectile-global-mode t))
 
@@ -58,6 +61,7 @@
   :init
   (counsel-projectile-on))
 (use-package projectile-rails
+  :diminish projectile-rails-mode
   :defer t
   :after (counsel-projectile)
   :init 
@@ -65,3 +69,12 @@
   (setq projectile-rails-expand-snippet t)
   :config
   (projectile-rails-global-mode))
+
+;; remote servers
+;; (use-package tramp
+  ;; :init
+  ;; (setq tramp-verbose 10)
+  ;; (setq tramp-default-method "ssh")
+  ;; :config
+  ;; (tramp-set-completion-function "ssh" '((tramp-parse-sconfig "/etc/ssh_config")
+                                         ;; (tramp-parse-sconfig "~/.ssh/config"))))
