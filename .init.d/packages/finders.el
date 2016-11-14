@@ -14,7 +14,6 @@
   :init
   (setq projectile-completion-system 'ivy)
   (setq projectile-create-missing-test-files t)
-  (setq projectile-enable-caching nil)
   :config
   (projectile-global-mode t))
 
@@ -67,14 +66,13 @@
   :init 
   (setq projectile-rails-add-keywords t)
   (setq projectile-rails-expand-snippet t)
-  :config
-  (projectile-rails-global-mode))
+  (add-hook 'find-file-hook 'projectile-rails-on))
 
 ;; remote servers
-;; (use-package tramp
-  ;; :init
-  ;; (setq tramp-verbose 10)
-  ;; (setq tramp-default-method "ssh")
-  ;; :config
-  ;; (tramp-set-completion-function "ssh" '((tramp-parse-sconfig "/etc/ssh_config")
-                                         ;; (tramp-parse-sconfig "~/.ssh/config"))))
+(use-package tramp
+  :init
+  ;; (setq tramp-verbose 10) 
+  (setq tramp-default-method "ssh")
+  :config
+  (tramp-set-completion-function "ssh" '((tramp-parse-sconfig "/etc/ssh_config")
+                                         (tramp-parse-sconfig "~/.ssh/config"))))
