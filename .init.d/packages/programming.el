@@ -17,7 +17,7 @@
   :defer t
   :init
   (setq multi-term-program "/bin/zsh")
-  ;; (add-hook 'term-mode-hook (lambda () (yas-minor-mode -1))) ;; TODO: after installing yasnippet enable this option
+  (add-hook 'term-mode-hook (lambda () (yas-minor-mode -1))) 
   :bind
   (("H-0" . multi-term-next)
    ("H-9" . multi-term-prev)
