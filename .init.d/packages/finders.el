@@ -5,6 +5,8 @@
 ;; for searching files
 (use-package ag
   :defer t
+  :init
+  (setq ag-highlight-search t)
   :bind
   (("H-s" . ag)))
 
@@ -41,6 +43,8 @@
 ;; replace vanilla finders with counsel, closely tied to ivy-mode
 (use-package counsel
   :after (swiper)
+  :init
+  (setq counsel-ag-base-command "ag --nocolor --nogroup --hidden --ignore-dir .git %s")
   :bind
   (("M-x" . counsel-M-x)
    ("M-y" . counsel-yank-pop)
