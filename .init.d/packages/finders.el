@@ -54,7 +54,7 @@
    ("C-h x" . counsel-imenu)
    ("C-c SPC g" . counsel-git)
    ("C-c SPC j" . counsel-git-grep)
-   ("H-s" . counsel-ag)))
+   ("H-f" . counsel-ag)))
 
 ;; inter package integrations
 (use-package counsel-projectile
