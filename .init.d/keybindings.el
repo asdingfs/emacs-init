@@ -34,10 +34,22 @@
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 (global-set-key (kbd "C-x C-;") 'comment-or-uncomment-region)
 
-;; temporary convenience functions until better solutions can be found
-(defun connect-remote-alias (ssh-alias)
+;; TODO: figure out how to call ivy more elegantly, this is basically copy pasting
+;; uses ivy methods for convenience
+(defun tramp-completion-list (method)
+  ;; provide a completion list, based on ivy and tramp-get-completion-function
+  ;; METHOD is connection method to remote, can be ssh ftp, will be passed to (tramp-get-completion-function method)
+  (let (clist)
+    (dolist (x (tramp-get-completion-function method))
+      (setq clist (append clist (funcall (car x) (cadr x)))))
+    (setq clist (cl-delete-duplicates (delq nil clist) :test #'equal))
+    (mapcar #'ivy-build-tramp-name clist)))
+
+;; temporary convenience functions until better solutions can be found, I'm relatively happy with the hackish result
+(defun dired-remote-alias (ssh-alias)
   "Connect to remote with tramp, projectile alternative until it works"
-  (interactive (list
-                (read-buffer "Enter alias: ")))
+  (interactive (list (ivy-read "Enter ssh-alias: "
+                               (tramp-completion-list "ssh") )))
   (dired (format "/ssh:%s:" ssh-alias)))
-(global-set-key (kbd "H-c") 'connect-remote-alias)
+(global-set-key (kbd "H-c") 'dired-remote-alias)
+
