@@ -6,9 +6,7 @@
 (use-package ag
   :defer t
   :init
-  (setq ag-highlight-search t)
-  :bind
-  (("H-s" . ag)))
+  (setq ag-highlight-search t))
 
 ;; use projectile for project file finders
 (use-package projectile
@@ -56,7 +54,7 @@
    ("C-h x" . counsel-imenu)
    ("C-c SPC g" . counsel-git)
    ("C-c SPC j" . counsel-git-grep)
-   ("C-c SPC s" . counsel-ag)))
+   ("H-s" . counsel-ag)))
 
 ;; inter package integrations
 (use-package counsel-projectile
