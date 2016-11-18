@@ -50,3 +50,9 @@
   :config
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/.personal.d/snippets")
   (yas-reload-all))
+
+;; merge-tools
+(use-package ediff)
+(use-package smerge-mode
+  :init
+  (setq smerge-command-prefix (kbd "C-c v")))
