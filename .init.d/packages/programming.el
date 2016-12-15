@@ -12,6 +12,9 @@
   (add-hook 'git-commit-setup-hook 'turn-off-auto-fill t)
   :bind
   (("C-x g" . magit-status)))
+;; major mode for editing git config files
+(use-package gitignore-mode
+  :defer t)
 ;; terminals and ssh
 (use-package multi-term
   :defer t
@@ -72,6 +75,10 @@
   (("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode))
   :config
   (unbind-key "C-d" enh-ruby-mode-map))
+(use-package rvm
+  :defer 1 ;; after exec-path-from-shell
+  :config
+  (rvm-use-default))
 (use-package rspec-mode
   :commands (rspec-mode)
   :init
@@ -91,7 +98,22 @@
   :defer t
   :bind
   (:map yaml-mode-map
-   ("C-m" . newline-and-indent)
-   ("<return>" . newline-and-indent))
+        ("C-m" . newline-and-indent)
+        ("<return>" . newline-and-indent))
   :mode
   (("\\.yml\\'" . yaml-mode)))
+
+;; html templates
+(use-package web-mode
+  :mode
+  (("\\.phtml\\'" . web-mode)
+   ("\\.tpl\\.php\\'" . web-mode)
+   ("\\.[agj]sp\\'" . web-mode)
+   ("\\.as[cp]x\\'" . web-mode)
+   ("\\.erb\\'" . web-mode)
+   ("\\.mustache\\'" . web-mode)
+   ("\\.djhtml\\'" . web-mode)))
+
+
+
+

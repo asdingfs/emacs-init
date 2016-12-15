@@ -54,7 +54,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (magit robe ag rspec-mode yasnippet multi-term ssh-config-mode ssh yaml-mode htmlize org-bullets dash-at-point ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm zenburn-theme use-package)))
+    (highlight-indent-guides web-mode rvm gitignore-mode git-modes magit robe ag rspec-mode yasnippet multi-term ssh-config-mode ssh yaml-mode htmlize org-bullets dash-at-point ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm zenburn-theme use-package)))
  '(projectile-mode t nil (projectile)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -62,3 +62,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'narrow-to-region 'disabled nil)

@@ -43,6 +43,17 @@
   (require 'smartparens-config)
   (show-smartparens-global-mode t))
 
+;; code folding
+;; TODO: here
+
+;; for highlighting indentations with lines
+(use-package highlight-indent-guides
+  :init
+  (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+  (setq highlight-indent-guides-method 'character)
+  :config
+  (set-face-foreground 'highlight-indent-guides-character-face "dimgray"))
+
 ;; snippets
 (use-package yasnippet
   :init
