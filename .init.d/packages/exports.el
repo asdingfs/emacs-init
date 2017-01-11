@@ -33,6 +33,9 @@
 (use-package htmlize ;; source code to follow formatting in org-mode src blk
   :after (org)
   :defer t)
+(use-package ox-pandoc
+  :after (org)
+  :defer t)
 
 ;; display
 (use-package org-bullets ;; bullets
