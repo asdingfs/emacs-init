@@ -45,3 +45,12 @@
         '( "►" "✸" "◉" "○" "◆" "◇" "▸" "•"))
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :defer t)
+
+;; other editing/export modes
+(use-package markdown-mode
+  :diminish t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
