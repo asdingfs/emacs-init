@@ -15,7 +15,6 @@
 ;; custom key macros
 (global-set-key (kbd "C-c C-SPC") (kbd "C-a C-SPC C-n M-w C-y C-b"))    ;; duplicate a current line
 (global-set-key (kbd "C-c C-<return>") (kbd "C-a C-j C-p TAB"))         ;; shift down line and begin with indentations
-(global-set-key (kbd "C-c C-<backspace>") (kbd "C-0 C-k TAB"))          ;; kill until beginning of line and indent
 
 ;; custom keybinding functions
 (defun jump-to-mark () ;; rebinds C-u C-SPC, will pop local mark ring and move there
@@ -27,12 +26,20 @@
 (defun toggle-comment-on-line ()
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+(defun kill-back-to-indentation ()
+  "Kill from point back to the first non-whitespace character on the line."
+  (interactive)
+  (let ((prev-pos (point)))
+    (back-to-indentation)
+    (kill-region (point) prev-pos)))
 
 (global-set-key (kbd "C-`") 'jump-to-mark)
 (global-set-key (kbd "C-~") 'jump-to-global-mark)
 
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 (global-set-key (kbd "C-x C-;") 'comment-or-uncomment-region)
+
+(global-set-key (kbd "C-c C-<backspace>") 'kill-back-to-indentation)      ;; kill until beginning of line and indent
 
 ;; TODO: figure out how to call ivy more elegantly, this is basically copy pasting
 ;; uses ivy methods for convenience
