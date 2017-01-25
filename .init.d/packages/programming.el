@@ -114,6 +114,14 @@
    ("\\.mustache\\'" . web-mode)
    ("\\.djhtml\\'" . web-mode)))
 
-
-
-
+;; javascript
+(use-package js
+  :config
+  (setq js-indent-level 2))
+;; json modes and configurations
+(use-package json-mode
+  :bind
+  (:map json-mode-map
+        ("C-c C-f" . json-mode-beautify))
+  :config
+  (setq json-reformat:indent-width 2))
