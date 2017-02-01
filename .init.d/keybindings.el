@@ -15,6 +15,7 @@
 ;; custom key macros
 (global-set-key (kbd "C-c C-SPC") (kbd "C-a C-SPC C-n M-w C-y C-b"))    ;; duplicate a current line
 (global-set-key (kbd "C-c C-<return>") (kbd "C-a C-j C-p TAB"))         ;; shift down line and begin with indentations
+(global-set-key (kbd "C-<return>") (kbd "C-e C-j"))                     ;; shift cursor down and make a new line
 
 ;; custom keybinding functions
 (defun jump-to-mark () ;; rebinds C-u C-SPC, will pop local mark ring and move there
