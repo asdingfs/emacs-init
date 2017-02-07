@@ -33,6 +33,14 @@
   (let ((prev-pos (point)))
     (back-to-indentation)
     (kill-region (point) prev-pos)))
+(defun reindent-whole-buffer ()
+  "Recompute indentation for the whole buffer."
+  (interactive)
+  (save-excursion
+    (mark-whole-buffer)
+    (indent-region (point-min) (point-max))
+    (pop-mark) ;; do not store extra marks
+    (pop-mark)))
 
 (global-set-key (kbd "C-`") 'jump-to-mark)
 (global-set-key (kbd "C-~") 'jump-to-global-mark)
@@ -41,6 +49,7 @@
 (global-set-key (kbd "C-x C-;") 'comment-or-uncomment-region)
 
 (global-set-key (kbd "C-c C-<backspace>") 'kill-back-to-indentation)      ;; kill until beginning of line and indent
+(global-set-key (kbd "C-M-|") 'reindent-whole-buffer)
 
 ;; TODO: figure out how to call ivy more elegantly, this is basically copy pasting
 ;; uses ivy methods for convenience
