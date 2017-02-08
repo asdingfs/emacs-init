@@ -63,10 +63,13 @@
     (mapcar #'ivy-build-tramp-name clist)))
 
 ;; temporary convenience functions until better solutions can be found, I'm relatively happy with the hackish result
-(defun dired-remote-alias (ssh-alias)
+(defun dired-remote-alias (ssh-alias &optional arg)
   "Connect to remote with tramp, projectile alternative until it works"
   (interactive (list (ivy-read "Enter ssh-alias: "
-                               (tramp-completion-list "ssh") )))
-  (dired (format "/ssh:%s:" ssh-alias)))
+                               (tramp-completion-list "ssh") )
+                     (prefix-numeric-value current-prefix-arg)))
+  (if (> arg 1)
+      (dired (format "/scp:%s|sudo:%s:" ssh-alias ssh-alias))
+    (dired (format "/scp:%s:" ssh-alias))))
 (global-set-key (kbd "H-s") 'dired-remote-alias)
 
