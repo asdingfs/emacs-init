@@ -69,7 +69,7 @@
                                (tramp-completion-list "ssh") )
                      (prefix-numeric-value current-prefix-arg)))
   (if (> arg 1)
-      (dired (format "/scp:%s|sudo:%s:" ssh-alias ssh-alias))
+      (dired (format "/ssh:%s|sudo:%s:" ssh-alias ssh-alias))
     (dired (format "/scp:%s:" ssh-alias))))
 (global-set-key (kbd "H-s") 'dired-remote-alias)
 
