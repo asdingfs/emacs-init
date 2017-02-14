@@ -31,8 +31,8 @@
 ;;;;;;;;;;;;;;;; Packages and Customizations ;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/.init.d/")
 (load-library "configurations")     ;; global settings, and themes
-(load-library "keybindings")        ;; global keybindings
 (load-library "functions")          ;; global self-defined functions
+(load-library "keybindings")        ;; global keybindings
 (load-library "specifics")          ;; machine/os specific configurations
 (load-library "packages")           ;; other packages, most bulk, and required most organizations
 
