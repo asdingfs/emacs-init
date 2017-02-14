@@ -36,7 +36,9 @@
   :after (ivy)
   :bind
   (("C-s" . swiper)
-   ("C-r" . swiper)))
+   ("C-r" . swiper)
+   ("C-S-s" . isearch-forward)
+   ("C-S-r" . isearch-backward)))
 
 ;; replace vanilla finders with counsel, closely tied to ivy-mode
 (use-package counsel
