@@ -43,6 +43,11 @@
   (require 'smartparens-config)
   (show-smartparens-global-mode t))
 
+;; selections
+(use-package expand-region
+  :bind
+  (("C-=" . er/expand-region)))
+
 ;; code folding
 ;; TODO: here
 
@@ -53,6 +58,10 @@
   (setq highlight-indent-guides-method 'character)
   :config
   (set-face-foreground 'highlight-indent-guides-character-face "dimgray"))
+;; auto-indentation for every major programming mode
+(use-package aggressive-indent
+  :init
+  (add-hook 'prog-mode-hook 'aggressive-indent-mode))
 
 ;; snippets
 (use-package yasnippet
