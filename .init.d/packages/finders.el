@@ -31,7 +31,16 @@
   (setq ivy-initial-inputs-alist nil)
   (setq ivy-height 10)
   :config
-  (ivy-mode 1))
+  (ivy-mode 1)
+  (ivy-add-actions t
+                   '(("I" (lambda (x) (with-ivy-window (insert x))) "insert")))
+  (ivy-add-actions 'counsel-find-file
+                   '(("F" (lambda (x) (with-ivy-window (insert (file-relative-name x))))
+                      "insert relative file name")
+                     ("B" (lambda (x)
+                            (with-ivy-window
+                              (insert (file-name-nondirectory (replace-regexp-in-string "/\\'" "" x)))))
+                      "insert file name without any directory information"))))
 (use-package swiper
   :after (ivy)
   :bind
