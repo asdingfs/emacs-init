@@ -29,6 +29,7 @@
 ;; customs
 (setq bookmark-default-file "~/.emacs.d/.personal.d/bookmarks")
 (setq dired-dwim-target t) ;; dired will try to guess the target for file operations
+(setq save-interprogram-paste-before-kill t) ;; always append system's clipboard to kill-ring
 
 ;; quirks
 (setq system-uses-terminfo nil) ;; causing '4m' in shells

@@ -56,7 +56,9 @@
    ("C-h x" . counsel-imenu)
    ("C-c SPC g" . counsel-git)
    ("C-c SPC j" . counsel-git-grep)
-   ("H-f" . counsel-ag)))
+   ("H-f" . counsel-ag)
+   :map ivy-minibuffer-map
+   ("M-y" . ivy-next-line)))
 
 ;; inter package integrations
 (use-package counsel-projectile
