@@ -20,6 +20,7 @@
   :ensure t
   :init (load-theme 'zenburn t))
 (set-default-font "Inconsolata-14" nil t)
+(global-hl-line-mode t)
 
 ;; behaviours
 (defalias 'yes-or-no-p 'y-or-n-p)
