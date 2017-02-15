@@ -49,7 +49,18 @@
   (("C-=" . er/expand-region)))
 
 ;; code folding
-;; TODO: here
+(use-package origami
+  :init
+  (add-hook 'prog-mode-hook (lambda () (origami-mode 1)))
+  :bind
+  (("C-c h a" . origami-open-all-nodes)
+   ("C-c h h" . origami-toggle-node)
+   :map origami-mode-map
+   ("C-c h o" . origami-show-only-node)
+   ("C-c h s" . origami-open-node-recursively)
+   ("C-c h <tab>" . origami-recursively-toggle-node)
+   ("C-c h /" . origami-undo)
+   ("C-c h \\" . origami-redo)))
 
 ;; for highlighting indentations with lines
 (use-package highlight-indent-guides
