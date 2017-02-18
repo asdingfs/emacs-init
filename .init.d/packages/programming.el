@@ -102,8 +102,10 @@
         ("<return>" . newline-and-indent))
   :mode
   (("\\.yml\\'" . yaml-mode)))
-
-;; html templates
+;; front end major modes
+(use-package css-mode
+  :config
+  (setq css-indent-offset 2))
 (use-package web-mode
   :mode
   (("\\.phtml\\'" . web-mode)
@@ -112,7 +114,9 @@
    ("\\.as[cp]x\\'" . web-mode)
    ("\\.erb\\'" . web-mode)
    ("\\.mustache\\'" . web-mode)
-   ("\\.djhtml\\'" . web-mode)))
+   ("\\.djhtml\\'" . web-mode))
+  :config
+  (setq web-mode-css-indent-offset 2))
 
 ;; javascript
 (use-package js
