@@ -69,10 +69,6 @@
   (setq highlight-indent-guides-method 'character)
   :config
   (set-face-foreground 'highlight-indent-guides-character-face "dimgray"))
-;; auto-indentation for every major programming mode
-(use-package aggressive-indent
-  :init
-  (add-hook 'prog-mode-hook 'aggressive-indent-mode))
 
 ;; snippets
 (use-package yasnippet
