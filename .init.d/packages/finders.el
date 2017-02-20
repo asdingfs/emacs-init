@@ -11,10 +11,10 @@
 ;; use projectile for project file finders
 (use-package projectile
   :diminish projectile-mode
-  :init
+  :config
   (setq projectile-completion-system 'ivy)
   (setq projectile-create-missing-test-files t)
-  :config
+  (setq projectile-switch-project-action 'magit-status)
   (projectile-global-mode t))
 
 ;; better search with swiper: installs ivy-mode too
