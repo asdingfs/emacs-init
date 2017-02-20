@@ -12,8 +12,9 @@
         ("H-M-:"  . org-shiftmetaleft)
         ("H-M-?"  . org-shiftmetadown)
         ("H-M-{"  . org-shiftmetaup))
-  :init
+  :config
   (setq org-src-fontify-natively t)     ;; make source code block prettier
+  (setq org-src-tab-acts-natively t)    ;; make tab works as if programming normally
   (setq org-export-with-sub-superscripts nil)
   
   (defface org-block-begin-line
