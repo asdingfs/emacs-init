@@ -35,14 +35,13 @@
 (load-library "keybindings")        ;; global keybindings
 (load-library "specifics")          ;; machine/os specific configurations
 (load-library "packages")           ;; other packages, most bulk, and required most organizations
-
+;;;;;;;;;;;;;;;; Locals and Instance Specifics ;;;;;;;;;;;;;;;;
+;; i.e. require only if defined
+(add-to-list 'load-path "~/.emacs.d/.personal.d/locals/")
+(load "publishing" t)
 
 ;;;;;;;;;;;;;;;; List of packages yet to be further configured ;;;;;;;;;;;;;;;;
-;; Magit
-;; Ruby program setup
 ;; emacs-w3m
-;; neotree
-;; ag: https://github.com/Wilfred/ag.el
 ;; wgrep-ag: https://github.com/mhayashi1120/Emacs-wgrep
 ;; powerline (better info-bar)
 
