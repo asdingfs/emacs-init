@@ -17,4 +17,4 @@ projectile-*
 *.cache
 
 # environment-specific file
-.personal.d/locals
+.personal.d/locals/*.el*
