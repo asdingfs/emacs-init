@@ -18,3 +18,4 @@ projectile-*
 
 # environment-specific file
 .personal.d/locals/*.el*
+/eshell/*
