@@ -76,7 +76,7 @@
   :config
   (unbind-key "C-d" enh-ruby-mode-map))
 (use-package rvm
-  :defer 1 ;; after exec-path-from-shell
+  :defer 1.5 ;; after exec-path-from-shell
   :config
   (rvm-use-default))
 (use-package rspec-mode

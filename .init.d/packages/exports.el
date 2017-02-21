@@ -1,7 +1,10 @@
 ;; main org configurations
 (use-package org
   :commands (ox-twbs htmlize)
-  :defer t
+  :defer 1
+  :init
+  (setq org-export-in-background t)     ;; run exporting and publishing in background
+  (setq org-export-async-debug t)       ;; by default, leave data behind
   :bind
   (:map org-mode-map
         ("H-M-'"  . org-metaright)
