@@ -81,7 +81,8 @@
   :init 
   (setq projectile-rails-add-keywords t)
   (setq projectile-rails-expand-snippet t)
-  (add-hook 'find-file-hook 'projectile-rails-on))
+  (add-hook 'find-file-hook 'projectile-rails-on)
+  (add-hook 'dired-mode-hook 'projectile-rails-on))
 
 ;; remote servers
 (use-package tramp
