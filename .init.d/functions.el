@@ -23,6 +23,37 @@
     (pop-mark) ;; do not store extra marks
     (pop-mark)))
 
+;;;;;;;;;;;;;;;; Editings ;;;;;;;;;;;;;;;;
+(defun copy-line (arg)
+  "Copy lines (as many as prefix argument) in the kill ring.
+    Ease of use features:
+    - Move to start of next line
+    - Appends the copy on sequential calls
+    - Use newline as last char even on the last line of the buffer
+    - If region is active, copy its lines."
+  (interactive "p")
+  (let ((b (line-beginning-position))
+        (e (line-end-position arg)))
+    (when mark-active
+      (if (> (point) (mark))
+          (setq b (save-excursion (goto-char (mark)) (line-beginning-position)))
+        (setq e (save-excursion (goto-char (mark)) (line-end-position)))))
+    (if (eq last-command 'copy-line)
+        (kill-append (buffer-substring b e) (< e b))
+      (kill-ring-save b e)))
+  (kill-append "\n" nil)
+  (beginning-of-line (or (and arg (1+ arg)) 2))
+  (if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
+
+(defun duplicate-line ()
+  "Deactivate any active mark, duplicates current line, saves horizontal position, and moves to the next line"
+  (interactive)
+  (save-excursion
+    (deactivate-mark)
+    (copy-line nil)
+    (yank))
+  (next-line))
+
 ;;;;;;;;;;;;;;;; Tramp ;;;;;;;;;;;;;;;;
 ;; TODO: figure out how to call ivy more elegantly, this is basically copy pasting
 ;; uses ivy methods for convenience
