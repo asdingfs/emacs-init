@@ -5,6 +5,7 @@
   :init
   (setq org-export-in-background t)     ;; run exporting and publishing in background
   (setq org-export-async-debug t)       ;; by default, leave data behind
+  (setq initial-major-mode 'org-mode)
   :bind
   (:map org-mode-map
         ("H-M-'"  . org-metaright)
@@ -38,7 +39,7 @@
   :after (org)
   :defer t)
 (use-package ox-pandoc
-  :after (org)
+  :after (org exec-path-from-shell)
   :defer t)
 
 ;; display
