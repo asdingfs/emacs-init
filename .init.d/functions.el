@@ -1,4 +1,9 @@
 ;;;;;;;;;;;;;;;; Movements ;;;;;;;;;;;;;;;;
+(defun move-to-scratch ()
+  "Switch to buffer named *scratch* and create if it does not exist"
+  (interactive)
+  (switch-to-buffer
+   (get-buffer-create "*scratch*")))
 (defun jump-to-mark () ;; rebinds C-u C-SPC, will pop local mark ring and move there
   (interactive)
   (set-mark-command 1))
