@@ -13,7 +13,8 @@
 (global-set-key (kbd "H-l") 'org-open-at-point-global)
 
 ;; movements
-(global-set-key (kbd "H-<escape>") 'move-to-scratch)
+(global-set-key (kbd "H-<escape>") 'move-to-notes)
+(global-set-key (kbd "H-S-<escape>") 'move-to-scratch)
 
 ;; editings
 (global-set-key (kbd "H-c") 'copy-line)                                 ;; copy ARGS line or region if mark-active, successive calls appends to the same kill ring
