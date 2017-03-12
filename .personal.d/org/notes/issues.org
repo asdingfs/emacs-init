@@ -1,0 +1,115 @@
+Documenting the solvable problems by programming that I have yet to find out how...
+
+* Quadrant 1 (Important, or very very annoying)
+** org-mode
+*** problems
+    1. 60% keyboards while I use a lot of direction keys, or generally, find a good keybinding to remember
+*** workarounds
+*** leads
+*** solutions
+** smartparens
+*** problems
+    1. when sp-kill-backward-word, kills with trailing space, which is not default emacs behaviour, wish I can preserve the space if possible
+    2. in strict mode at least disable inputs of singular closing brackets that can't be deleted, or maybe delete non-balanced pair
+    3. when inside quotes, disable pairing
+    4. slurping annoyingly adds spaces and slurps dots/commas too, it does not work
+    5. unpredictable behaviour when moving sp-up-sexp, sometimes it ends up at the start of sexp, sometimes at the end
+    6. deleting comments and functions C-M-k, sp-kill-sexp does not kill properly, need to investigate
+*** workarounds
+*** leads
+*** solutions
+** tramp
+*** problems
+    1. when connecting via ssh password, somehow tramp sends IDKW password to the server, unable to login, production servers with keys are all rightp
+** projectile
+*** problems
+    1. More imporant error is unable to ssh due to projectile tramp: Error in post-command-hook (projectile-rails-global-mode-check-buffers): (quit)
+    2. errors after connecting to remote ssh, when executing projectile-find-file (I assume), error is: unable to load /bin/sh: 120: /bin/zsh: not found
+*** solutions
+    2. define temporary connect-remote-alias in keybindings and bind to H-c, until I find out how projectile works with TRAMP
+* Quadrant 2 (Can live by it, but maybe very good to do)
+  Not so annoying after workarounds, but definitely worth to look at 
+** ivy
+*** problems
+    1. when searching for something, how to insert current selection to buffer, maybe can think of a macro to execute this?
+*** workarounds
+    1. press M-i to insert current selection to buffer, use C-0 k to copy to buffer, C-g to clear and insert at point
+*** leads
+    1. 
+*** solutions
+    1. 
+** cousel
+*** problems
+    1. when searching on arbitrary project, ag does not search recursively... what defines the project search directory?
+*** workarounds
+*** leads
+*** solutions
+** bookmarks
+*** problems
+    1. want to jump to most recent bookmark! I think this one is possible
+*** workaroundss
+    1. to use counsel-bookmart to still find bookmarks quite efficiently
+*** solutions
+* Quadrant 3 (Maybe later, exporations)
+** robe
+*** problems
+    1. when running multiple projects (e.g. switching to new via projectile), how to rerun robe shell in that project
+    2. execute only when opening rails project, not when creating a .rb file
+    3. auto execute development environment by default
+*** workarounds
+    1. temporary solutions is to use C-p p k, for projectile kill all buffers relating to project, this includes the inf-ruby shell also, worked quite well so far
+*** leads
+*** solutions
+** org-mode
+*** problems
+    1. even though org-block-background has been set, the quote block counterparts does not get highlighted
+    2. when highlighting a hightlighted text area in org-mode, the block did not get hightlighted (caveats)
+*** workarounds
+*** leads
+*** solutions
+** inf-ruby
+*** problem
+    1. how to clear screen
+    2. keep history! important
+    3. I assume reload! works to refresh class definitions
+*** workarounds
+    1. 2. use iTerm2 instead... lol
+*** leads
+*** solution
+    3. Indeed
+** enh-ruby-mode
+*** problems
+    - improve highlighting for common ruby methods, maybe think of the implications (how are they differently highlighted from normal ruby methods)
+*** workarounds
+*** leads
+*** solution
+** projectile-rails
+*** problem
+    1. find out how projectile-mode-hook are called when visiting file (maybe it's projectile-global-mode)
+       - now it's implemented hackish way (via 'enh-ruby-mode-hook which should be from projectile-mode-hook)
+    2. when running rake tasks, projectile-rails-compilations frequently hangs
+*** workarounds
+*** leads
+*** solution
+    1. done! there was update for projectile-rails-global-mode, everything else is good!
+    2. 
+* Quadrant 4 (Curious, need research and explorations)
+** use-package
+*** problems
+    1. why doesn't use-package :mode work (invalid function) for ssh-config-mode, but when it is disabled it worked fine?
+*** workarounds
+*** leads
+*** solutions
+    1. well, it works now, it's not as important to find this
+* Closed
+** magit
+*** problem
+    - turn off auto fill always
+***** solution
+      - =(add-hook 'git-commit-setup-hook 'turn-off-auto-fill t)=
+** ssh and dired
+*** problems
+    1. how to find folders faster when copying from remote repository
+*** solutions
+    1. use =(setq dired-dwim-target t)=, it will copy to the second visible dired directory
+
