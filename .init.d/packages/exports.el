@@ -2,24 +2,28 @@
 (use-package org
   :commands (ox-twbs htmlize)
   :defer 1
-  :init
+  :bind
+  (("C-c a" . org-agenda)
+   ("C-c l" . org-store-link)
+   :map org-mode-map
+   ("H-M-'"  . org-metaright)
+   ("H-M-;"  . org-metaleft)
+   ("H-M-["  . org-metaup)
+   ("H-M-/"  . org-metadown)
+   ("H-M-\"" . org-shiftmetaright)
+   ("H-M-:"  . org-shiftmetaleft)
+   ("H-M-?"  . org-shiftmetadown)
+   ("H-M-{"  . org-shiftmetaup))
+  :config
+  ;; general
+  (setq org-log-done t)
+  ;; export settings
   (setq org-export-in-background t)     ;; run exporting and publishing in background
   (setq org-export-async-debug t)       ;; by default, leave data behind
-  :bind
-  (:map org-mode-map
-        ("H-M-'"  . org-metaright)
-        ("H-M-;"  . org-metaleft)
-        ("H-M-["  . org-metaup)
-        ("H-M-/"  . org-metadown)
-        ("H-M-\"" . org-shiftmetaright)
-        ("H-M-:"  . org-shiftmetaleft)
-        ("H-M-?"  . org-shiftmetadown)
-        ("H-M-{"  . org-shiftmetaup))
-  :config
+  (setq org-export-with-sub-superscripts nil)
+  ;; looks
   (setq org-src-fontify-natively t)     ;; make source code block prettier
   (setq org-src-tab-acts-natively t)    ;; make tab works as if programming normally
-  (setq org-export-with-sub-superscripts nil)
-  
   (defface org-block-begin-line
     '((t (:background "#383838" :foreground "#7F9F7F")))
     "Face used for the line delimiting the begin of source blocks.")
