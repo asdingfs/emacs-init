@@ -28,7 +28,7 @@
 (setq-default indent-tabs-mode nil) ;; Use spaces for indentations
 
 ;; customs
-(setq bookmark-default-file "~/.emacs.d/.personal.d/bookmarks")
+(setq bookmark-default-file "~/.emacs.d/.personal.d/locals/bookmarks")
 (setq dired-dwim-target t) ;; dired will try to guess the target for file operations
 (setq save-interprogram-paste-before-kill t) ;; always append system's clipboard to kill-ring
 
