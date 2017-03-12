@@ -4,6 +4,7 @@
   :defer 1
   :bind
   (("C-c a" . org-agenda)
+   ("C-c c" . org-capture) 
    ("C-c l" . org-store-link)
    :map org-mode-map
    ("H-M-'"  . org-metaright)
@@ -17,6 +18,7 @@
   :config
   ;; general
   (setq org-log-done t)
+  (setq org-goto-auto-isearch nil)
   (setq org-agenda-files (directory-files "~/.emacs.d/.personal.d/org/tasks" t "^.*\\.org$"))
   ;; export settings
   (setq org-export-in-background t)     ;; run exporting and publishing in background
