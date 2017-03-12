@@ -17,6 +17,7 @@
   :config
   ;; general
   (setq org-log-done t)
+  (setq org-agenda-files (directory-files "~/.emacs.d/.personal.d/org/tasks" t "^.*\\.org$"))
   ;; export settings
   (setq org-export-in-background t)     ;; run exporting and publishing in background
   (setq org-export-async-debug t)       ;; by default, leave data behind
