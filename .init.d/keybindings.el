@@ -13,7 +13,7 @@
 (global-set-key (kbd "H-l") 'org-open-at-point-global)
 
 ;; movements
-(global-set-key (kbd "H-<escape>") 'move-to-notes)
+(global-set-key (kbd "H-<escape>") 'move-to-scratch-org)
 (global-set-key (kbd "H-S-<escape>") 'move-to-scratch)
 
 ;; editings

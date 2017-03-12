@@ -4,9 +4,9 @@
   (interactive)
   (switch-to-buffer
    (get-buffer-create "*scratch*")))
-(defun move-to-notes ()
+(defun move-to-scratch-org ()
   (interactive)
-  (find-file "~/.emacs.d/.personal.d/notes.org"))
+  (find-file "~/.emacs.d/.personal.d/org/notes/scratch.org"))
 (defun jump-to-mark () ;; rebinds C-u C-SPC, will pop local mark ring and move there
   (interactive)
   (set-mark-command 1))
