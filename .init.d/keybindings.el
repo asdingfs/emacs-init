@@ -30,7 +30,7 @@
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 (global-set-key (kbd "C-x C-;") 'comment-or-uncomment-region)
 
-(global-set-key (kbd "C-c C-<backspace>") 'kill-back-to-indentation)      ;; kill until beginning of line and indent
+(global-set-key (kbd "H-<backspace>") 'kill-back-to-indentation)      ;; kill until beginning of line and indent
 (global-set-key (kbd "C-M-|") 'reindent-whole-buffer)
 
 (global-set-key (kbd "H-s") 'dired-remote-alias)
