@@ -93,3 +93,17 @@
   :config
   (tramp-set-completion-function "ssh" '((tramp-parse-sconfig "/etc/ssh_config")
                                          (tramp-parse-sconfig "~/.ssh/config"))))
+
+;; web surfing
+(use-package w3m
+  :bind
+  (("H-w" . w3m-browse-url))
+  :config
+  (setq
+   w3m-coding-system 'utf-8
+   w3m-file-coding-system 'utf-8
+   w3m-file-name-coding-system 'utf-8
+   w3m-input-coding-system 'utf-8
+   w3m-output-coding-system 'utf-8
+   w3m-terminal-coding-system 'utf-8)
+  (setq w3m-search-default-engine "google-groups"))
