@@ -97,7 +97,7 @@
 ;; web surfing
 (use-package w3m
   :bind
-  (("H-w" . w3m-browse-url))
+  (("H-w" . w3m-search))
   :config
   (setq
    w3m-coding-system 'utf-8
@@ -106,4 +106,4 @@
    w3m-input-coding-system 'utf-8
    w3m-output-coding-system 'utf-8
    w3m-terminal-coding-system 'utf-8)
-  (setq w3m-search-default-engine "google-groups"))
+  (setq w3m-search-default-engine "google"))
