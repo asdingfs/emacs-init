@@ -1,6 +1,6 @@
 ;; main org configurations
 (use-package org
-  :commands (ox-twbs htmlize)
+  :commands (ox-md ox-twbs htmlize)
   :defer 1
   :bind
   (("C-c a" . org-agenda)
@@ -24,6 +24,7 @@
   (setq org-export-in-background t)     ;; run exporting and publishing in background
   (setq org-export-async-debug t)       ;; by default, leave data behind
   (setq org-export-with-sub-superscripts nil)
+  (setq org-export-backends '(ascii html icalendar latex odt md))
   ;; looks
   (setq org-src-fontify-natively t)     ;; make source code block prettier
   (setq org-src-tab-acts-natively t)    ;; make tab works as if programming normally
