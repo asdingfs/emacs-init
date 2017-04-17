@@ -97,8 +97,8 @@
 ;; web surfing
 (use-package w3m
   :bind
-  (("H-w" . w3m-search)
-   ("H-u" . w3m-browse-url))
+  (("H-b" . w3m-search)
+   ("H-S-b" . w3m-browse-url))
   :config
   (setq
    w3m-coding-system 'utf-8

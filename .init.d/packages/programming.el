@@ -3,7 +3,7 @@
 (use-package dash-at-point
   :commands (dash-at-point)
   :bind
-  (("H-d" . dash-at-point)))
+  (("s-." . dash-at-point)))
 ;; git
 (use-package magit
   :defer t
