@@ -9,8 +9,10 @@
 (global-set-key (kbd "H-/") 'windmove-down)
 (global-set-key (kbd "H-;") 'windmove-left)
 
-;; actions
+;; commands
 (global-set-key (kbd "H-l") 'org-open-at-point-global)
+(global-set-key (kbd "H--") 'text-scale-decrease)
+(global-set-key (kbd "H-=") 'text-scale-increase)
 
 ;; movements
 (global-set-key (kbd "H-<escape>") 'move-to-scratch-org)
