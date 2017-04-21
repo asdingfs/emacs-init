@@ -19,7 +19,7 @@
 (global-set-key (kbd "H-S-<escape>") 'move-to-scratch)
 
 ;; editings
-(global-set-key (kbd "H-c") 'copy-line)                                 ;; copy ARGS line or region if mark-active, successive calls appends to the same kill ring
+(global-set-key (kbd "C-+") 'copy-line)                                 ;; copy ARGS line or region if mark-active, successive calls appends to the same kill ring
 (global-set-key (kbd "H-d") 'duplicate-line)                          ;; duplicate a current line
 (global-set-key (kbd "C-c C-<return>") (kbd "C-a C-j C-p TAB"))         ;; shift down line and begin with indentations
 (global-set-key (kbd "C-<return>") (kbd "C-e C-j"))                     ;; shift cursor down and make a new line
