@@ -86,6 +86,7 @@
   :config
   (rspec-install-snippets))
 (use-package robe
+  :disabled
   :defer t
   :init
   (add-hook 'ruby-mode-hook 'robe-mode)
