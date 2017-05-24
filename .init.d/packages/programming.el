@@ -130,3 +130,9 @@
         ("C-c C-f" . json-mode-beautify))
   :config
   (setq json-reformat:indent-width 2))
+
+;; bash scripting
+(use-package conf-mode
+  :mode
+  (("\\.env.sample\\'" . conf-mode)
+   ("\\.env\\'" . conf-mode)))
