@@ -24,6 +24,7 @@
 (global-set-key (kbd "H-d") 'duplicate-line)                          ;; duplicate a current line
 (global-set-key (kbd "C-c C-<return>") (kbd "C-a C-j C-p TAB"))         ;; shift down line and begin with indentations
 (global-set-key (kbd "C-<return>") (kbd "C-e C-j"))                     ;; shift cursor down and make a new line
+(global-set-key (kbd "H-u") 'universal-argument)
 
 ;; custom keybinding functions
 ;; these are all defined in functions.el in the same directory
