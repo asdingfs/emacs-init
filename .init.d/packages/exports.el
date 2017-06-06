@@ -21,9 +21,11 @@
   (setq org-goto-auto-isearch nil)
   (setq org-agenda-files (directory-files "~/.emacs.d/.personal.d/org/tasks" t "^.*\\.org$"))
   ;; refiling
-  (setq org-refile-targets (quote ((org-agenda-files :level . 1))))   ;; use header lvl 1 in ALL registed agenda files
-  (setq org-refile-use-outline-path (quote file))                     ;; refile includes relative file name
-  (setq org-refile-allow-creating-parent-nodes (quote confirm))       ;; confirm if creating a new parent node
+  (setq org-refile-targets (quote ((nil :maxlevel . 1)
+                                   (org-agenda-files :maxlevel . 2))))    ;; use header lvl 1 in ALL registed agenda files
+  (setq org-refile-use-outline-path (quote file))                         ;; refile includes relative file name
+  (setq org-refile-allow-creating-parent-nodes (quote confirm))           ;; confirm if creating a new parent node
+  (setq org-outline-path-complete-in-steps nil)                           ;; show all steps, for ivy autocomplete
 
   ;; export settings
   (setq org-export-in-background t)     ;; run exporting and publishing in background
