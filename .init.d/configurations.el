@@ -36,4 +36,5 @@
 (setq system-uses-terminfo nil) ;; causing '4m' in shells
 
 ;; server
-(server-start)
+(load "server")
+(unless (server-running-p) (server-start))
