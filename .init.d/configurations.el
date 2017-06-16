@@ -19,7 +19,7 @@
 (use-package zenburn-theme
   :ensure t
   :init (load-theme 'zenburn t))
-(set-default-font "Inconsolata-14" nil t)
+(add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
 (global-hl-line-mode t)
 
 ;; behaviours
