@@ -73,6 +73,7 @@
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown")
   :config
-  (setq markdown-fontify-code-blocks-natively t))
+  (setq markdown-fontify-code-blocks-natively t)
+  (set-face-attribute 'markdown-code-face nil :background "#464646" :family "Inconsolata"))
 (use-package markdown-preview-mode
   :defer t)
