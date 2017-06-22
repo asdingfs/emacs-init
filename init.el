@@ -53,8 +53,14 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (markdown-preview-mode linum-relative w3m origami expand-region json-mode markdown-mode ox-pandoc highlight-indent-guides web-mode rvm gitignore-mode git-modes magit robe ag rspec-mode yasnippet multi-term ssh-config-mode ssh yaml-mode htmlize org-bullets dash-at-point ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm zenburn-theme use-package)))
+    (transpose-frame markdown-preview-mode linum-relative w3m origami expand-region json-mode markdown-mode ox-pandoc highlight-indent-guides web-mode rvm gitignore-mode git-modes magit robe ag rspec-mode yasnippet multi-term ssh-config-mode ssh yaml-mode htmlize org-bullets dash-at-point ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm zenburn-theme use-package)))
  '(projectile-mode t nil (projectile)))
 
 ;;;;;;;;;;;;;;;; Disabled warning commands ;;;;;;;;;;;;;;;;
 (put 'narrow-to-region 'disabled nil)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

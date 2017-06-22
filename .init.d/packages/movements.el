@@ -13,3 +13,10 @@
   (setq linum-relative-current-symbol "=>"))
 ;; enable linum mode globally
 (global-linum-mode t)
+
+;; transpose-frame to switch windows
+(use-package transpose-frame
+  :bind
+  (("H-\"" . flop-frame)
+   ("H-?" . flip-frame)
+   ("H-}" . transpose-frame)))
