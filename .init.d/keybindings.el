@@ -8,7 +8,6 @@
 (global-set-key (kbd "H-'") 'windmove-right)
 (global-set-key (kbd "H-/") 'windmove-down)
 (global-set-key (kbd "H-;") 'windmove-left)
-(setq windmove-wrap-around t)
 
 ;; commands
 (global-set-key (kbd "H-l") 'org-open-at-point-global)
