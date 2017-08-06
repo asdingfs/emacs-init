@@ -1,11 +1,9 @@
 ;;;;;;;;;;;;;;;; Modifier keys ;;;;;;;;;;;;;;;;
 (setq ns-pop-up-frames nil)     ;; always open file on same emacs frame
-(setq ns-option-key-is-meta nil)
-(setq ns-command-key-is-meta t)
-(setq ns-right-option-modifier 'super)
-(setq ns-option-modifier 'option)
-(setq ns-right-command-modifier 'hyper)
-(setq ns-command-modifier 'meta)
+(setq ns-option-modifier 'meta)
+(setq ns-command-modifier nil)
+(setq ns-right-command-modifier 'super)
+(setq ns-right-option-modifier 'hyper)
 
 (when (featurep 'ns)
   (defun ns-raise-emacs ()
