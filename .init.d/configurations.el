@@ -29,8 +29,13 @@
 
 ;; customs
 (setq bookmark-default-file "~/.emacs.d/.personal.d/locals/bookmarks")
-(setq dired-dwim-target t) ;; dired will try to guess the target for file operations
 (setq save-interprogram-paste-before-kill t) ;; always append system's clipboard to kill-ring
+
+;; dired configs
+(require 'dired)
+(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
+(define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
+(setq dired-dwim-target t) ;; dired will try to guess the target for file operations
 
 ;; quirks
 (setq system-uses-terminfo nil) ;; causing '4m' in shells
