@@ -11,7 +11,25 @@
   (setq magit-completing-read-function 'ivy-completing-read)
   (add-hook 'git-commit-setup-hook 'turn-off-auto-fill t)
   :bind
-  (("C-x g" . magit-status)))
+  (("C-x g" . magit-status))
+  :config
+  (setq magit-display-buffer-function
+      (lambda (buffer)
+        (display-buffer
+         buffer
+         (cond ((and (derived-mode-p 'magit-mode)
+                     (eq (with-current-buffer buffer major-mode)
+                         'magit-status-mode))
+                nil)
+               ((memq (with-current-buffer buffer major-mode)
+                      '(magit-process-mode
+                        magit-revision-mode
+                        magit-diff-mode
+                        magit-log-mode
+                        magit-stash-mode))
+                nil)
+               (t
+                '(display-buffer-same-window)))))))
 ;; major mode for editing git config files
 (use-package gitignore-mode
   :defer t)
