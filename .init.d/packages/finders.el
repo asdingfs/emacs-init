@@ -29,7 +29,7 @@
         '((swiper . ivy--regex-plus)
           (t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil)
-  (setq ivy-height 10)
+  (setq ivy-height 12)
   :config
   (ivy-mode 1)
   (ivy-add-actions t
@@ -47,7 +47,9 @@
   (("C-s" . swiper)
    ("C-r" . swiper)
    ("C-S-s" . isearch-forward)
-   ("C-S-r" . isearch-backward)))
+   ("C-S-r" . isearch-backward))
+  :config
+  (setq swiper-include-line-number-in-search t))
 
 ;; replace vanilla finders with counsel, closely tied to ivy-mode
 (use-package counsel
@@ -86,13 +88,19 @@
   (add-hook 'magit-mode-hook 'projectile-rails-on))
 
 ;; remote servers
+(defun set-default-remote-shell ()
+  "Function to set remote shell to default, not following current environment"
+  (when (file-remote-p (buffer-file-name))
+    (setq-local shell-file-name "/bin/bash")))
+
 (use-package tramp
   :init
   ;; (setq tramp-verbose 10) 
   (setq tramp-default-method "ssh")
   :config
   (tramp-set-completion-function "ssh" '((tramp-parse-sconfig "/etc/ssh_config")
-                                         (tramp-parse-sconfig "~/.ssh/config"))))
+                                         (tramp-parse-sconfig "~/.ssh/config")))
+  (add-hook 'find-file-hook 'set-default-remote-shell))
 
 ;; web surfing
 (use-package w3m
