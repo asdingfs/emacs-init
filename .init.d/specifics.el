@@ -22,8 +22,8 @@
     (ns-raise-emacs)))
 
 (use-package exec-path-from-shell
+  :if (memq window-system '(mac ns x))
   :defer 0.5
-  :if (memq window-system '(mac ns))
   :config
   (add-to-list 'exec-path-from-shell-variables "GEM_PATH")
   (add-to-list 'exec-path-from-shell-variables "GEM_HOME")
