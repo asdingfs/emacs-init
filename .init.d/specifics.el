@@ -27,5 +27,5 @@
   :config
   (add-to-list 'exec-path-from-shell-variables "GEM_PATH")
   (add-to-list 'exec-path-from-shell-variables "GEM_HOME")
-  (exec-path-from-shell-initialize))
+  (add-hook 'after-make-frame-functions 'exec-path-from-shell-initialize))
 
