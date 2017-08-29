@@ -72,6 +72,7 @@
 
 ;; snippets
 (use-package yasnippet
+  :diminish yas-minor-mode
   :init
   (add-hook 'prog-mode-hook 'yas-minor-mode)
   :config

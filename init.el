@@ -24,6 +24,7 @@
 (eval-when-compile
   (require 'use-package))
 (require 'diminish)		;; enable :diminish options
+(diminish 'auto-revert-mode)
 (require 'bind-key)		;; enable :bind options
 (setq use-package-always-ensure t) ;; always download if not available
 (setq use-package-verbose t)	;; don't fail silently
