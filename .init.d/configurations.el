@@ -40,6 +40,9 @@
 ;; quirks
 (setq system-uses-terminfo nil) ;; causing '4m' in shells
 
+;; eshells
+(add-hook 'eshell-mode-hook (lambda () (setq pcomplete-cycle-completions nil)))
+
 ;; server
 (load "server")
 (unless (server-running-p) (server-start))

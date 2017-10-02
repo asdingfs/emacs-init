@@ -39,3 +39,5 @@
 
 (global-set-key (kbd "H-t") 'dired-remote-alias)
 
+(global-set-key (kbd "H-0") 'eshell)
+

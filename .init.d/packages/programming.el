@@ -33,39 +33,6 @@
 ;; major mode for editing git config files
 (use-package gitignore-mode
   :defer t)
-;; terminals and ssh
-(use-package multi-term
-  :defer t
-  :init
-  (setq multi-term-program "/bin/zsh")
-  (add-hook 'term-mode-hook (lambda () (yas-minor-mode -1))) 
-  :bind
-  (("H-0" . multi-term-next)
-   ("H-9" . multi-term-prev)
-   :map term-raw-map ;; char mode map
-   ("C-j" . term-line-mode)
-   ("C-c C-c" . term-interrupt-subjob)
-   ("M-f" . term-send-forward-word)
-   ("M-b" . term-send-backward-word)
-   ("M-<backspace>" . term-send-backward-kill-word)
-   ("M-d" . term-send-forward-kill-word)
-   ("C-r" . term-send-reverse-search-history)
-   ("M-y" . term-send-raw-meta)
-   ("C-y" . term-send-raw)
-   :map term-mode-map ;; line mode map
-   ("C-j" . term-char-mode)
-   ("C-c C-c" . term-interrupt-subjob)
-   ("C-p" . previous-line)
-   ("C-n" . next-line)
-   ("M-p" . term-send-up)
-   ("M-n" . term-send-down)
-   ("M-f" . term-send-forward-word)
-   ("M-b" . term-send-backward-word)
-   ("M-<backspace>" . term-send-backward-kill-word)
-   ("M-d" . term-send-forward-kill-word)
-   ("C-r" . term-send-reverse-search-history)
-   ("M-y" . term-send-raw-meta)
-   ("C-y" . term-send-raw)))
 (use-package ssh
   :defer t
   :init
