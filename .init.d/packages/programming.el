@@ -30,6 +30,10 @@
                 nil)
                (t
                 '(display-buffer-same-window)))))))
+(use-package magit-gitflow
+  :after (magit)
+  :config
+  (add-hook 'magit-mode-hook 'turn-on-magit-gitflow))
 ;; major mode for editing git config files
 (use-package gitignore-mode
   :defer t)
