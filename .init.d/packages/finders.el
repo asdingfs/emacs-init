@@ -2,6 +2,10 @@
 (use-package flx
   :defer t)
 
+;; edit on occur
+(use-package wgrep
+  :defer t)
+
 ;; for searching files
 (use-package ag
   :defer t
