@@ -23,9 +23,11 @@
   (package-install 'use-package))
 (eval-when-compile
   (require 'use-package))
-(require 'diminish)		;; enable :diminish options
-(diminish 'auto-revert-mode)
-(require 'bind-key)		;; enable :bind options
+(use-package diminish
+  :ensure t
+  :config
+  (diminish 'auto-revert-mode)) ;; enable :diminish options
+(use-package bind-key) ;; enable :bind options
 (setq use-package-always-ensure t) ;; always download if not available
 (setq use-package-verbose t)	;; don't fail silently
 
