@@ -16,6 +16,9 @@
               ("S-<backspace>" . sp-backward-delete-char)
               ("<backspace>" . backward-delete-char)
               ([remap sp-backward-delete-char] . backward-delete-char)
+              ("C-S-<backspace>" . sp-kill-whole-line)
+              ("C-M-S-<backspace>" . kill-whole-line)
+              ([remap sp-kill-whole-line] . kill-whole-line)
               
               ("C-M-a" . sp-beginning-of-sexp)
               ("C-M-e" . sp-end-of-sexp)
