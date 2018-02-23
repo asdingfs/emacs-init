@@ -21,6 +21,7 @@
   :init (load-theme 'zenburn t))
 (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
 (global-hl-line-mode t)
+(set-face-background 'hl-line "#2B2B2B")
 
 ;; behaviours
 (defalias 'yes-or-no-p 'y-or-n-p)
