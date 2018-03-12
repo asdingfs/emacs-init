@@ -77,3 +77,11 @@
   (set-face-attribute 'markdown-code-face nil :family "Inconsolata"))
 (use-package markdown-preview-mode
   :defer t)
+
+;; interface with pandoc
+(use-package pandoc-mode
+  :init
+  (load "pandoc-mode")
+  :config
+  (add-hook 'markdown-mode-hook 'pandoc-mode)
+  (add-hook 'pandoc-mode-hook 'pandoc-load-default-settings))
