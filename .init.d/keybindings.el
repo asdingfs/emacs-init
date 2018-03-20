@@ -39,5 +39,7 @@
 
 (global-set-key (kbd "H-t") 'dired-remote-alias)
 
-(global-set-key (kbd "H-0") 'eshell)
+(global-set-key (kbd "H-SPC") 'completion-at-point)
+(global-set-key (kbd "H-)") 'eshell)
+(global-set-key (kbd "H-(") 'term)
 
