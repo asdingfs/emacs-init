@@ -63,7 +63,8 @@
               ;; add eshell-tramp integration to eshell-modules-list
               (add-to-list 'eshell-modules-list 'eshell-tramp)
               ;; don't cycle completions, and show completion-list
-              (setq pcomplete-cycle-completions nil))))
+              (setq pcomplete-cycle-completions nil)
+              (define-key eshell-mode-map (kbd "<tab>") 'completion-at-point))))
 
 ;; server
 (load "server")
