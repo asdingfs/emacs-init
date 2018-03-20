@@ -47,7 +47,23 @@
 (setq system-uses-terminfo nil) ;; causing '4m' in shells
 
 ;; eshells
-(add-hook 'eshell-mode-hook (lambda () (setq pcomplete-cycle-completions nil)))
+(defun eshell/gst (&rest args)
+    (magit-status (pop args) nil)
+    (eshell/echo))   ;; The echo command suppresses output
+(use-package eshell
+  :init
+  (setq eshell-scroll-to-bottom-on-input 'all
+        eshell-destroy-buffer-when-process-dies t)
+  (add-hook 'eshell-mode-hook
+            (lambda ()
+              ;; for better handling of ansiterm when running these commands
+              (add-to-list 'eshell-visual-commands "ssh")
+              (add-to-list 'eshell-visual-commands "tail")
+              (add-to-list 'eshell-visual-commands "top")
+              ;; add eshell-tramp integration to eshell-modules-list
+              (add-to-list 'eshell-modules-list 'eshell-tramp)
+              ;; don't cycle completions, and show completion-list
+              (setq pcomplete-cycle-completions nil))))
 
 ;; server
 (load "server")
