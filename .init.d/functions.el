@@ -62,6 +62,11 @@
     (yank))
   (next-line))
 
+(defun top-join-line ()
+  "Join the current line with the line beneath it."
+  (interactive)
+  (delete-indentation 1))
+
 ;;;;;;;;;;;;;;;; Tramp ;;;;;;;;;;;;;;;;
 ;; TODO: figure out how to call ivy more elegantly, this is basically copy pasting
 ;; uses ivy methods for convenience

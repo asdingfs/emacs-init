@@ -40,6 +40,7 @@
 (global-set-key (kbd "H-t") 'dired-remote-alias)
 
 (global-set-key (kbd "M-/") 'completion-at-point)
+(global-set-key (kbd "C-^") 'top-join-line)
 (global-set-key (kbd "H-)") 'eshell)
 (global-set-key (kbd "H-(") 'term)
 
