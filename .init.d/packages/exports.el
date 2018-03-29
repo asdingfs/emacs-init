@@ -20,6 +20,7 @@
   (setq org-log-done t)
   (setq org-goto-auto-isearch nil)
   (setq org-agenda-files (directory-files "~/.emacs.d/.personal.d/org/tasks" t "^.*\\.org$"))
+  (setq org-src-window-setup 'current-window)
   ;; refiling
   (setq org-refile-targets (quote ((nil :maxlevel . 1)
                                    (org-agenda-files :maxlevel . 2))))    ;; use header lvl 1 in ALL registed agenda files
