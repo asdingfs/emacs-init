@@ -28,19 +28,21 @@
 
 ;; custom keybinding functions
 ;; these are all defined in functions.el in the same directory
+;; movements
 (global-set-key (kbd "C-`") 'jump-to-mark)
 (global-set-key (kbd "C-~") 'jump-to-global-mark)
 
+;; editing
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 (global-set-key (kbd "C-x C-;") 'comment-or-uncomment-region)
-
 (global-set-key (kbd "H-<backspace>") 'kill-back-to-indentation)      ;; kill until beginning of line and indent
 (global-set-key (kbd "C-M-|") 'reindent-whole-buffer)
-
-(global-set-key (kbd "H-t") 'dired-remote-alias)
-
 (global-set-key (kbd "M-/") 'completion-at-point)
 (global-set-key (kbd "C-^") 'top-join-line)
+(global-set-key (kbd "C-S-o") 'open-line-and-indent)
+
+;; externals
+(global-set-key (kbd "H-t") 'dired-remote-alias)
 (global-set-key (kbd "H-)") 'eshell)
 (global-set-key (kbd "H-(") 'term)
 

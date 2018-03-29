@@ -67,6 +67,15 @@
   (interactive)
   (delete-indentation 1))
 
+(defun open-line-and-indent (arg)
+  "Call open line and immediately indent the next line"
+  (interactive "p")
+  (save-excursion
+    (open-line arg)
+    (indent-according-to-mode)
+    (next-line 1)
+    (indent-according-to-mode)))
+
 ;;;;;;;;;;;;;;;; Tramp ;;;;;;;;;;;;;;;;
 ;; TODO: figure out how to call ivy more elegantly, this is basically copy pasting
 ;; uses ivy methods for convenience
