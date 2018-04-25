@@ -10,4 +10,4 @@
   :bind
   (("H-\"" . flop-frame)
    ("H-?" . flip-frame)
-   ("H-}" . transpose-frame)))
+   ("C-x \\" . transpose-frame)))
