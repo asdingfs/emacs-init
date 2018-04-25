@@ -15,19 +15,6 @@
 (setq initial-scratch-message "")               
 ;; (set-frame-parameter nil 'fullscreen 'fullboth) ;; enable this if you want full screen
 
-;; themes
-(use-package zenburn-theme
-  :ensure t
-  :init (load-theme 'zenburn t))
-(add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
-(global-hl-line-mode t)
-
-(use-package nlinum-relative
-  :config
-  (add-hook 'prog-mode-hook 'nlinum-relative-mode)
-  (setq nlinum-relative-redisplay-delay 0) ;; delay
-  (setq nlinum-relative-current-symbol "->")) ;; or "" for display current line number
-
 ;; behaviours
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq-default tab-width 2)
