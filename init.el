@@ -59,7 +59,7 @@
     ("~/.emacs.d/.personal.d/org/notes/scratch.org" "/Users/asding/.emacs.d/.personal.d/org/tasks/errands.org" "/Users/asding/.emacs.d/.personal.d/org/tasks/hubble.org" "/Users/asding/.emacs.d/.personal.d/org/tasks/meetings.org")))
  '(package-selected-packages
    (quote
-    (nlinum-relative linum-relative pandoc-mode wgrep dumb-jump magit-gitflow transpose-frame w3m markdown-preview-mode origami expand-region json-mode markdown-mode ox-pandoc highlight-indent-guides web-mode rvm gitignore-mode git-modes magit robe ag rspec-mode yasnippet ssh-config-mode ssh yaml-mode htmlize org-bullets dash-at-point ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm zenburn-theme use-package)))
+    (diminish nlinum-relative linum-relative pandoc-mode wgrep dumb-jump magit-gitflow transpose-frame w3m markdown-preview-mode origami expand-region json-mode markdown-mode ox-pandoc highlight-indent-guides web-mode rvm gitignore-mode git-modes magit robe ag rspec-mode yasnippet ssh-config-mode ssh yaml-mode htmlize org-bullets dash-at-point ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm zenburn-theme use-package)))
  '(projectile-mode t nil (projectile)))
 
 ;;;;;;;;;;;;;;;; Disabled warning commands ;;;;;;;;;;;;;;;;
