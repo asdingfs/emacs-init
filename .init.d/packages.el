@@ -10,3 +10,6 @@
 ;;;;;;;;;;;;;;;; navigations ;;;;;;;;;;;;;;;;
 (load-library "finders")                ;; finders for things you seek (projectile, ivy, etc)
 (load-library "movements")              ;; movements, temporal and spatial
+
+;;;;;;;;;;;;;;;; displays ;;;;;;;;;;;;;;;;
+(load-library "display")                ;; for display enhancements to emacs
