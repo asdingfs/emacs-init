@@ -1,7 +1,6 @@
 ;; main org configurations
 (use-package org
   :commands (ox-md ox-twbs htmlize)
-  :defer 1
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture) 

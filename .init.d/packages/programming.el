@@ -65,13 +65,13 @@
   :config
   (unbind-key "C-d" enh-ruby-mode-map))
 (use-package rvm
-  :defer 1.5 ;; after exec-path-from-shell
+  :after (exec-path-from-shell)
   :config
   (rvm-use-default))
 (use-package rspec-mode
   :commands (rspec-mode)
   :init
-  (add-hook 'after-init-hook 'inf-ruby-switch-setup)
+  (setq rspec-use-rvm t)
   :config
   (rspec-install-snippets))
 (use-package robe
