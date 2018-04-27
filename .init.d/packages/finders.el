@@ -31,6 +31,8 @@
 ;; use projectile for project file finders
 (use-package projectile
   :diminish projectile-mode
+  :custom
+  (projectile-mode t "enable projectile mode")
   :config
   (setq projectile-completion-system 'ivy)
   (setq projectile-create-missing-test-files t)
@@ -94,8 +96,9 @@
 ;; inter package integrations
 (use-package counsel-projectile
   :after (counsel projectile)
-  :init
-  (counsel-projectile-on))
+  :custom
+  (counsel-projectile-mode t "enable counsel-projectile-mode"))
+
 (use-package projectile-rails
   :diminish projectile-rails-mode
   :defer t
