@@ -23,9 +23,8 @@
 
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns x nil))
-  :defer 0.5
   :config
-  (add-to-list 'exec-path-from-shell-variables "GEM_PATH")
-  (add-to-list 'exec-path-from-shell-variables "GEM_HOME")
+  (exec-path-from-shell-copy-env "GEM_PATH")
+  (exec-path-from-shell-copy-env "GEM_HOME")
   (exec-path-from-shell-initialize)
   (message "Initialized PATH and other variables from SHELL"))
