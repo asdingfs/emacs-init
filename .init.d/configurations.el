@@ -56,3 +56,12 @@
 ;; server
 (load "server")
 (unless (server-running-p) (server-start))
+
+;; custom file
+(setq custom-file "~/.emacs.d/.personal.d/custom-file.el")
+(load custom-file)
+;; put declaration of disabled command in custom-file
+(defadvice en/disable-command (around put-in-custom-file activate)
+      "Put declarations in `custom-file'."
+      (let ((user-init-file custom-file))
+        ad-do-it))
