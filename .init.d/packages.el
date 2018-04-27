@@ -1,5 +1,8 @@
 (add-to-list 'load-path "~/.emacs.d/.init.d/packages/")
 
+;;;;;;;;;;;;;;;; displays ;;;;;;;;;;;;;;;;
+(load-library "display")                ;; for display enhancements to emacs
+
 ;;;;;;;;;;;;;;;; exports ;;;;;;;;;;;;;;;;
 (load-library "exports")                ;; most of org-mode configurations here
 
@@ -11,5 +14,3 @@
 (load-library "finders")                ;; finders for things you seek (projectile, ivy, etc)
 (load-library "movements")              ;; movements, temporal and spatial
 
-;;;;;;;;;;;;;;;; displays ;;;;;;;;;;;;;;;;
-(load-library "display")                ;; for display enhancements to emacs
