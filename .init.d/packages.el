@@ -1,16 +1,8 @@
-(add-to-list 'load-path "~/.emacs.d/.init.d/packages/")
-
-;;;;;;;;;;;;;;;; displays ;;;;;;;;;;;;;;;;
-(load-library "display")                ;; for display enhancements to emacs
-
-;;;;;;;;;;;;;;;; exports ;;;;;;;;;;;;;;;;
-(load-library "exports")                ;; most of org-mode configurations here
-
-;;;;;;;;;;;;;;;; editings ;;;;;;;;;;;;;;;;
-(load-library "editing")                ;; aids editing of texts/codes
-(load-library "programming")            ;; configs for programming modes
-
-;;;;;;;;;;;;;;;; navigations ;;;;;;;;;;;;;;;;
-(load-library "finders")                ;; finders for things you seek (projectile, ivy, etc)
-(load-library "movements")              ;; movements, temporal and spatial
-
+(let ((directory "~/.emacs.d/.init.d/packages/"))
+  (dolist (filename '(display ;; for display enhancements to emacs
+                      exports ;; most of org-mode configurations here
+                      editing ;; aids editing of texts/codes
+                      programming ;; configs for programming modes and environments
+                      finders ;; finders for things you seek (projectile, ivy, etc)
+                      movements)) ;; movements, temporal and spatial                    
+    (load (format "%s%s" directory filename)))) ;; load each packages declared above

@@ -26,12 +26,13 @@
 (setq use-package-verbose t)	;; don't fail silently
 
 ;;;;;;;;;;;;;;;; Packages and Customizations ;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/.init.d/")
-(load-library "configurations")     ;; global settings
-(load-library "functions")          ;; global self-defined functions
-(load-library "keybindings")        ;; global keybindings
-(load-library "specifics")          ;; machine/os specific configurations
-(load-library "packages")           ;; other packages, most bulk, and required most organizations
+(let ((directory "~/.emacs.d/.init.d/"))
+  (dolist (filename '(configurations ;; global settings
+                      functions      ;; global self-defined functions
+                      keybindings    ;; global keybindings
+                      specifics      ;; machine/os specific configurations
+                      packages))     ;; other packages, most bulk, and required most organizations
+    (load (format "%s%s" directory filename)))) ;; load each packages declared above
 
 ;;;;;;;;;;;;;;;; Locals and Instance Specifics ;;;;;;;;;;;;;;;;
 ;; i.e. require only if defined
