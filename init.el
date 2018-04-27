@@ -25,6 +25,11 @@
 (setq use-package-always-ensure t) ;; always download if not available
 (setq use-package-verbose t)	;; don't fail silently
 
+;; use zenburn theme, right after use package initialization
+(use-package zenburn-theme
+  :ensure t
+  :init (load-theme 'zenburn t))
+
 ;;;;;;;;;;;;;;;; Packages and Customizations ;;;;;;;;;;;;;;;;
 (let ((directory "~/.emacs.d/.init.d/"))
   (dolist (filename '(configurations ;; global settings
