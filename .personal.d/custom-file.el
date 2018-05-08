@@ -6,6 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(projectile-mode t nil (projectile))
  '(counsel-projectile-mode t nil (counsel-projectile))
+ '(dumb-jump-mode t nil (dumb-jump))
  '(custom-file "~/.emacs.d/.personal.d/custom-file.el")
  '(org-agenda-files
    (quote

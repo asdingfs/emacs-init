@@ -24,7 +24,6 @@
    ("M-g ." . dumb-jump-go-prefer-external)
    ("M-g M-." . dumb-jump-go-prefer-external-other-window))
   :config
-  (dumb-jump-mode)
   (setq dumb-jump-selector 'ivy)
   (setq dumb-jump-prefer-searcher 'ag))
 
