@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;; Personal Data ;;;;;;;;;;;;;;;;
 ;; username
 (setq user-full-name "Anthony S. 丁富胜"
-      user-mail-address "ding.fsas@gmail.com")
+      user-mail-address "asding.fs@gmail.com")
 
 ;;;;;;;;;;;;;;;; Themes ;;;;;;;;;;;;;;;;
 ;; looks
