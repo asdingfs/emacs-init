@@ -53,7 +53,12 @@
   (magit-define-popup-switch 'magit-log-popup
     ?m "Omit merge commits" "--no-merges")
   (magit-define-popup-switch 'magit-push-popup
-    ?t "Follow tags" "--follow-tags"))
+    ?t "Follow tags" "--follow-tags")
+  (magit-define-popup-action 'magit-merge-popup
+    ?u "Merge updates from upstream"
+    (lambda ()
+      (interactive)
+      (magit-merge "@{upstream}" `("--ff" "--ff-only")))))
 
 (use-package magit-gitflow
   :after (magit)
