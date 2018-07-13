@@ -27,8 +27,10 @@
 
 ;; use zenburn theme, right after use package initialization
 (use-package zenburn-theme
+  :ensure t)
+(use-package base16-theme
   :ensure t
-  :init (load-theme 'zenburn t))
+  :init (load-theme 'base16-gruvbox-dark-soft t))
 
 ;;;;;;;;;;;;;;;; Packages and Customizations ;;;;;;;;;;;;;;;;
 (let ((directory "~/.emacs.d/.init.d/"))
