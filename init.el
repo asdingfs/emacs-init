@@ -25,12 +25,20 @@
 (setq use-package-always-ensure t) ;; always download if not available
 (setq use-package-verbose t)	;; don't fail silently
 
-;; use zenburn theme, right after use package initialization
+;; use theme, right after use package initialization
 (use-package zenburn-theme
-  :ensure t)
+  :ensure t
+  :init
+  ;; (load-theme 'zenburn t)
+  )
 (use-package base16-theme
   :ensure t
-  :init (load-theme 'base16-gruvbox-dark-soft t))
+  :init
+  ;; (load-theme 'base16-gruvbox-dark-medium t)
+  ;; (load-theme 'base16-gruvbox-dark-soft t)
+  (load-theme 'base16-ocean t)
+  ;; (load-theme 'base16-eighties t)
+  )
 
 ;;;;;;;;;;;;;;;; Packages and Customizations ;;;;;;;;;;;;;;;;
 (let ((directory "~/.emacs.d/.init.d/"))
