@@ -14,6 +14,8 @@
    ("H-M-:"  . org-shiftmetaleft)
    ("H-M-?"  . org-shiftmetadown)
    ("H-M-{"  . org-shiftmetaup))
+  :init
+  (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
   :config
   ;; general
   (setq org-log-done t)
