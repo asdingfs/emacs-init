@@ -48,12 +48,10 @@
     "Face used for the line delimiting the end of source blocks."))
 
 ;; exporting
-(use-package ox-twbs ;; pretty html
-  :after (org)
-  :defer t)
-(use-package htmlize ;; source code to follow formatting in org-mode src blk
-  :after (org)
-  :defer t)
+;; pretty html
+(use-package ox-twbs)
+ ;; source code to follow formatting in org-mode src blk
+(use-package htmlize :after (org))
 (use-package ox-pandoc
   :after (org exec-path-from-shell)
   :defer t)
