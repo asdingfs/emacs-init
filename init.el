@@ -29,14 +29,14 @@
 (use-package zenburn-theme
   :ensure t
   :init
-  ;; (load-theme 'zenburn t)
+  (load-theme 'zenburn t)
   )
 (use-package base16-theme
   :ensure t
   :init
   ;; (load-theme 'base16-gruvbox-dark-medium t)
   ;; (load-theme 'base16-gruvbox-dark-soft t)
-  (load-theme 'base16-ocean t)
+  ;; (load-theme 'base16-ocean t)
   ;; (load-theme 'base16-eighties t)
   )
 
