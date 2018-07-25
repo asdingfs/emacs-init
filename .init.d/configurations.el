@@ -15,6 +15,7 @@
 (setq initial-scratch-message "")               
 ;; (set-frame-parameter nil 'fullscreen 'fullboth) ;; enable this if you want full screen
 (setq column-number-mode t) ;; show column number
+(setq-default line-spacing 1) ;; standardise line-spacing
 (global-hl-line-mode t) ;; highlight currently active line
 (add-to-list 'default-frame-alist '(font . "Inconsolata-14")) ;; set font to use
 
