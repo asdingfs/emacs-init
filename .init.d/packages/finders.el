@@ -29,12 +29,14 @@
 
 ;; use projectile for project file finders
 (use-package projectile
+  :ensure t
   :diminish projectile-mode
   :config
+  (define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
   (setq projectile-completion-system 'ivy)
   (setq projectile-create-missing-test-files t)
   (setq projectile-switch-project-action 'magit-status)
-  (projectile-global-mode t))
+  (projectile-mode 1))
 
 ;; better search with swiper: installs ivy-mode too
 (use-package ivy
