@@ -16,7 +16,7 @@
 (global-set-key (kbd "H-=") 'text-scale-increase)
 
 ;; movements
-(global-set-key (kbd "H-<escape>") 'move-to-scratch-org)
+(global-set-key (kbd "H-<escape>") 'move-to-working-memory)
 (global-set-key (kbd "H-S-<escape>") 'move-to-scratch)
 
 ;; editings
