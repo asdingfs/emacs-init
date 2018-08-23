@@ -1,6 +1,3 @@
 [submodule ".personal.d/snippets"]
 	path = .personal.d/snippets
 	url = git@github.com:AndreaCrotti/yasnippet-snippets.git
-[submodule ".personal.d/org"]
-	path = .personal.d/org
-	url = git@gitlab.com:asding/org-private.git

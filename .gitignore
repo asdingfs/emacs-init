@@ -1,5 +1,6 @@
 # System generated files
 .DS_Store
+network-security.data
 
 # Emacs backup, autosaves, sessions
 *#*
@@ -19,3 +20,7 @@ projectile-*
 # environment-specific file
 .personal.d/locals/*
 /eshell/*
+
+# maintained in Dropbox separately
+.personal.d/org/*
+
