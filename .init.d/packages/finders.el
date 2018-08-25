@@ -35,7 +35,7 @@
   (define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
   (setq projectile-completion-system 'ivy)
   (setq projectile-create-missing-test-files t)
-  (setq projectile-switch-project-action 'magit-status)
+  (setq projectile-switch-project-action 'magit-status-on-toplevel-if-possible)
   (projectile-mode 1))
 
 ;; better search with swiper: installs ivy-mode too
@@ -96,7 +96,28 @@
 (use-package counsel-projectile
   :after (counsel projectile)
   :config
-  (setq counsel-projectile-switch-project-action 'magit-status))
+  (setq counsel-projectile-switch-project-action
+        '(1
+          ("dwim" counsel-projectile-switch-project-action-dwim "execute do-what-i-mean")
+          ("o" counsel-projectile-switch-project-action "jump to a project buffer or file")
+          ("f" counsel-projectile-switch-project-action-find-file "jump to a project file")
+          ("d" counsel-projectile-switch-project-action-find-dir "jump to a project directory")
+          ("b" counsel-projectile-switch-project-action-switch-to-buffer "jump to a project buffer")
+          ("m" counsel-projectile-switch-project-action-find-file-manually "find file manually from project root")
+          ("S" counsel-projectile-switch-project-action-save-all-buffers "save all project buffers")
+          ("k" counsel-projectile-switch-project-action-kill-buffers "kill all project buffers")
+          ("K" counsel-projectile-switch-project-action-remove-known-project "remove project from known projects")
+          ("c" counsel-projectile-switch-project-action-compile "run project compilation command")
+          ("C" counsel-projectile-switch-project-action-configure "run project configure command")
+          ("E" counsel-projectile-switch-project-action-edit-dir-locals "edit project dir-locals")
+          ("v" counsel-projectile-switch-project-action-vc "open project in vc-dir / magit / monky")
+          ("sg" counsel-projectile-switch-project-action-grep "search project with grep")
+          ("ss" counsel-projectile-switch-project-action-ag "search project with ag")
+          ("sr" counsel-projectile-switch-project-action-rg "search project with rg")
+          ("xs" counsel-projectile-switch-project-action-run-shell "invoke shell from project root")
+          ("xe" counsel-projectile-switch-project-action-run-eshell "invoke eshell from project root")
+          ("xt" counsel-projectile-switch-project-action-run-term "invoke term from project root")
+          ("O" counsel-projectile-switch-project-action-org-capture "org-capture into project"))))
 
 (use-package projectile-rails
   :diminish projectile-rails-mode

@@ -31,6 +31,22 @@
     (pop-mark) ;; do not store extra marks
     (pop-mark)))
 
+(defun counsel-projectile-switch-project-action-dwim (project)
+  "Jump to a file in PROJECT."
+  (let ((projectile-switch-project-action
+         (lambda () (magit-status-on-toplevel-if-possible))))
+    (counsel-projectile-switch-project-by-name project)))
+
+(defun magit-status-on-toplevel-if-possible ()
+  "If the project being switched to is a git repository, invoke
+magit-status on the project root directory. Use dired otherwise."
+  (interactive)
+  (if (and (executable-find "git")
+           (eq (projectile-project-vcs) 'git)
+           (string-equal (magit-toplevel) (projectile-project-root)))
+      (magit-status (projectile-project-root))
+    (find-file (projectile-project-root))))
+
 ;;;;;;;;;;;;;;;; Editings ;;;;;;;;;;;;;;;;
 (defun copy-line (arg)
   "Copy lines (as many as prefix argument) in the kill ring.
