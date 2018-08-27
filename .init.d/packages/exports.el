@@ -20,7 +20,7 @@
   ;; general
   (setq org-log-done t)
   (setq org-goto-auto-isearch nil)
-  (setq org-agenda-files (directory-files "~/.emacs.d/.personal.d/org/tasks" t "^.*\\.org$"))
+  (setq org-agenda-files (directory-files "~/.emacs.d/.personal.d/org" t "^.*\\.org$"))
   (setq org-src-window-setup 'current-window)
   ;; refiling
   (setq org-refile-targets (quote ((nil :maxlevel . 2)
