@@ -23,7 +23,7 @@
   (setq org-agenda-files (directory-files "~/.emacs.d/.personal.d/org" t "^.*\\.org$"))
   (setq org-src-window-setup 'current-window)
   ;; refiling
-  (setq org-refile-targets (quote ((nil :maxlevel . 2)
+  (setq org-refile-targets (quote ((nil :maxlevel . 3)
                                    (org-agenda-files :maxlevel . 2))))    ;; use header lvl 1 in ALL registed agenda files
   (setq org-refile-use-outline-path (quote file))                         ;; refile includes relative file name
   (setq org-refile-allow-creating-parent-nodes (quote confirm))           ;; confirm if creating a new parent node
