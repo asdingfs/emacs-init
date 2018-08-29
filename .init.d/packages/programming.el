@@ -26,6 +26,7 @@
   (("s-." . dash-at-point)))
 ;; git
 (use-package magit
+  :commands (magit-toplevel)
   :defer t
   :init
   (setq magit-completing-read-function 'ivy-completing-read)

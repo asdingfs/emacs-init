@@ -50,6 +50,6 @@
     (load (format "%s%s" directory filename)))) ;; load each packages declared above
 
 ;;;;;;;;;;;;;;;; Locals and Instance Specifics ;;;;;;;;;;;;;;;;
-;; i.e. require only if defined
+;; org-publishing options, i.e. require only if defined
 (add-to-list 'load-path "~/.emacs.d/.personal.d/locals/")
 (load "publishing" t)

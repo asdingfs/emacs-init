@@ -12,7 +12,12 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)
-(setq initial-scratch-message "")               
+(setq initial-scratch-message "")
+;; open magit-status on emacs init file directory by default
+(setq initial-buffer-choice (lambda ()
+                              (magit-status (file-name-directory user-init-file))
+                              (current-buffer)))
+
 ;; (set-frame-parameter nil 'fullscreen 'fullboth) ;; enable this if you want full screen
 (setq column-number-mode t) ;; show column number
 (setq-default line-spacing 1) ;; standardise line-spacing
