@@ -41,7 +41,9 @@
               ("C-(" . sp-backward-slurp-sexp)
               ("C-{" . sp-backward-barf-sexp))
   :init
-  (add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
+  (add-hook 'prog-mode-hook #'smartparens-mode)
+  (add-hook 'org-mode-hook #'smartparens-mode)
+  (add-hook 'markdown-mode-hook #'smartparens-mode)
   :config
   (require 'smartparens-config)
   (show-smartparens-global-mode t))
