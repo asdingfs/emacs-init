@@ -65,6 +65,9 @@
   :after (magit)
   :config
   (add-hook 'magit-mode-hook 'turn-on-magit-gitflow))
+
+(use-package git-timemachine)
+
 ;; major mode for editing git config files
 (use-package gitignore-mode
   :defer t)
