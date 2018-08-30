@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;; Modifier keys ;;;;;;;;;;;;;;;;
 (setq ns-pop-up-frames nil)     ;; always open file on same emacs frame
 (setq ns-option-modifier 'meta)
-(setq ns-command-modifier nil)
+(setq ns-command-modifier 'super)
 (setq ns-right-command-modifier 'super)
 (setq ns-right-option-modifier 'hyper)
 
