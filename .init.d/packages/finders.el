@@ -14,7 +14,7 @@
 
 ;; for finding definitions
 (use-package dumb-jump
-  :after (ag)
+  :ensure t
   :bind
   (("C-." . dumb-jump-go)
    ("C-," . dumb-jump-back)
