@@ -32,7 +32,7 @@
   :ensure t
   :diminish projectile-mode
   :config
-  (define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "M-s") 'projectile-command-map)
   (setq projectile-completion-system 'ivy)
   (setq projectile-create-missing-test-files t)
   (setq projectile-switch-project-action 'magit-status-on-toplevel-if-possible)
