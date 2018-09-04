@@ -143,9 +143,30 @@
   (setq web-mode-css-indent-offset 2))
 
 ;; javascript
-(use-package js
+(use-package js2-mode
+  :mode
+  (("\\.js\\'" . js2-mode))
+  :interpreter
+  ("node" . js2-mode)
   :config
-  (setq js-indent-level 2))
+  (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
+  (add-hook 'js2-mode-hook
+            (lambda () (setq js2-basic-offset 2))))
+
+(use-package js2-refactor
+  :bind
+  (:map js-mode-map
+        ("M-." . nil))
+  :config
+  (add-hook 'js2-mode-hook #'js2-refactor-mode)
+  (js2r-add-keybindings-with-prefix "C-c C-r"))
+
+(use-package xref-js2
+  :config
+  (add-hook 'js2-mode-hook
+            (lambda () (add-hook 'xref-backend-functions
+                                 #'xref-js2-xref-backend nil t))))
+
 ;; json modes and configurations
 (use-package json-mode
   :bind

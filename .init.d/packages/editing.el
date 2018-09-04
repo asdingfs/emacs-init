@@ -3,6 +3,7 @@
 ;;    for deletions, if S is defined, force overwrite the sp-command (i.e. use the normal command)
 ;;    for movements, if S is defined, use reverse direction
 (use-package smartparens
+  :diminish smartparens-mode
   :bind (:map smartparens-mode-map
               ("C-M-k" . sp-kill-sexp)
               ("C-k" . sp-kill-hybrid-sexp)
@@ -66,6 +67,12 @@
    ("C-c h <tab>" . origami-recursively-toggle-node)
    ("C-c h /" . origami-undo)
    ("C-c h \\" . origami-redo)))
+
+;; code completions
+(use-package company
+  :diminish company-mode
+  :config
+  (add-hook 'after-init-hook 'global-company-mode))
 
 ;; for highlighting indentations with lines
 (use-package highlight-indent-guides
