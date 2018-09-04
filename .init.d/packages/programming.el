@@ -1,8 +1,8 @@
 ;;;;;;;;;;;;;;;; meta ;;;;;;;;;;;;;;;;
 ;; eshells
 (defun eshell/gst (&rest args)
-    (magit-status (pop args) nil)
-    (eshell/echo))   ;; The echo command suppresses output
+  (magit-status (pop args) nil)
+  (eshell/echo))   ;; The echo command suppresses output
 (use-package eshell
   :init
   (setq eshell-scroll-to-bottom-on-input 'all
@@ -35,22 +35,22 @@
   (("C-x g" . magit-status))
   :config
   (setq magit-display-buffer-function
-      (lambda (buffer)
-        (display-buffer
-         buffer
-         (cond ((and (derived-mode-p 'magit-mode)
-                     (eq (with-current-buffer buffer major-mode)
-                         'magit-status-mode))
-                nil)
-               ((memq (with-current-buffer buffer major-mode)
-                      '(magit-process-mode
-                        magit-revision-mode
-                        magit-diff-mode
-                        magit-log-mode
-                        magit-stash-mode))
-                nil)
-               (t
-                '(display-buffer-same-window))))))
+        (lambda (buffer)
+          (display-buffer
+           buffer
+           (cond ((and (derived-mode-p 'magit-mode)
+                       (eq (with-current-buffer buffer major-mode)
+                           'magit-status-mode))
+                  nil)
+                 ((memq (with-current-buffer buffer major-mode)
+                        '(magit-process-mode
+                          magit-revision-mode
+                          magit-diff-mode
+                          magit-log-mode
+                          magit-stash-mode))
+                  nil)
+                 (t
+                  '(display-buffer-same-window))))))
   (magit-define-popup-switch 'magit-log-popup
     ?m "Omit merge commits" "--no-merges")
   (magit-define-popup-switch 'magit-push-popup
@@ -60,17 +60,17 @@
     (lambda ()
       (interactive)
       (magit-merge "@{upstream}" `("--ff" "--ff-only")))))
-
+;; extensions for gitflow
 (use-package magit-gitflow
   :after (magit)
   :config
   (add-hook 'magit-mode-hook 'turn-on-magit-gitflow))
-
+;; check history of file changes
 (use-package git-timemachine)
-
 ;; major mode for editing git config files
 (use-package gitignore-mode
   :defer t)
+;; ssh configs
 (use-package ssh
   :defer t
   :init
