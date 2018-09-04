@@ -1,12 +1,17 @@
 ;;;;;;;;;;;;;;;; Movements ;;;;;;;;;;;;;;;;
-(defun move-to-scratch ()
+(defun jump-to-scratch ()
   "Switch to buffer named *scratch* and create if it does not exist"
   (interactive)
   (switch-to-buffer
    (get-buffer-create "*scratch*")))
-(defun move-to-working-memory ()
+(defun jump-to-working-memory ()
+  "immediately jump to my working-memory org file"
   (interactive)
   (find-file "~/.emacs.d/.personal.d/org/notes/working-memory.org"))
+(defun magit-on-init-dir ()
+  "immediately run magit-status on emacs init directory .emacs.d"
+  (interactive)
+  (magit-status "~/.emacs.d"))
 (defun jump-to-mark () ;; rebinds C-u C-SPC, will pop local mark ring and move there
   (interactive)
   (set-mark-command 1))

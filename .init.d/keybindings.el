@@ -17,8 +17,9 @@
 (global-set-key (kbd "H-=") 'text-scale-increase)
 
 ;; movements
-(global-set-key (kbd "H-<escape>") 'move-to-working-memory)
-(global-set-key (kbd "H-S-<escape>") 'move-to-scratch)
+(global-set-key (kbd "H-<escape>") 'jump-to-working-memory)
+(global-set-key (kbd "H-S-<escape>") 'jump-to-scratch)
+(global-set-key (kbd "C-M-<escape>") 'magit-on-init-dir)
 
 ;; editings
 (global-set-key (kbd "C-+") 'copy-line)                                 ;; copy ARGS line or region if mark-active, successive calls appends to the same kill ring
