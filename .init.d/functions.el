@@ -117,3 +117,8 @@ magit-status on the project root directory. Use dired otherwise."
   (if (> arg 1)
       (dired (format "/ssh:%s|sudo:%s:" ssh-alias ssh-alias))
     (dired (format "/scp:%s:" ssh-alias))))
+
+(defun safe-positive-log-4 (arg)
+  "If arg < 1 return 0, otherwise return (log arg 4)"
+  (let ((sanitised-arg (if (< arg 1) 1 arg)))
+    (log sanitised-arg 4)))
