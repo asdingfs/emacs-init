@@ -22,11 +22,10 @@
 (global-set-key (kbd "C-M-<escape>") 'magit-on-init-dir)
 
 ;; editings
-(global-set-key (kbd "C-+") 'copy-line)                                 ;; copy ARGS line or region if mark-active, successive calls appends to the same kill ring
-(global-set-key (kbd "H-d") 'duplicate-line)                          ;; duplicate a current line
-(global-set-key (kbd "C-S-<return>") (kbd "C-a C-j C-p TAB"))         ;; shift down line and begin with indentations
-(global-set-key (kbd "C-<return>") (kbd "C-e C-j"))                     ;; shift cursor down and make a new line
-(global-set-key (kbd "H-u") 'universal-argument)
+(global-set-key (kbd "C-+") 'copy-line) ;; copy ARGS line or region if mark-active, successive calls appends to the same kill ring
+(global-set-key (kbd "H-d") 'duplicate-line) ;; duplicate a current line
+(global-set-key (kbd "C-S-<return>") (kbd "C-a C-j C-p TAB")) ;; shift down line and begin with indentations
+(global-set-key (kbd "C-<return>") (kbd "C-e C-j")) ;; shift cursor down and make a new line
 
 ;; custom keybinding functions
 ;; these are all defined in functions.el in the same directory
