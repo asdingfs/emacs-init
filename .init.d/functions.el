@@ -108,17 +108,25 @@ magit-status on the project root directory. Use dired otherwise."
       (setq clist (append clist (funcall (car x) (cadr x)))))
     (setq clist (cl-delete-duplicates (delq nil clist) :test #'equal))
     (mapcar #'ivy-build-tramp-name clist)))
+;; method required to convert prefix-numeric-value to number of times prefix C-u is pressed
+(defun safe-positive-log-4 (arg)
+  "If arg < 1 return 0, otherwise return (log arg 4)"
+  (let ((sanitised-arg (if (< arg 1) 1 arg)))
+    (truncate (log sanitised-arg 4))))
 ;; temporary convenience functions until better solutions can be found, I'm relatively happy with the hackish result
+
 (defun dired-remote-alias (ssh-alias &optional arg)
   "Connect to remote with tramp, projectile alternative until it works"
   (interactive (list (ivy-read "Enter ssh-alias: "
                                (tramp-completion-list "ssh") )
                      (prefix-numeric-value current-prefix-arg)))
-  (if (> arg 1)
-      (dired (format "/ssh:%s|sudo:%s:" ssh-alias ssh-alias))
-    (dired (format "/scp:%s:" ssh-alias))))
-
-(defun safe-positive-log-4 (arg)
-  "If arg < 1 return 0, otherwise return (log arg 4)"
-  (let ((sanitised-arg (if (< arg 1) 1 arg)))
-    (log sanitised-arg 4)))
+  (let ((times (safe-positive-log-4 arg)))
+    (cond
+     ((= 1 times) ;; connect to host specified in ssh-alias or explicit hostname as username
+      (dired (format "/ssh:%s|sudo:%s@%s:" ssh-alias
+                     (read-string "Enter username to login as: " "")
+                     ssh-alias)))
+     ((= 2 times) ;; connect as root
+      (dired (format "/ssh:%s|sudo:%s:" ssh-alias ssh-alias)))
+     (t ;; else, connect normally using user specified in ~/.ssh/config
+      (dired (format "/ssh:%s:" ssh-alias))))))

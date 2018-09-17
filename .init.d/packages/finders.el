@@ -137,10 +137,8 @@
     (setq-local shell-file-name "/bin/bash")))
 
 (use-package tramp
-  :init
-  ;; (setq tramp-verbose 10) 
-  (setq tramp-default-method "ssh")
   :config
+  (setq tramp-default-method "scp")
   (tramp-set-completion-function "ssh" '((tramp-parse-sconfig "/etc/ssh_config")
                                          (tramp-parse-sconfig "~/.ssh/config")))
   (add-hook 'find-file-hook 'set-default-remote-shell))
