@@ -122,11 +122,10 @@ magit-status on the project root directory. Use dired otherwise."
                      (prefix-numeric-value current-prefix-arg)))
   (let ((times (safe-positive-log-4 arg)))
     (cond
-     ((= 1 times) ;; connect to host specified in ssh-alias or explicit hostname as username
-      (dired (format "/ssh:%s|sudo:%s@%s:" ssh-alias
-                     (read-string "Enter username to login as: " "")
-                     ssh-alias)))
-     ((= 2 times) ;; connect as root
+     ((= 1 times) ;; select method of connection, e.g. ssh, scp
+      (dired (format "/%s:%s:"
+                     (read-string "Enter connection type: ") ssh-alias ssh-alias)))
+     ((= 2 times) ;; ssh as root
       (dired (format "/ssh:%s|sudo:%s:" ssh-alias ssh-alias)))
      (t ;; else, connect normally using user specified in ~/.ssh/config
       (dired (format "/ssh:%s:" ssh-alias))))))
