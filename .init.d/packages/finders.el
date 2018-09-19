@@ -139,6 +139,7 @@
 (use-package tramp
   :config
   (setq tramp-default-method "scp")
+  (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
   (tramp-set-completion-function "ssh" '((tramp-parse-sconfig "/etc/ssh_config")
                                          (tramp-parse-sconfig "~/.ssh/config")))
   (add-hook 'find-file-hook 'set-default-remote-shell))
