@@ -41,6 +41,7 @@
 
 ;; quirks
 (setq system-uses-terminfo nil) ;; causing '4m' in shells
+(setq shell-file-name "/bin/bash") ;; TODO: temporarily set bash as default shell for remote server compatibility
 
 ;; server
 (load "server")
