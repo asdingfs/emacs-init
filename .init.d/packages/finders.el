@@ -131,11 +131,6 @@
   (add-hook 'magit-mode-hook 'projectile-rails-on))
 
 ;; remote servers
-(defun set-default-remote-shell ()
-  "Function to set remote shell to default, not following current environment"
-  (when (file-remote-p (buffer-file-name))
-    (setq-local shell-file-name "/bin/bash")))
-
 (use-package tramp
   :config
   (setq tramp-default-method "scp")

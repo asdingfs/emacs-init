@@ -98,6 +98,11 @@ magit-status on the project root directory. Use dired otherwise."
     (indent-according-to-mode)))
 
 ;;;;;;;;;;;;;;;; Tramp ;;;;;;;;;;;;;;;;
+;; set default remote shell to use
+(defun set-default-remote-shell ()
+  "Function to set remote shell to default, not following current environment"
+  (when (file-remote-p (buffer-file-name))
+    (setq-local shell-file-name "/bin/bash")))
 ;; TODO: figure out how to call ivy more elegantly, this is basically copy pasting
 ;; uses ivy methods for convenience
 (defun tramp-completion-list (method)
