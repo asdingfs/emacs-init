@@ -132,7 +132,8 @@
   (setq css-indent-offset 2))
 (use-package web-mode
   :mode
-  (("\\.phtml\\'" . web-mode)
+  (("\\.html?\\'" . web-mode)
+   ("\\.phtml\\'" . web-mode)
    ("\\.tpl\\.php\\'" . web-mode)
    ("\\.[agj]sp\\'" . web-mode)
    ("\\.as[cp]x\\'" . web-mode)
@@ -140,7 +141,11 @@
    ("\\.mustache\\'" . web-mode)
    ("\\.djhtml\\'" . web-mode))
   :config
-  (setq web-mode-css-indent-offset 2))
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-attr-indent-offset 2)
+)
 
 ;; javascript
 (use-package js2-mode
