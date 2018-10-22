@@ -51,7 +51,7 @@
 ;; exporting
 ;; pretty html
 (use-package ox-twbs)
- ;; source code to follow formatting in org-mode src blk
+;; source code to follow formatting in org-mode src blk
 (use-package htmlize :after (org))
 (use-package ox-pandoc
   :after (org exec-path-from-shell)
@@ -62,7 +62,8 @@
   :after (org)
   :init
   (setq org-bullets-bullet-list
-        '( "►" "*" "●" "○" "•" "•" "•" "•" "•" "•" ))
+        '("►" ">" "●" "○" "*" "+" "~" "-"
+          "•" "•" "•" "•" "•" "•" "•" "•"))
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :defer t)
 
