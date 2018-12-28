@@ -108,14 +108,6 @@
   (setq rspec-use-rvm t)
   :config
   (rspec-install-snippets))
-(use-package robe
-  :disabled
-  :defer t
-  :init
-  (add-hook 'ruby-mode-hook 'robe-mode)
-  (add-hook 'enh-ruby-mode-hook 'robe-mode)
-  :config
-  (robe-start))
 
 ;; yaml
 (use-package yaml-mode
