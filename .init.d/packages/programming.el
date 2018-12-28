@@ -144,8 +144,7 @@
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
-  (setq web-mode-attr-indent-offset 2)
-)
+  (setq web-mode-attr-indent-offset 2))
 
 ;; javascript
 (use-package js2-mode
@@ -171,6 +170,10 @@
   (add-hook 'js2-mode-hook
             (lambda () (add-hook 'xref-backend-functions
                                  #'xref-js2-xref-backend nil t))))
+
+(use-package rjsx-mode
+  :mode
+  (("components\\/.*\\.js\\'" . rjsx-mode)))
 
 ;; json modes and configurations
 (use-package json-mode
