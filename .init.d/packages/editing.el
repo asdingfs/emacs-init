@@ -54,6 +54,14 @@
   :bind
   (("C-=" . er/expand-region)))
 
+(use-package multiple-cursors
+  :bind
+  (("C->" . mc/mark-next-like-this)
+   ("C-<" . mc/mark-previous-like-this)
+   ("C-c C-<" . mc/mark-all-like-this)
+   ("C-S-c C-S-c" . mc/edit-lines)
+   ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
+
 ;; code folding
 (use-package origami
   :init
