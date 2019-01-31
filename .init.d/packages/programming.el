@@ -140,8 +140,8 @@
 
 ;; javascript
 (use-package js2-mode
-  :mode
-  (("\\.js\\'" . js2-mode))
+  ;; :mode
+  ;; (("\\.js\\'" . js2-mode)) # use rjsx mode instead
   :interpreter
   ("node" . js2-mode)
   :config
@@ -165,7 +165,7 @@
 
 (use-package rjsx-mode
   :mode
-  (("components\\/.*\\.js\\'" . rjsx-mode)))
+  (("\\/.*\\.js\\'" . rjsx-mode)))
 
 ;; json modes and configurations
 (use-package json-mode
