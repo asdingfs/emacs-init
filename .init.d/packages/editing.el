@@ -82,6 +82,19 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
+(use-package flycheck-flow
+  :config
+  (flycheck-add-mode 'javascript-flow 'flow-minor-mode)
+  (flycheck-add-mode 'javascript-eslint 'flow-minor-mode)
+  (flycheck-add-next-checker 'javascript-flow 'javascript-eslint))
+
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode)
+  :config
+  (add-hook 'js2-mode-hook #'flycheck-mode))
+
 ;; for highlighting indentations with lines
 (use-package highlight-indent-guides
   :init
