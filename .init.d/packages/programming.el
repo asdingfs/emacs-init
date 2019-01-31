@@ -167,6 +167,10 @@
   :mode
   (("\\/.*\\.js\\'" . rjsx-mode)))
 
+(use-package flow-minor-mode
+  :config
+  (add-hook 'js2-mode-hook 'flow-minor-enable-automatically))
+
 ;; json modes and configurations
 (use-package json-mode
   :bind
