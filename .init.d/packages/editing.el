@@ -96,8 +96,10 @@
   :init
   (add-hook 'prog-mode-hook 'yas-minor-mode)
   :config
-  (add-to-list 'yas-snippet-dirs "~/.emacs.d/.personal.d/snippets")
+  (yas-global-mode 1)
   (yas-reload-all))
+
+(use-package yasnippet-snippets)
 
 ;; merge-tools
 (use-package ediff)
