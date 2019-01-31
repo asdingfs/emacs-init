@@ -93,6 +93,10 @@
 ;; snippets
 (use-package yasnippet
   :diminish yas-minor-mode
+  :bind
+  (("C-c i" . yas-insert-snippet)
+   :map yas-minor-mode-map
+   ("C-c e" . yas-expand))
   :init
   (add-hook 'prog-mode-hook 'yas-minor-mode)
   :config
@@ -100,6 +104,25 @@
   (yas-reload-all))
 
 (use-package yasnippet-snippets)
+
+(use-package react-snippets)
+
+(use-package hippie-exp
+  :bind
+  (("M-/" . hippie-expand))
+  :config
+  (setq hippie-expand-try-functions-list
+        '(yas-expand-snippet
+          try-expand-dabbrev
+          try-expand-dabbrev-all-buffers
+          try-expand-dabbrev-from-kill
+          try-complete-file-name-partially
+          try-complete-file-name
+          try-expand-all-abbrevs
+          try-expand-list
+          try-expand-line
+          try-complete-lisp-symbol-partially
+          try-complete-lisp-symbol)))
 
 ;; merge-tools
 (use-package ediff)
