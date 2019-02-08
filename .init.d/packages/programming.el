@@ -34,6 +34,8 @@
   :bind
   (("C-x g" . magit-status))
   :config
+  (add-hook 'after-save-hook 'magit-after-save-refresh-status)
+  (setq magit-save-repository-buffers 'dontask)
   (setq magit-display-buffer-function
         (lambda (buffer)
           (display-buffer
