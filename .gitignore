@@ -24,3 +24,4 @@ projectile-*
 # maintained in Dropbox separately
 .personal.d/org/*
 
+.mc-lists.el
