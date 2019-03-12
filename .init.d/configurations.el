@@ -35,7 +35,6 @@
 
 ;; dired configs
 (require 'dired)
-(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
 (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 (setq dired-dwim-target t) ;; dired will try to guess the target for file operations
 
