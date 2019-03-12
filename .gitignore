@@ -24,4 +24,6 @@ projectile-*
 # maintained in Dropbox separately
 .personal.d/org/*
 
+# ignore other files
 .mc-lists.el
+transient*
