@@ -47,7 +47,8 @@
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
   (setq ivy-re-builders-alist
-        '((swiper . ivy--regex-plus)
+        '((counsel-ag . ivy--regex-plus)
+          (swiper . ivy--regex-plus)
           (t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil)
   (setq ivy-height 12)
@@ -62,6 +63,7 @@
                             (with-ivy-window
                               (insert (file-name-nondirectory (replace-regexp-in-string "/\\'" "" x)))))
                       "insert file name without any directory information"))))
+
 (use-package swiper
   :after (ivy)
   :bind
