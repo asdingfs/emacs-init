@@ -110,6 +110,13 @@
   (setq rspec-use-rvm t)
   :config
   (rspec-install-snippets))
+(use-package rubocop
+  :diminish rubocop-mode
+  :init
+  (add-hook 'ruby-mode-hook #'rubocop-mode)
+  (add-hook 'enh-ruby-mode-hook #'rubocop-mode)
+  :config
+  (setq rubocop-autocorrect-on-save t))
 
 ;; yaml
 (use-package yaml-mode
