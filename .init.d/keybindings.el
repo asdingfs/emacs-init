@@ -18,6 +18,7 @@
 
 ;; movements
 (global-set-key (kbd "H-<escape>") 'jump-to-working-memory)
+(global-set-key (kbd "H-M-<escape>") 'jump-to-capture)
 (global-set-key (kbd "H-S-<escape>") 'jump-to-scratch)
 (global-set-key (kbd "C-M-<escape>") 'magit-on-init-dir)
 

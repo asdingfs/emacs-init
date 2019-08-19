@@ -8,6 +8,10 @@
   "immediately jump to my working-memory org file"
   (interactive)
   (find-file "~/.emacs.d/.personal.d/org/notes/working-memory.org"))
+(defun jump-to-capture ()
+  "immediately jump to my capture org file"
+  (interactive)
+  (find-file "~/.emacs.d/.personal.d/org/notes/capture.org"))
 (defun magit-on-init-dir ()
   "immediately run magit-status on emacs init directory .emacs.d"
   (interactive)
