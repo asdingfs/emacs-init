@@ -21,12 +21,14 @@
   (org-agenda-files-refresh)
   (setq org-log-done t)
   (setq org-goto-auto-isearch nil)
-  (setq org-default-notes-file "~/.emacs.d/.personal.d/org/notes/capture.org")
   (setq org-imenu-depth 3)
   (setq org-src-window-setup 'current-window)
+  (setq org-directory "~/.emacs.d/.personal.d/org/notes")
+  ;; capture
+  (setq org-default-notes-file "~/.emacs.d/.personal.d/org/notes/capture.org")
   ;; refiling
-  (setq org-refile-targets (quote ((nil :maxlevel . 5)
-                                   (org-agenda-files :maxlevel . 4))))    ;; use header lvl 1 in ALL registed agenda files
+  (setq org-refile-targets (quote ((nil :maxlevel . 3)
+                                   (org-agenda-files :maxlevel . 2))))    ;; use header lvl 1 in ALL registed agenda files
   (setq org-refile-use-outline-path (quote file))                         ;; refile includes relative file name
   (setq org-refile-allow-creating-parent-nodes (quote confirm))           ;; confirm if creating a new parent node
   (setq org-outline-path-complete-in-steps nil)                           ;; show all steps, for ivy autocomplete
