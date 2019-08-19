@@ -18,9 +18,9 @@
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
   :config
   ;; general
+  (org-agenda-files-refresh)
   (setq org-log-done t)
   (setq org-goto-auto-isearch nil)
-  (setq org-agenda-files (directory-files "~/.emacs.d/.personal.d/org" t "^.*\\.org$"))
   (setq org-default-notes-file "~/.emacs.d/.personal.d/org/notes/capture.org")
   (setq org-imenu-depth 3)
   (setq org-src-window-setup 'current-window)

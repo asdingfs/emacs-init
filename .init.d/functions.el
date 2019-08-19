@@ -16,6 +16,10 @@
   "immediately run magit-status on emacs init directory .emacs.d"
   (interactive)
   (magit-status "~/.emacs.d"))
+(defun org-agenda-files-refresh ()
+  "refresh the contents of org agenda"
+  (interactive)
+  (setq org-agenda-files (directory-files-recursively "~/.emacs.d/.personal.d/org/notes" "^.*\\.org$")))
 (defun jump-to-mark () ;; rebinds C-u C-SPC, will pop local mark ring and move there
   (interactive)
   (set-mark-command 1))
