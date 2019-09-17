@@ -8,7 +8,7 @@
 (global-set-key (kbd "H-'") 'windmove-right)
 (global-set-key (kbd "H-/") 'windmove-down)
 (global-set-key (kbd "H-;") 'windmove-left)
-(global-set-key (kbd "s-w") 'kill-this-buffer)
+(global-set-key (kbd "s-w") 'kill-buffer-and-window)
 
 ;; commands
 (global-set-key (kbd "H-l") 'org-open-at-point-global)
