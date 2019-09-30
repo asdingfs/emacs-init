@@ -142,3 +142,11 @@
 (use-package smerge-mode
   :init
   (setq smerge-command-prefix (kbd "C-c v")))
+
+
+;; configuration guide: https://www.emacswiki.org/emacs/Edit_with_Emacs
+(use-package edit-server
+  :ensure t
+  :config
+  (setq edit-server-new-frame nil)
+  (edit-server-start))
