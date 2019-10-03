@@ -23,6 +23,7 @@
   (setq org-goto-auto-isearch nil)
   (setq org-imenu-depth 3)
   (setq org-src-window-setup 'current-window)
+  (add-hook 'focus-out-hook (lambda () (org-save-all-org-buffers)))
   (setq org-directory "~/.emacs.d/.personal.d/org/notes")
   ;; capture
   (setq org-default-notes-file "~/.emacs.d/.personal.d/org/notes/capture.org")
