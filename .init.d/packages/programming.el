@@ -116,7 +116,7 @@
   (add-hook 'ruby-mode-hook #'rubocop-mode)
   (add-hook 'enh-ruby-mode-hook #'rubocop-mode)
   :config
-  (setq rubocop-autocorrect-on-save t))
+  (setq rubocop-autocorrect-on-save nil))
 
 ;; yaml
 (use-package yaml-mode
