@@ -1,6 +1,6 @@
 ;; main org configurations
 (use-package org
-  :commands (ox-md ox-twbs htmlize)
+  :commands (ox-md ox-twbs ox-pandoc htmlize)
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture) 
@@ -19,6 +19,8 @@
   :config
   ;; general
   (org-agenda-files-refresh)
+  (setq org-hide-emphasis-markers t) ;; show content only
+  (setq org-image-actual-width '(300)) ;; restrict image display to display size
   (setq org-log-done t)
   (setq org-goto-auto-isearch nil)
   (setq org-imenu-depth 3)
@@ -59,7 +61,24 @@
 (use-package htmlize :after (org))
 (use-package ox-pandoc
   :after (org exec-path-from-shell)
+  :init
+  (with-eval-after-load 'ox (require 'ox-pandoc))
+  :config
+  (setq org-pandoc-menu-entry
+        '((106 "to json and open." org-pandoc-export-to-json-and-open)
+          (74 "as json." org-pandoc-export-as-json)
+          (108 "to latex-pdf and open." org-pandoc-export-to-latex-pdf-and-open)
+          (76 "to latex-pdf." org-pandoc-export-to-latex-pdf)
+          (109 "to man and open." org-pandoc-export-to-man-and-open)
+          (77 "as man." org-pandoc-export-as-man)
+          (111 "to odt and open." org-pandoc-export-to-odt-and-open)
+          (79 "to odt." org-pandoc-export-to-odt)
+          (112 "to pptx and open." org-pandoc-export-to-pptx-and-open)
+          (80 "to pptx." org-pandoc-export-to-pptx)
+          (120 "to docx and open." org-pandoc-export-to-docx-and-open)
+          (88 "to docx." org-pandoc-export-to-docx)))
   :defer t)
+
 
 ;; display
 (use-package org-bullets ;; bullets
