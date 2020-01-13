@@ -1,3 +1,9 @@
+;;;;;;;;;;;;;;;; Views ;;;;;;;;;;;;;;;;
+(defun text-scale-100% ()
+  "Scale current buffer to 100%"
+  (interactive)
+  (text-scale-increase 0))
+
 ;;;;;;;;;;;;;;;; Movements ;;;;;;;;;;;;;;;;
 (defun jump-to-scratch ()
   "Switch to buffer named *scratch* and create if it does not exist"
