@@ -134,7 +134,7 @@ magit-status on the project root directory. Use dired otherwise."
     (truncate (log sanitised-arg 4))))
 ;; temporary convenience functions until better solutions can be found, I'm relatively happy with the hackish result
 
-(defun dired-remote-alias (ssh-alias &optional arg)
+(defun dired-remote-ssh-alias (ssh-alias &optional arg)
   "Connect to remote with tramp, projectile alternative until it works"
   (interactive (list (ivy-read "Enter ssh-alias: "
                                (tramp-completion-list "ssh") )
@@ -148,3 +148,9 @@ magit-status on the project root directory. Use dired otherwise."
       (dired (format "/ssh:%s|sudo:%s:" ssh-alias ssh-alias)))
      (t ;; else, connect normally using user specified in ~/.ssh/config
       (dired (format "/ssh:%s:" ssh-alias))))))
+
+(defun dired-remote-kubectl-alias (kubectl-alias)
+  "Connect to remote with kubectl-tramp"
+  (interactive (list (ivy-read "Enter kubectl-alias: "
+                               (tramp-completion-list "kubectl"))))
+  (dired (format "/kubectl:%s:%s" kubectl-alias (read-string "Pod directory: "))))

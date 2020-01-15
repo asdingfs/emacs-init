@@ -62,6 +62,7 @@
     (lambda ()
       (interactive)
       (magit-merge "@{upstream}" `("--ff" "--ff-only")))))
+
 ;; extensions for gitflow
 (use-package magit-gitflow
   :after (magit)
@@ -72,6 +73,11 @@
 ;; major mode for editing git config files
 (use-package gitignore-mode
   :defer t)
+
+(use-package kubernetes
+  :ensure t
+  :commands (kubernetes-overview))
+
 ;; ssh configs
 (use-package ssh
   :defer t

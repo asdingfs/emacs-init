@@ -141,6 +141,10 @@
                                          (tramp-parse-sconfig "~/.ssh/config")))
   (add-hook 'find-file-hook 'set-default-remote-shell))
 
+;; integration with kubernetes
+(use-package kubernetes-tramp
+  :after (tramp))
+
 ;; web surfing
 (use-package w3m
   :bind

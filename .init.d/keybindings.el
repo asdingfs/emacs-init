@@ -45,7 +45,10 @@
 (global-set-key (kbd "C-S-o") 'open-line-and-indent)
 
 ;; externals
-(global-set-key (kbd "H-t") 'dired-remote-alias)
+(global-set-key (kbd "H-t") 'dired-remote-ssh-alias)
+(global-set-key (kbd "H-g") 'magit-status)
+(global-set-key (kbd "H-k") 'kubernetes-overview)
+(global-set-key (kbd "H-K") 'dired-remote-kubectl-alias)
 (global-set-key (kbd "H-)") 'eshell)
 (global-set-key (kbd "H-(") 'term)
 
