@@ -25,7 +25,25 @@
 (defun org-agenda-files-refresh ()
   "refresh the contents of org agenda"
   (interactive)
-  (setq org-agenda-files (directory-files-recursively "~/.emacs.d/.personal.d/org/notes" "^.*\\.org$")))
+  (setq org-agenda-files nil)) ;; TODO, define a set of agenda files
+(defun org-all-files-refresh ()
+  "refresh the contents of org agenda"
+  (interactive)
+  (setq org-all-files (directory-files-recursively "~/.emacs.d/.personal.d/org/notes" "^.*\\.org$")))
+(defun org-refile-within-current-buffer ()
+  "Move the entry at point to another heading in the current buffer"
+  (interactive)
+  (let ((org-refile-targets '((nil :maxlevel . 9))))
+    (org-refile)))
+(defun org-refile-to-all-defined-org-files ()
+  "Attempt to refile to current and all other files defined in org-all-files"
+  (interactive)
+  (org-all-files-refresh)
+  (let ((org-agenda-files (progn (org-all-files-refresh) org-all-files))
+        (org-refile-targets (quote ((nil :maxlevel . 5)
+                                    (org-agenda-files :maxlevel . 5)))))
+    (org-refile)))
+
 (defun jump-to-mark () ;; rebinds C-u C-SPC, will pop local mark ring and move there
   (interactive)
   (set-mark-command 1))

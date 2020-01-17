@@ -6,6 +6,10 @@
    ("C-c c" . org-capture) 
    ("C-c l" . org-store-link)
    :map org-mode-map
+   ("C-S-c C-S-w" . org-refile-within-current-buffer)
+   ("C-c C-w" . org-refile-to-all-defined-org-files)
+   ("C-c C-j" . counsel-org-goto)
+   ("C-c C-q" . counsel-org-tag)
    ("H-M-'"  . org-metaright)
    ("H-M-;"  . org-metaleft)
    ("H-M-["  . org-metaup)
@@ -18,6 +22,7 @@
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
   :config
   ;; general
+  (org-all-files-refresh)
   (org-agenda-files-refresh)
   (setq org-hide-emphasis-markers t) ;; show content only
   (setq org-image-actual-width '(300)) ;; restrict image display to display size
@@ -30,11 +35,13 @@
   ;; capture
   (setq org-default-notes-file "~/.emacs.d/.personal.d/org/notes/capture.org")
   ;; refiling
-  (setq org-refile-targets (quote ((nil :maxlevel . 3)
-                                   (org-agenda-files :maxlevel . 2))))    ;; use header lvl 1 in ALL registed agenda files
-  (setq org-refile-use-outline-path (quote file))                         ;; refile includes relative file name
-  (setq org-refile-allow-creating-parent-nodes (quote confirm))           ;; confirm if creating a new parent node
-  (setq org-outline-path-complete-in-steps nil)                           ;; show all steps, for ivy autocomplete
+  (setq org-refile-targets (quote ((nil :maxlevel . 5))))
+  ;; refile includes full file name, for clarity
+  (setq org-refile-use-outline-path (quote full-file-path))
+  ;; confirm if creating a new parent node
+  (setq org-refile-allow-creating-parent-nodes (quote confirm))
+  ;; show all paths, for ivy autocomplete
+  (setq org-outline-path-complete-in-steps nil)
 
   ;; export settings
   (setq org-export-in-background t)     ;; run exporting and publishing in background
