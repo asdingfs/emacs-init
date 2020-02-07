@@ -32,6 +32,13 @@
   (setq org-src-window-setup 'current-window)
   (add-hook 'focus-out-hook (lambda () (org-save-all-org-buffers)))
   (setq org-directory "~/.emacs.d/.personal.d/org/notes")
+  ;; attachments
+  (setq org-file-apps (quote ((auto-mode . emacs)
+                              ("\\.mm\\'" . default)
+                              ("\\.x?html?\\'" . default)
+                              ("\\.pdf\\'" . default)
+                              ("\\.xls\\'" . default)
+                              ("\\.xlsx\\'" . default))))
   ;; capture
   (setq org-default-notes-file "~/.emacs.d/.personal.d/org/notes/capture.org")
   ;; refiling
