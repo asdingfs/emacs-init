@@ -102,9 +102,13 @@
 ;; for highlighting indentations with lines
 (use-package highlight-indent-guides
   :init
-  (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+  ;; disable autoload of highlight-indent-guides-mode as it's very laggy for some reason
+  ;; will enable manually if a workaround for font-lock is found
+  ;; (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
   (setq highlight-indent-guides-method 'character)
   :config
+  (setq highlight-indent-guides-responsive (quote top))
+  (setq highlight-indent-guides-delay 1)
   (set-face-foreground 'highlight-indent-guides-character-face "dimgray"))
 
 ;; snippets
