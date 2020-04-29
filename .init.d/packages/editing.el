@@ -93,6 +93,10 @@
   :init
   (global-flycheck-mode)
   :config
+  (setq flycheck-check-syntax-automatically
+   (quote (save idle-change mode-enable)))
+  (setq flycheck-idle-change-delay 4)
+  (setq flycheck-idle-buffer-switch-delay 4)
   (add-hook 'js2-mode-hook #'flycheck-mode))
 
 ;; for highlighting indentations with lines
