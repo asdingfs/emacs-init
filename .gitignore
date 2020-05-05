@@ -27,3 +27,4 @@ projectile-*
 # ignore other files
 .mc-lists.el
 transient*
+.zsh_history
