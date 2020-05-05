@@ -1,0 +1,3 @@
+#!/bin/zsh
+. $HOME/.zshenv # load the env variable
+$ROOT/Applications/Emacs.app/Contents/MacOS/Emacs --daemon
