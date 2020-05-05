@@ -90,6 +90,7 @@
    ("C-h x" . counsel-imenu)
    ("C-c SPC g" . counsel-git)
    ("C-c SPC j" . counsel-git-grep)
+   ("C-S-e" . counsel-mark-ring) ;; # TODO: implement custom function for global mark ring
    ("H-f" . counsel-ag)
    :map ivy-minibuffer-map
    ("M-y" . ivy-next-line)))
