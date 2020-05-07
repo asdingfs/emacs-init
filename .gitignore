@@ -28,3 +28,4 @@ projectile-*
 .mc-lists.el
 transient*
 .zsh_history
+.zcompdump*
