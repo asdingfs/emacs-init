@@ -3,36 +3,36 @@ Host *
   UseKeychain yes
 
 Host github
-  User git  
+  User git
   HostName github.com
-  IdentityFile ~/.ssh/github_rsa
+  IdentityFile ~/.ssh/keys/github_rsa
 
 Host gitlab
   User git
   HostName gitlab.com
-  IdentityFile ~/.ssh/gitlab_rsa
+  IdentityFile ~/.ssh/keys/gitlab_rsa
 
 Host bitbucket
   User git
   HostName bitbucket.org
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/keys/bitbucket_rsa
 
 # hubble: common configuration
 Host hbk.*
   User anthony
-  IdentityFile ~/.ssh/amazon_rsa  
+  IdentityFile ~/.ssh/keys/amazon_rsa
   IdentitiesOnly true
   RemoteCommand sudo su - ubuntu
   RequestTTY yes
 
 Host *.hubble.sg
   User anthony
-  IdentityFile ~/.ssh/amazon_rsa  
+  IdentityFile ~/.ssh/keys/amazon_rsa
   IdentitiesOnly yes
   RemoteCommand sudo su - ubuntu
   RequestTTY yes
   StrictHostKeyChecking no
-  UserKnownHostsFile /dev/null  
+  UserKnownHostsFile /dev/null
 
 # hubble: development environment
 Host hbk.dev
@@ -56,9 +56,9 @@ Host hbk.bmsprd
   HostName bms.hubble.sg
 
 Host hbk.prsprd
-  HostName primestructures.hubble.sg  
-  
-# hubble: old servers  
+  HostName primestructures.hubble.sg
+
+# hubble: old servers
 Host demo
   HostName 188.166.212.41
   User hubbledev
@@ -70,7 +70,7 @@ Host demov
 Host demovd
   HostName 139.59.227.129
   User hubbledev
-  
+
 Host playg
   HostName 139.59.232.248
   User hubbledev
@@ -90,13 +90,13 @@ Host odev
 Host dev
   HostName development.hubble.sg
   User ubuntu
-  IdentityFile ~/.ssh/server_keys/aws_dev.pem  
-  
+  IdentityFile ~/.ssh/server_keys/aws_dev.pem
+
 Host sdev
   HostName development2.hubble.sg
   User ubuntu
-  IdentityFile ~/.ssh/server_keys/aws_dev.pem  
-  
+  IdentityFile ~/.ssh/server_keys/aws_dev.pem
+
 Host whprd
   HostName wohhup.hubble.sg
   User ubuntu
@@ -111,7 +111,7 @@ Host clsprd
   HostName cleansolution.hubble.sg
   User ubuntu
   IdentityFile ~/.ssh/server_keys/cleansolution_production.pem
-  
+
 Host kklprd
   HostName kkl.hubble.sg
   User ubuntu
@@ -121,7 +121,7 @@ Host clprd
   HostName chuanlim.hubble.sg
   User ubuntu
   IdentityFile ~/.ssh/server_keys/chuanlim_production.pem
-  
+
 Host ivprd
   HostName innovente.hubble.sg
   User ubuntu
@@ -135,7 +135,7 @@ Host sckprd
 Host sckaprd
   HostName sck-archive.hubble.sg
   User ubuntu
-  IdentityFile ~/.ssh/server_keys/sck_production.pem  
+  IdentityFile ~/.ssh/server_keys/sck_production.pem
 
 Host geprd
   HostName 52.74.54.86
@@ -166,11 +166,11 @@ Host hxcprd
   HostName hexacon.hubble.sg
   User ubuntu
   IdentityFile ~/.ssh/server_keys/hexacon_production.pem
-  
+
 Host oasprd
   HostName oas.hubble.sg
   User ubuntu
-  IdentityFile ~/.ssh/server_keys/oaspainting_production.pem  
+  IdentityFile ~/.ssh/server_keys/oaspainting_production.pem
 
 Host steprd
   HostName sante.hubble.sg
@@ -205,8 +205,8 @@ Host hscprd
 Host prsprd
   HostName primestructures.hubble.sg
   User ubuntu
-  IdentityFile ~/.ssh/server_keys/primestructures_production.pem  
-  
+  IdentityFile ~/.ssh/server_keys/primestructures_production.pem
+
 Host clstg
   HostName chuanlim-stg.hubble.sg
   User hubbledev
@@ -215,7 +215,7 @@ Host ivstg
   HostName 128.199.100.135
   Port 2706
   User mobadmin
-  
+
 Host msstg
   HostName maosheng-trial.hubble.sg
   User hubbledev
@@ -251,7 +251,7 @@ Host sckstg
 Host fscstg
   HostName firstcom-stg.hubble.sg
   User ubuntu
-  IdentityFile ~/.ssh/server_keys/firstcom_staging.pem  
+  IdentityFile ~/.ssh/server_keys/firstcom_staging.pem
 
 Host tlostg
   HostName tongloong-stg.hubble.sg
@@ -267,9 +267,8 @@ Host hxcstg
   HostName hexacon-stg.hubble.sg
   User ubuntu
   IdentityFile ~/.ssh/server_keys/hexacon_staging.pem
-  
+
 Host bmsstg
   HostName bms-stg.hubble.sg
   User ubuntu
-  IdentityFile ~/.ssh/server_keys/bms_staging.pem    
-    
+  IdentityFile ~/.ssh/server_keys/bms_staging.pem
