@@ -29,3 +29,5 @@ projectile-*
 transient*
 .zsh_history
 .zcompdump*
+
+.files.d/karabiner_config/automatic_backups/*
