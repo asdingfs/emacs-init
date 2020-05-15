@@ -19,7 +19,12 @@
   (add-hook 'after-make-frame-functions 'ns-raise-emacs-with-frame)
 
   (when (display-graphic-p)
-    (ns-raise-emacs)))
+    (ns-raise-emacs))
+
+  (setq shell-file-name "/usr/local/bin/zsh")
+  (setq explicit-shell-file-name "/usr/local/bin/zsh")
+  (setenv "SHELL" shell-file-name)
+  (setenv "ESHELL" shell-file-name))
 
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns x nil))
