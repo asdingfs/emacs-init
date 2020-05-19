@@ -33,7 +33,7 @@
 (defun org-refile-within-current-buffer ()
   "Move the entry at point to another heading in the current buffer"
   (interactive)
-  (let ((org-refile-targets '((nil :maxlevel . 9))))
+  (let ((org-refile-targets (quote ((nil . (:maxlevel . 9))))))
     (org-refile)))
 (defun org-refile-to-all-defined-org-files ()
   "Attempt to refile to current and all other files defined in org-all-files"
