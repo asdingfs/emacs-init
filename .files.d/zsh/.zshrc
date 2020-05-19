@@ -97,7 +97,44 @@ precmd() { echo }
 alias t='open -a /Applications/iTerm.app/Contents/MacOS/iTerm2 "$@"'
 alias e='open $emacs $1'
 alias et='emacsclient -nw'
+
+# kubernetes shortcut
 alias k8=kubectl
+alias kns=kubens
+# quick access to terminal
+function k8t() {
+    kubectl exec -it $1 -- bash
+}
+
+function k8p() {
+    while getopts "n" option; do
+        case $option in
+            n)
+                TEMPLATE_STR="{{range .items}}{{.metadata.name}}{{"'"\n"'"}}{{end}}"
+                TEMPLATE_ARGS=(--template ${TEMPLATE_STR})
+                shift
+                ;;
+            *)
+                break
+                ;;
+        esac
+    done
+    if [[ $# -eq 0 ]]; then
+        kubectl get pods
+    elif [[ $# -gt 2 ]]; then
+        echo "invalid argument length" 1>&2
+    elif [[ -n "$2" ]]; then
+        kubectl get pods -l instance=$1,component=$2 ${TEMPLATE_ARGS[@]}
+    elif [[ -n "$1" ]]; then
+        kubectl get pods -l instance=$1 ${TEMPLATE_ARGS[@]}
+    fi
+}
+
+function k8pc() {
+    k8p -n $@ | pbcopy
+}
+
+# other aliases
 alias pip=pip3
 export EDITOR="emacsclient"
 setopt rm_star_silent
