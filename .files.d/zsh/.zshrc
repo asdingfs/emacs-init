@@ -131,7 +131,7 @@ function k8p() {
 }
 
 function k8pc() {
-    k8p -n $@ | pbcopy
+    k8p -n $@ | head -1 | pbcopy
 }
 
 # other aliases
