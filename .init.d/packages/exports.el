@@ -3,7 +3,7 @@
   :commands (ox-md ox-twbs ox-pandoc htmlize)
   :bind
   (("C-c a" . org-agenda)
-   ("C-c c" . org-capture) 
+   ("C-c c" . org-capture)
    ("C-c l" . org-store-link)
    :map org-mode-map
    ("C-S-c C-S-w" . org-refile-within-current-buffer)
@@ -103,6 +103,11 @@
           "•" "•" "•" "•" "•" "•" "•" "•"))
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   :defer t)
+
+(use-package org-download ;; drag and drop file into emacs buffer & upload as attachments
+  :config
+  (add-hook 'org-mode-hook 'org-download-enable)
+  (add-hook 'dired-mode-hook 'org-download-enable))
 
 ;; other editing/export modes
 (use-package markdown-mode
