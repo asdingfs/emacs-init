@@ -107,7 +107,7 @@ function k8t() {
 }
 
 function k8p() {
-    while getopts "n" option; do
+    while getopts ":n" option; do
         case $option in
             n)
                 TEMPLATE_STR="{{range .items}}{{.metadata.name}}{{"'"\n"'"}}{{end}}"
