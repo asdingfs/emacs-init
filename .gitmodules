@@ -1,3 +1,12 @@
 [submodule "snippets/es6-snippets"]
 	path = snippets/es6-snippets
 	url = https://github.com/CodyReichert/es6-snippets.git
+[submodule ".files.d/zsh/.oh-my-zsh/custom/plugins/zsh-completions"]
+	path = .files.d/zsh/.oh-my-zsh/custom/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
+[submodule ".files.d/zsh/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+	path = .files.d/zsh/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule ".files.d/zsh/.oh-my-zsh/custom/themes/geometry-theme"]
+	path = .files.d/zsh/.oh-my-zsh/custom/themes/geometry-theme
+	url = https://github.com/geometry-zsh/geometry.git
