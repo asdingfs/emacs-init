@@ -131,7 +131,13 @@ function k8p() {
 }
 
 function k8pc() {
-    k8p -n $@ | head -1 | pbcopy
+    target=$(k8p -n $@ | head -1)
+    if [[ -z "$target" ]]; then
+        echo "No target was found!"
+    else
+        echo $target | pbcopy
+        echo "Copied '$target' k8 pod name to clipboard."
+    fi
 }
 
 # other aliases
