@@ -26,6 +26,10 @@
   (setenv "SHELL" shell-file-name)
   (setenv "ESHELL" shell-file-name))
 
+(when (eq system-type 'darwin)
+  (require 'ls-lisp)
+  (setq ls-lisp-use-insert-directory-program nil))
+
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns x nil))
   :config
