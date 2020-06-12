@@ -124,6 +124,10 @@ cp Emacs-x86_64-10_14 Emacs
 cd /Applications/Emacs.app/Contents/
 rm -rf _CodeSignature
 cd ~/
+# link launchd to start emacs at startup
+chmod 755 $HOME/.emacs.d/.files.d/gnu.emacs.daemon.LaunchAtLogin.agent.plist
+ln -s $HOME/.emacs.d/.files.d/gnu.emacs.daemon.LaunchAtLogin.agent.plist $HOME/Library/LaunchAgents/
+launchctl load -w $HOME/Library/LaunchAgents/gnu.emacs.daemon.LaunchAtLogin.agent.plist
 
 # setup karabiner & ssh config
 ln -s $HOME/.emacs.d/.files.d/ssh_config $HOME/.ssh/config
@@ -158,4 +162,4 @@ rvm install ruby --latest --with-openssl-dir=$HOME/.rvm/usr
 
 # other customisations for MacOS
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 70 '<dict><key>enabled</key><false/></dict>' # disable CMD+CTRL+D
-defaults write com.apple.notificationcenterui bannerTime -int 3 # shorten notification banner time to 3s
+defaults write com.apple.notificationcenterui bannerTime -int 2 # shorten notification banner time to 2s

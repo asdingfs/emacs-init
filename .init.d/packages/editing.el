@@ -8,8 +8,8 @@
               ("C-M-k" . sp-kill-sexp)
               ("C-k" . sp-kill-hybrid-sexp)
               ("C-S-k" . sp-backward-kill-sexp)
-              ("C-S-w" . sp-kill-region) 
-              ("C-w" . kill-region) 
+              ("C-S-w" . sp-kill-region)
+              ("C-w" . kill-region)
               ([remap sp-kill-region] . kill-region)
               ("C-<backspace>" . sp-backward-kill-word)
               ("M-<backspace>" . backward-kill-word)
@@ -20,7 +20,7 @@
               ("C-S-<backspace>" . sp-kill-whole-line)
               ("C-M-S-<backspace>" . kill-whole-line)
               ([remap sp-kill-whole-line] . kill-whole-line)
-              
+
               ("C-M-a" . sp-beginning-of-sexp)
               ("C-M-e" . sp-end-of-sexp)
               ("C-S-f" . sp-forward-symbol)

@@ -43,8 +43,9 @@
 (setq shell-file-name "/bin/bash") ;; TODO: temporarily set bash as default shell for remote server compatibility
 
 ;; server
-(load "server")
-(unless (server-running-p) (server-start))
+;; used launchd istead of manually starting server here
+;; (load "server")
+;; (unless (server-running-p) (server-start))
 
 ;; custom file
 (setq custom-file "~/.emacs.d/.personal.d/custom-file.el")
