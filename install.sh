@@ -21,12 +21,12 @@ brew tap homebrew/cask-fonts
 brew install zsh
 
 # restarts zsh to use the brew version
-exec zsh  
+exec zsh
 
 # note in MacOSX CATALINA, you need to grant full disk access to the terminal app that you're running
 
 # packages to install in this script
-BREW_PACKAGES=(wget curl z ripgrep ag w3m pandoc git python postgres redis node kubernetes-cli kubectx imagemagick@6 svn)
+BREW_PACKAGES=(wget curl gpg z ripgrep ag w3m pandoc git python postgres redis node kubernetes-cli kubectx imagemagick@6 svn)
 # TODO: additional brew packages: texinfo
 CASK_PACKAGES=(1password paragon-ntfs omnidisksweeper onyx appcleaner emacs iterm2 karabiner-elements shiftit scroll-reverser font-inconsolata font-latin-modern-math fluid dropbox firefox franz telegram skype flume tunnelblick spotify dash postman docker android-file-transfer android-studio vysor google-chrome blender figma sketch gimp inkscape handbrake mediahuman-audio-converter mediahuman-youtube-downloader musicbrainz-picard pdf-expert musescore sequential send-to-kindle calibre flux itsycal vlc swinsian elmedia-player parsec steam openemu transmission)
 # TODO: additional cask packages: mactex
@@ -73,7 +73,7 @@ git clone https://github.com/asdingfs/macosx-emacs-init.git .emacs.d/
 # populate submodules
 cd .emacs.d/
 git submodule update --init
-cd ../   
+cd ../
 
 # setting up ssh keys, recommended to store keys inside ~/.ssh/keys
 mkdir -p $HOME/.ssh/keys
@@ -127,12 +127,12 @@ cd ~/
 
 # setup karabiner & ssh config
 ln -s $HOME/.emacs.d/.files.d/ssh_config $HOME/.ssh/config
-mkdir .config 
+mkdir .config
 ln -s $HOME/.emacs.d/.files.d/karabiner_config $HOME/.config/karabiner
 
 # setup git username & email
 git config user.name "Anthony Setiawan"
-git config user.email "anthonysetiawan.ding@gmail.com" 
+git config user.email "anthonysetiawan.ding@gmail.com"
 
 # setup themes
 open $HOME/.emacs.d/.files.d/Tomorrow\ Night\ Eighties.itermcolors
@@ -149,12 +149,12 @@ aws eks update-kubeconfig --name eks-prod-cluster
 brew services start postgresql
 brew services start redis
 
-# install ruby
+# install rvm & ruby
+gpg --keyserver hkp://pgp.mit.edu --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | bash -s stable
-# source RVM after install
-
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+rvm pkg install openssl
+rvm install ruby --latest --with-openssl-dir=$HOME/.rvm/usr
 
 # other customisations
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 70 '<dict><key>enabled</key><false/></dict>' # disable CMD+CTRL+D
-
- 
