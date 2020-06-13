@@ -1,3 +1,9 @@
 #!/bin/zsh
 . $HOME/.zshenv # load the env variable
-$ROOT/Applications/Emacs.app/Contents/MacOS/Emacs --daemon
+
+# save buffers, restarts the server & all client frames associated with it
+emacsclient -e "(save-buffers-kill-emacs)"
+
+# reloads using launchctl
+launchctl unload ~/Library/LaunchAgents/gnu.emacs.daemon.LaunchAtLogin.agent.plist
+launchctl load ~/Library/LaunchAgents/gnu.emacs.daemon.LaunchAtLogin.agent.plist
