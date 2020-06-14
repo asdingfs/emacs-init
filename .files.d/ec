@@ -14,16 +14,35 @@ if [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]; then
 fi
 
 # open server in background if not yet started
-if ! emacsclient -q -a false -e 't'; then es; fi
+if ! emacsclient -q -a false -e 't' 1> /dev/null
+then
+    echo "Restarting emacs server..."
+    es
+fi
 
 # Now the meat part.
 # We use the command emacsclient. Get the state of the emacsclient, ‘nil’ if no frame is opened and ‘t’ if a is frame is opened
 # If the server is off OR if there is no frame already opened OR if we explicitly ask for a frame using the suffix "w"
 state="$(emacsclient -qn -e "(if (> (length (frame-list)) 1) 't)")"
-if [[ "$state" == "" ]] || [[ "$state" == "nil" ]] || [[ "$2" == "w" ]] ; then
-    emacsclient -a "" -cqn $1 # Create a frame and open the file within it
+# if no extra argument is supplied
+if [[ "$state" == "" ]] || [[ "$state" == "nil" ]] || [[ "$2" == "w" ]]
+then
+    if [[ $# -eq 0 ]]; then
+        echo "Creating frame & running (magit-on-init-dir)"
+        # Create a frame and run (magit-on-init-dir) function
+        emacsclient -a "" -cqn -e "(magit-on-init-dir)" 1> /dev/null
+    else
+        # Create a frame and open the file within it
+        emacsclient -a "" -cqn $1
+    fi
 else
-    emacsclient -qn $1 # Open the file in the existing frame
+    # if no argument is supplied
+    if [[ $# -eq 0 ]]; then
+        echo "Raising existing frame..."
+        # Raise frame
+        emacsclient -qn -e "(raise-frame)" 1> /dev/null
+    else
+         # Open the file in the existing frame
+        emacsclient -qn $1
+    fi
 fi
-
-
