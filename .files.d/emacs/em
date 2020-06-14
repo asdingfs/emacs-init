@@ -1,3 +1,4 @@
 #!/bin/zsh
+# script to bring emacs to front
 . $HOME/.zshenv
 emacsclient -a "" -e "(select-frame-set-input-focus (selected-frame))"

@@ -1,4 +1,5 @@
 #!/bin/zsh
+
 . $HOME/.zshenv
 # Note: X windows are referred as frames, since for emacs a window is a split of a frame. This script is called ec.
 # The part help.
@@ -28,9 +29,9 @@ state="$(emacsclient -qn -e "(if (> (length (frame-list)) 1) 't)")"
 if [[ "$state" == "" ]] || [[ "$state" == "nil" ]] || [[ "$2" == "w" ]]
 then
     if [[ $# -eq 0 ]]; then
-        echo "Creating frame & running (magit-on-init-dir)"
+        echo "Creating frame & running (magit-on-init-dir)..."
         # Create a frame and run (magit-on-init-dir) function
-        emacsclient -a "" -cqn -e "(magit-on-init-dir)" 1> /dev/null
+        emacsclient -a "" -cqnu -e "(magit-on-init-dir)"
     else
         # Create a frame and open the file within it
         emacsclient -a "" -cqn $1
@@ -39,10 +40,11 @@ else
     # if no argument is supplied
     if [[ $# -eq 0 ]]; then
         echo "Raising existing frame..."
-        # Raise frame
-        emacsclient -qn -e "(raise-frame)" 1> /dev/null
+        # Toggle frame visibility, i.e. if not frontmost bring to front, otherwise hide frame
+        osascript "$HOME/.emacs.d/.files.d/emacs/Emacs Toggle.app"
     else
          # Open the file in the existing frame
         emacsclient -qn $1
+        (frame-visible-p (selected-frame))
     fi
 fi

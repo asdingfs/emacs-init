@@ -104,15 +104,10 @@ chmod -R 755 $ROOT/usr/local/share/zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # setup emacs scripts
-ln -s $HOME/.emacs.d/.files.d/es $ROOT/usr/local/bin
-ln -s $HOME/.emacs.d/.files.d/ec $ROOT/usr/local/bin
-ln -s $HOME/.emacs.d/.files.d/em $ROOT/usr/local/bin
-chmod 755 $HOME/.emacs.d/.files.d/es
-chmod 755 $HOME/.emacs.d/.files.d/ec
-chmod 755 $HOME/.emacs.d/.files.d/em
-chmod 755 $ROOT/usr/local/bin/es
-chmod 755 $ROOT/usr/local/bin/ec
-chmod 755 $ROOT/usr/local/bin/em
+ln -s $HOME/.emacs.d/.files.d/emacs/es $ROOT/usr/local/bin
+ln -s $HOME/.emacs.d/.files.d/emacs/ec $ROOT/usr/local/bin
+ln -s $HOME/.emacs.d/.files.d/emacs/em $ROOT/usr/local/bin
+chmod 755 $HOME/.emacs.d/.files.d/emacs/es $HOME/.emacs.d/.files.d/emacs/ec $HOME/.emacs.d/.files.d/emacs/em $ROOT/usr/local/bin/es $ROOT/usr/local/bin/ec $ROOT/usr/local/bin/em
 
 # fix emacs compatibility with MacOSX Catalina, https://spin.atomicobject.com/2019/12/12/fixing-emacs-macos-catalina/
 # also on: https://medium.com/@holzman.simon/emacs-on-macos-catalina-10-15-in-2019-79ff713c1ccc
@@ -125,8 +120,8 @@ cd /Applications/Emacs.app/Contents/
 rm -rf _CodeSignature
 cd ~/
 # link launchd to start emacs at startup
-chmod 755 $HOME/.emacs.d/.files.d/gnu.emacs.daemon.LaunchAtLogin.agent.plist
-ln -s $HOME/.emacs.d/.files.d/gnu.emacs.daemon.LaunchAtLogin.agent.plist $HOME/Library/LaunchAgents/
+chmod 755 $HOME/.emacs.d/.files.d/emacs/gnu.emacs.daemon.LaunchAtLogin.agent.plist
+ln -s $HOME/.emacs.d/.files.d/emacs/gnu.emacs.daemon.LaunchAtLogin.agent.plist $HOME/Library/LaunchAgents/
 launchctl load -w $HOME/Library/LaunchAgents/gnu.emacs.daemon.LaunchAtLogin.agent.plist
 
 # setup karabiner & ssh config
