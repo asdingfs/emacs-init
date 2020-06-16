@@ -15,7 +15,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "H--") 'text-scale-decrease)
 (global-set-key (kbd "H-=") 'text-scale-increase)
-(global-set-key (kbd "H-\\") 'text-scale-100%)
+(global-set-key (kbd "H-0") 'text-scale-100%)
 
 ;; movements
 (global-set-key (kbd "H-<escape>") 'jump-to-working-memory)
