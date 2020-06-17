@@ -1,4 +1,7 @@
 ;;;;;;;;;;;;;;;; Keybindings ;;;;;;;;;;;;;;;;
+;; frames
+(global-unset-key (kbd "C-z"))
+(global-set-key (kbd "C-x C-z") 'suspend-frame)
 
 ;; rebindings
 (global-set-key (kbd "H-r") 'rename-buffer)
