@@ -307,7 +307,7 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>598 546 799 448 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>992 0 928 1177 0 0 1920 1177 </string>
+	<string>52 0 928 1177 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1086,14 +1086,14 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{673, 935}</string>
+		<string>{673, 931}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>328E3A93-3FA2-4725-A4EF-442A64137AE0</string>
 	<key>NoSyncLastTipTime</key>
-	<real>613980963.97375405</real>
+	<real>614165860.34782195</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>13</integer>
+	<integer>20</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1836,10 +1836,14 @@
 	</dict>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>613674631.61647105</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
 		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
@@ -1889,7 +1893,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-16T06:16:03Z</date>
+	<date>2020-06-18T06:16:17Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SeparateStatusBarsPerPane</key>
@@ -1905,7 +1909,7 @@
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.22651817375886529</real>
 	<key>StretchTabsToFillBar</key>
-	<false/>
+	<true/>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
 	<key>TabsHaveCloseButton</key>
