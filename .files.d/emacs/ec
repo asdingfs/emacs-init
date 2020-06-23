@@ -44,7 +44,6 @@ else
         osascript "$HOME/.emacs.d/.files.d/emacs/Emacs Toggle.app"
     else
          # Open the file in the existing frame
-        emacsclient -qn $1
-        (frame-visible-p (selected-frame))
+        emacsclient -qn $1 -e "(frame-visible-p (selected-frame))"
     fi
 fi
