@@ -154,6 +154,7 @@ alias gdd="git diff"
 # hubble main folders
 alias hbemapi="cd /Users/asdingfs/Adventures/hubble/hubble_api_master"
 alias hbedapi="cd /Users/asdingfs/Adventures/hubble/hubble_api_develop"
+alias hbemv3api="cd /Users/asdingfs/Adventures/hubble/hubble_api_master_v3/"
 alias hbedv3api="cd /Users/asdingfs/Adventures/hubble/hubble_api_develop_v3/"
 alias hfemweb="cd /Users/asdingfs/Adventures/hubble/hubble_web_base"
 alias hbejqgem="cd /Users/asdingfs/Adventures/hubble/job_queue_container/gems/job_queue"
