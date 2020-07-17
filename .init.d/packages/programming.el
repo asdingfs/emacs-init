@@ -98,7 +98,7 @@
   :init
   (setq enh-ruby-hanging-indent-level 2)
   (setq enh-ruby-deep-indent-paren nil)
-  ;; (setq enh-ruby-bounce-deep-indent nil) ;; toggle deep indent
+  (setq enh-ruby-bounce-deep-indent t) ;; toggle deep indent
   ;; (setq enh-ruby-hanging-paren-indent-level 2) ;; change parentheses indentation
   ;; (setq enh-ruby-hanging-brace-indent-level 2) ;; change curly braces indentation
   ;; (setq enh-ruby-hanging-paren-deep-indent-level 0)
