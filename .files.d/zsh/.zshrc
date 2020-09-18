@@ -151,7 +151,7 @@ function k8aplt() {
 }
 
 # other aliases
-alias pip=pip3
+# alias pip=pip3
 export EDITOR="emacsclient"
 setopt rm_star_silent
 
@@ -177,4 +177,8 @@ fi
 
 # if shell is interactive only, source rvm too
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function* on login shells
+
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
 

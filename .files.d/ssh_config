@@ -9,7 +9,9 @@ Host github
 
 Host gitlab
   User git
-  HostName gitlab.com
+  HostName altssh.gitlab.com
+  Port 443
+  PreferredAuthentications publickey
   IdentityFile ~/.ssh/keys/gitlab_rsa
 
 Host bitbucket
