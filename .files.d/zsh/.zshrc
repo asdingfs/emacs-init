@@ -140,6 +140,16 @@ function k8pc() {
     fi
 }
 
+function k8aplt() {
+    token=$(aws eks get-token --cluster-name=eks-prod-cluster | jq ".status.token" | tr -d '"')
+    if [[ -z "$token" ]]; then
+        echo "Token can't be generated!"
+    else
+        echo $token | pbcopy
+        echo "Copied '$token' to clipboard"
+    fi
+}
+
 # other aliases
 alias pip=pip3
 export EDITOR="emacsclient"
