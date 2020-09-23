@@ -4,7 +4,8 @@ Host *
 
 Host github
   User git
-  HostName github.com
+  HostName ssh.github.com
+  Port 443
   IdentityFile ~/.ssh/keys/github_rsa
 
 Host gitlab
