@@ -85,7 +85,7 @@
    ("C-x C-f" . counsel-find-file)
    ("C-h f" . counsel-describe-function)
    ("C-h v" . counsel-describe-variable)
-   ("C-x C-d" . counsel-file-jump) 
+   ("C-x C-d" . counsel-file-jump)
    ("C-x r l" . counsel-bookmark)
    ("C-h x" . counsel-imenu)
    ("C-c SPC g" . counsel-git)
@@ -126,7 +126,7 @@
   :diminish projectile-rails-mode
   :defer t
   :after (counsel-projectile)
-  :init 
+  :init
   (setq projectile-rails-add-keywords t)
   (setq projectile-rails-expand-snippet t)
   (add-hook 'find-file-hook 'projectile-rails-on)
