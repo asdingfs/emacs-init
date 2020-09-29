@@ -131,7 +131,12 @@
   (setq projectile-rails-expand-snippet t)
   (add-hook 'find-file-hook 'projectile-rails-on)
   (add-hook 'dired-mode-hook 'projectile-rails-on)
-  (add-hook 'magit-mode-hook 'projectile-rails-on))
+  (add-hook 'magit-mode-hook 'projectile-rails-on)
+  :bind
+  (:map projectile-rails-mode-map
+   ("M-s s p" . projectile-rails-command-map))
+  :config
+  (projectile-rails-global-mode))
 
 ;; remote servers
 (use-package tramp
