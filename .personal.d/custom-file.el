@@ -20,7 +20,7 @@
      (88 "to docx." org-pandoc-export-to-docx))))
  '(package-selected-packages
    (quote
-    (mw-thesaurus org-download kubernetes kubernetes-tramp edit-server buffer-move rubocop multiple-cursors flycheck-flow flycheck flow-minor-mode hippie-expand react-snippets yasnippet-snippets rjsx-mode company xref-js2 js2-refactor js2-mode git-timemachine counsel swiper ivy projectile smart-mode-line diminish nlinum-relative linum-relative pandoc-mode wgrep dumb-jump magit-gitflow transpose-frame w3m markdown-preview-mode origami expand-region json-mode markdown-mode ox-pandoc highlight-indent-guides web-mode rvm gitignore-mode git-modes magit ag rspec-mode yasnippet ssh-config-mode ssh yaml-mode htmlize org-bullets dash-at-point ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm base16-theme zenburn-theme use-package))))
+    (bundler mw-thesaurus org-download kubernetes kubernetes-tramp edit-server buffer-move rubocop multiple-cursors flycheck-flow flycheck flow-minor-mode hippie-expand react-snippets yasnippet-snippets rjsx-mode company xref-js2 js2-refactor js2-mode git-timemachine counsel swiper ivy projectile smart-mode-line diminish nlinum-relative linum-relative pandoc-mode wgrep dumb-jump magit-gitflow transpose-frame w3m markdown-preview-mode origami expand-region json-mode markdown-mode ox-pandoc highlight-indent-guides web-mode rvm gitignore-mode git-modes magit ag rspec-mode yasnippet ssh-config-mode ssh yaml-mode htmlize org-bullets dash-at-point ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm base16-theme zenburn-theme use-package))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

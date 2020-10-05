@@ -134,7 +134,7 @@
   (add-hook 'magit-mode-hook 'projectile-rails-on)
   :bind
   (:map projectile-rails-mode-map
-   ("M-s s p" . projectile-rails-command-map))
+   ("M-s M-r" . projectile-rails-command-map))
   :config
   (projectile-rails-global-mode))
 

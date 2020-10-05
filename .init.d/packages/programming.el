@@ -111,6 +111,8 @@
   :after (exec-path-from-shell)
   :config
   (rvm-use-default))
+(use-package bundler
+  :after (rvm))
 (use-package rspec-mode
   :commands (rspec-mode)
   :init
