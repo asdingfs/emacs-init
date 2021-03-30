@@ -31,4 +31,5 @@ transient*
 .zcompdump*
 
 .files.d/karabiner_config/automatic_backups/*
+.files.d/zsh/.zsh_sessions/*
 request/*
