@@ -31,12 +31,14 @@
 (use-package projectile
   :ensure t
   :diminish projectile-mode
+  :init
+  (projectile-mode +1)
+  :bind
+  (("M-s" . projectile-command-map))
   :config
-  (define-key projectile-mode-map (kbd "M-s") 'projectile-command-map)
   (setq projectile-completion-system 'ivy)
   (setq projectile-create-missing-test-files t)
-  (setq projectile-switch-project-action 'magit-status-on-toplevel-if-possible)
-  (projectile-mode 1))
+  (setq projectile-switch-project-action 'magit-status-on-toplevel-if-possible))
 
 ;; better search with swiper: installs ivy-mode too
 (use-package ivy
