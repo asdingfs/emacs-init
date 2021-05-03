@@ -4,7 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(counsel-projectile-mode t nil (counsel-projectile))
+ '(counsel-projectile-mode t nil (counsel-projectile)) ;; if this line causes error, disable this line first, and then re-enable the file once the package have been installed
  '(custom-file "~/.emacs.d/.personal.d/custom-file.el")
  '(dumb-jump-mode t)
  '(flycheck-javascript-flow-args nil)

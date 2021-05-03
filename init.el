@@ -12,6 +12,9 @@
 (package-initialize)
 
 ;;;;;;;;;;;;;;;; Use-Package ;;;;;;;;;;;;;;;;
+(setq use-package-always-demand (daemonp)) ;; when using use-package, always demand package to be loaded when running in daemon mode
+(setq use-package-always-ensure t) ;; always download if not available
+(setq use-package-verbose t)	;; don't fail silently
 (unless (package-installed-p 'use-package) ;; install if necessary
   (package-refresh-contents)
   (package-install 'use-package))
@@ -22,8 +25,6 @@
   :config
   (diminish 'auto-revert-mode)) ;; enable :diminish options
 (use-package bind-key) ;; enable :bind options
-(setq use-package-always-ensure t) ;; always download if not available
-(setq use-package-verbose t)	;; don't fail silently
 
 ;; use theme, right after use package initialization
 (use-package zenburn-theme
