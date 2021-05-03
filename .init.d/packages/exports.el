@@ -66,7 +66,46 @@
     "Face used for the source block background.")
   (defface org-block-end-line
     '((t (:background "#383838" :foreground "#7F9F7F")))
-    "Face used for the line delimiting the end of source blocks."))
+    "Face used for the line delimiting the end of source blocks.")
+  ;; tags
+  (setq org-tag-alist (quote ((:startgroup)
+                              ("@Context" . ?@)
+
+                              (:startgrouptag)
+                              ("@life" . ?l)
+                              (:grouptags)
+                              ("spiritual")
+                              ("brainwork")
+                              ("swpphotog")
+                              ("ccsggchoir")
+                              (:endgrouptag)
+
+                              (:startgrouptag)
+                              ("@people" . ?p)
+                              (:grouptags)
+                              ("followup")
+                              ("reachout")
+                              (:endgrouptag)
+
+                              (:startgrouptag)
+                              ("@home". ?h)
+                              (:grouptags)
+                              ("housework")
+                              ("paperwork")
+                              ("errands")
+                              (:endgrouptag)
+
+                              (:startgrouptag)
+                              ("@projects" . ?w)
+                              (:grouptags)
+                              ("supaherovb")
+                              ("brainvr")
+                              ("risuto")
+                              ("")
+                              (:endgrouptag)
+
+                              (:endgroup))))
+  )
 
 ;; exporting
 ;; pretty html
