@@ -14,7 +14,7 @@
 ;;;;;;;;;;;;;;;; Use-Package ;;;;;;;;;;;;;;;;
 (setq use-package-always-demand (daemonp)) ;; when using use-package, always demand package to be loaded when running in daemon mode
 (setq use-package-always-ensure t) ;; always download if not available
-(setq use-package-verbose t)	;; don't fail silently
+(setq use-package-verbose t) ;; don't fail silently
 (unless (package-installed-p 'use-package) ;; install if necessary
   (package-refresh-contents)
   (package-install 'use-package))
