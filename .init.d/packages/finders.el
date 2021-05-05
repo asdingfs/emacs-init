@@ -80,7 +80,7 @@
 (use-package counsel
   :after (swiper)
   :init
-  (setq counsel-ag-base-command "ag --nocolor --nogroup --hidden --ignore-dir .git %s")
+  (setq counsel-ag-base-command "ag --vimgrep --nocolor --nogroup --hidden --ignore-dir .git %s")
   :bind
   (("M-x" . counsel-M-x)
    ("M-y" . counsel-yank-pop)
