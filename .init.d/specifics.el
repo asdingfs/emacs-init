@@ -52,8 +52,12 @@
   (bind-key "<f24>" 'event-apply-hyper-modifier function-key-map);;
   (w32-register-hot-key [s-])
   (w32-register-hot-key [H-])
-
+  ;; set to use git bash for shell
   (setq shell-file-name "C:/Program Files/Git/bin/bash.exe")
   (setq explicit-shell-file-name "C:/Program Files/Git/bin/bash.exe")
   (setenv "SHELL" shell-file-name)
-  (setenv "ESHELL" shell-file-name))
+  (setenv "ESHELL" shell-file-name)
+  ;; set ssh_askpass executable so Magit doesn't throw error
+  (setq ssh-askpass-executables "c:/Program Files/Git/mingw64/libexec/git-core/git-askpass.exe")
+  (setenv "SSH_ASKPASS" ssh-askpass-executables)
+  )

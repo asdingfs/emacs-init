@@ -4,7 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(counsel-projectile-mode t nil (counsel-projectile)) ;; if this line causes error, disable this line first, and then re-enable the file once the package have been installed
+ '(counsel-projectile-mode t nil (counsel-projectile))
  '(custom-file "~/.emacs.d/.personal.d/custom-file.el")
  '(dumb-jump-mode t)
  '(flycheck-javascript-flow-args nil)
@@ -20,7 +20,7 @@
      (88 "to docx." org-pandoc-export-to-docx))))
  '(package-selected-packages
    (quote
-    (bundler mw-thesaurus org-download kubernetes kubernetes-tramp edit-server buffer-move rubocop multiple-cursors flycheck-flow flycheck flow-minor-mode hippie-expand react-snippets yasnippet-snippets rjsx-mode company xref-js2 js2-refactor js2-mode git-timemachine counsel swiper ivy projectile smart-mode-line diminish nlinum-relative linum-relative pandoc-mode wgrep dumb-jump magit-gitflow transpose-frame w3m markdown-preview-mode origami expand-region json-mode markdown-mode ox-pandoc highlight-indent-guides web-mode rvm gitignore-mode git-modes magit ag rspec-mode yasnippet ssh-config-mode ssh yaml-mode htmlize org-bullets dash-at-point ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm base16-theme zenburn-theme use-package))))
+    (ssh-agency bundler mw-thesaurus org-download kubernetes kubernetes-tramp edit-server buffer-move rubocop multiple-cursors flycheck-flow flycheck flow-minor-mode hippie-expand react-snippets yasnippet-snippets rjsx-mode company xref-js2 js2-refactor js2-mode git-timemachine counsel swiper ivy projectile smart-mode-line diminish nlinum-relative linum-relative pandoc-mode wgrep dumb-jump magit-gitflow transpose-frame w3m markdown-preview-mode origami expand-region json-mode markdown-mode ox-pandoc highlight-indent-guides web-mode rvm gitignore-mode git-modes magit ag rspec-mode yasnippet ssh-config-mode ssh yaml-mode htmlize org-bullets dash-at-point ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm base16-theme zenburn-theme use-package))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
