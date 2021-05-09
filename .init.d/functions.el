@@ -25,7 +25,8 @@
 (defun org-agenda-files-refresh ()
   "refresh the contents of org agenda"
   (interactive)
-  (setq org-agenda-files nil)) ;; TODO, define a set of agenda files
+  (setq org-agenda-files (quote ("~/.emacs.d/.personal.d/org/notes/working-memory.org"
+                                 "~/.emacs.d/.personal.d/org/notes/brain/personal/projects"))))
 (defun org-all-files-refresh ()
   "refresh the contents of org agenda"
   (interactive)

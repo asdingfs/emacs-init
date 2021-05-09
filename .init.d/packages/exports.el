@@ -17,7 +17,11 @@
    ("H-M-\"" . org-shiftmetaright)
    ("H-M-:"  . org-shiftmetaleft)
    ("H-M-?"  . org-shiftmetadown)
-   ("H-M-{"  . org-shiftmetaup))
+   ("H-M-{"  . org-shiftmetaup)
+   ("H-C-\"" . org-shiftcontrolright)
+   ("H-C-:"  . org-shiftcontrolleft)
+   ("H-C-?"  . org-shiftcontroldown)
+   ("H-C-{"  . org-shiftcontrolup))
   :init
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
   :config
@@ -67,6 +71,10 @@
   (defface org-block-end-line
     '((t (:background "#383838" :foreground "#7F9F7F")))
     "Face used for the line delimiting the end of source blocks.")
+  ;; todos
+  (setq org-todo-keywords (quote ((sequence "INBOX(i)" "TODO(t)" "NEXT(n)" "|" "DONE(v)" "CLOSED(c)")
+                                  (sequence "WAITING(w)" "|" "DEFER(d)")
+                                  (sequence "|" "CANCELLED(x)"))))
   ;; tags
   (setq org-tag-alist (quote ((:startgroup)
                               ("@Context" . ?@)
