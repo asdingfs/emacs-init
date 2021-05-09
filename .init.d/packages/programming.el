@@ -87,6 +87,7 @@
             '(lambda ()
                (shell-dirtrack-mode t)
                (setq dirtrackp nil) )))
+(use-package ssh-agency)
 (use-package ssh-config-mode
   :defer t
   :init
