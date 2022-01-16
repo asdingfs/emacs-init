@@ -1,0 +1,2 @@
+#!/bin/bash
+MKL_DEBUG_CPU_TYPE=5 /Applications/Discord.app/Contents/MacOS/Discord

@@ -119,6 +119,11 @@ cp Emacs-x86_64-10_14 Emacs
 cd /Applications/Emacs.app/Contents/
 rm -rf _CodeSignature
 cd ~/
+
+# setup discord shell script as workaround in Hackintosh
+ln -s $HOME/.emacs.d/.files.d/discord/discord $ROOT/usr/local/bin
+chmod 755 $HOME/.emacs.d/.files.d/discord/discord
+
 # link launchd to start emacs at startup
 chmod 755 $HOME/.emacs.d/.files.d/emacs/gnu.emacs.daemon.LaunchAtLogin.agent.plist
 ln -s $HOME/.emacs.d/.files.d/emacs/gnu.emacs.daemon.LaunchAtLogin.agent.plist $HOME/Library/LaunchAgents/
