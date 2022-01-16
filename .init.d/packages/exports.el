@@ -74,7 +74,7 @@
   ;; todos
   (setq org-todo-keywords (quote ((sequence "INBOX(i)" "TODO(t)" "NEXT(n)" "|" "DONE(v)" "CLOSED(c)")
                                   (sequence "WAITING(w)" "|" "DEFER(d)")
-                                  (sequence "|" "CANCELLED(x)"))))
+                                  (sequence "|" "FAILED(f)"))))
   ;; tags
   (setq org-tag-alist (quote ((:startgroup)
                               ("@Context" . ?@)
