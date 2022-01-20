@@ -70,9 +70,6 @@
   (add-hook 'magit-mode-hook 'turn-on-magit-gitflow))
 ;; check history of file changes
 (use-package git-timemachine)
-;; major mode for editing git config files
-(use-package gitignore-mode
-  :defer t)
 
 (use-package kubernetes
   :ensure t
