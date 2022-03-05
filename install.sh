@@ -28,7 +28,7 @@ exec zsh
 # packages to install in this script
 BREW_PACKAGES=(wget curl gpg z ripgrep ag w3m pandoc git python postgres redis node kubernetes-cli kubectx imagemagick@6 svn)
 # TODO: additional brew packages: texinfo
-CASK_PACKAGES=(1password paragon-ntfs omnidisksweeper onyx appcleaner emacs iterm2 karabiner-elements shiftit scroll-reverser font-inconsolata font-latin-modern-math fluid dropbox firefox franz telegram skype flume tunnelblick spotify dash postman docker android-file-transfer android-studio vysor google-chrome blender figma sketch gimp inkscape handbrake mediahuman-audio-converter mediahuman-youtube-downloader musicbrainz-picard pdf-expert musescore sequential send-to-kindle calibre flux itsycal vlc swinsian elmedia-player parsec steam openemu transmission)
+CASK_PACKAGES=(1password paragon-ntfs omnidisksweeper onyx appcleaner emacs iterm2 karabiner-elements shiftit scroll-reverser font-inconsolata font-latin-modern-math fluid dropbox google-drive firefox franz telegram skype discord zoom flume tunnelblick spotify dash postman docker android-file-transfer android-studio vysor google-chrome blender figma sketch gimp inkscape handbrake mediahuman-audio-converter mediahuman-youtube-downloader musicbrainz-picard pdf-expert musescore sequential send-to-kindle calibre flux vlc swinsian elmedia-player reflector parsec jump-desktop-connect steam openemu transmission alfred)
 # TODO: additional cask packages: mactex
 PIP_PACKAGES=(awscli)
 
@@ -50,8 +50,6 @@ PIP_PACKAGES=(awscli)
 #     - Affinity Designer
 #     - Capture One
 #     - Google Drive
-#     - Spark
-#     - Hotspot Shield
 #     - Palette Master Element (BENQ Monitor hardware calibration)
 #     - TeamViewer
 #     - Discord
@@ -62,7 +60,7 @@ PIP_PACKAGES=(awscli)
 # install packages
 alias pip=pip3
 brew install "${BREW_PACKAGES[@]}"
-brew cask install "${CASK_PACKAGES[@]}"
+brew install --cask "${CASK_PACKAGES[@]}"
 pip install "${PIP_PACKAGES[@]}"
 
 # force link some weird packages
@@ -85,11 +83,11 @@ ssh-keygen -t rsa -C "gitlab:anthonysetiawan.ding@gmail.com" -b 4096
 # setting up ssh keys for Hubble
 ssh-keygen -t rsa -C "amazon:anthony@hubble.com" -b 4096
 
-# to add to keychain
-# ssh-add -K ~/.ssh/keys/<private key>
-
 # change permission of key file
 chmod -R 400 ~/.ssh/keys/*
+
+# to add to keychain
+find ~/.ssh/keys \! -name "*.pub" -exec ssh-add -K {} +
 
 # soft-link system config files
 # all .zlogin, .zshenv, .zshrc are set to be load from $ZDOTDIR
@@ -107,7 +105,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ln -s $HOME/.emacs.d/.files.d/emacs/es $ROOT/usr/local/bin
 ln -s $HOME/.emacs.d/.files.d/emacs/ec $ROOT/usr/local/bin
 ln -s $HOME/.emacs.d/.files.d/emacs/em $ROOT/usr/local/bin
-chmod 755 $HOME/.emacs.d/.files.d/emacs/es $HOME/.emacs.d/.files.d/emacs/ec $HOME/.emacs.d/.files.d/emacs/em $ROOT/usr/local/bin/es $ROOT/usr/local/bin/ec $ROOT/usr/local/bin/em
+chmod 755 $HOME/.emacs.d/.files.d/emacs/es $HOME/.emacs.d/.files.d/emacs/ec $HOME/.emacs.d/.files.d/emacs/em
 
 # fix emacs compatibility with MacOSX Catalina, https://spin.atomicobject.com/2019/12/12/fixing-emacs-macos-catalina/
 # also on: https://medium.com/@holzman.simon/emacs-on-macos-catalina-10-15-in-2019-79ff713c1ccc
@@ -124,19 +122,20 @@ cd ~/
 ln -s $HOME/.emacs.d/.files.d/discord/discord $ROOT/usr/local/bin
 chmod 755 $HOME/.emacs.d/.files.d/discord/discord
 
-# link launchd to start emacs at startup
+# link launchd to start emacs at startupN
 chmod 755 $HOME/.emacs.d/.files.d/emacs/gnu.emacs.daemon.LaunchAtLogin.agent.plist
-ln -s $HOME/.emacs.d/.files.d/emacs/gnu.emacs.daemon.LaunchAtLogin.agent.plist $HOME/Library/LaunchAgents/
+mkdir -p $HOME/Library/LaunchAgents
+ln -s $HOME/.emacs.d/.files.d/emacs/gnu.emacs.daemon.LaunchAtLogin.agent.plist $HOME/Library/LaunchAgents
 launchctl load -w $HOME/Library/LaunchAgents/gnu.emacs.daemon.LaunchAtLogin.agent.plist
 
 # setup karabiner & ssh config
 ln -s $HOME/.emacs.d/.files.d/ssh_config $HOME/.ssh/config
-mkdir .config
+mkdir -p .config
 ln -s $HOME/.emacs.d/.files.d/karabiner_config $HOME/.config/karabiner
 
 # setup git username & email
-git config user.name "Anthony Setiawan"
-git config user.email "anthonysetiawan.ding@gmail.com"
+git config --global user.name "Anthony Setiawan"
+git config --global user.email "anthonysetiawan.ding@gmail.com"
 
 # setup themes
 open $HOME/.emacs.d/.files.d/Tomorrow\ Night\ Eighties.itermcolors
