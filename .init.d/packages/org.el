@@ -176,3 +176,94 @@
   :config
   (add-hook 'markdown-mode-hook 'pandoc-mode)
   (add-hook 'pandoc-mode-hook 'pandoc-load-default-settings))
+
+
+;; second brain with org-roam
+;; from https://github.com/org-roam/org-roam
+(use-package org-roam
+  :ensure t
+  :init
+  (setq org-roam-v2-ack t)
+  :custom
+  (org-roam-directory "~/.emacs.d/.personal.d/org/notes/brain/roam")
+  (org-roam-completion-everywhere t)
+  (org-roam-capture-templates
+   (quote (
+           ;; default tempalte
+           ("d" "default" plain
+            "%?"
+            :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n\n")
+            :unnarrowed t)
+           ("i" "inbox" plain
+            "* %?"
+            :target (file+head "inbox.org" "#+title: inbox\n"))
+           )))
+  (org-roam-dailies-directory "journal/")
+  (org-roam-dailies-capture-templates
+   (quote (
+           ;; default template
+           ("d" "default" entry "* %<%I:%M %p>:\n %?" :target
+            (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))
+           ;; collection of monk templates
+           ("m" "Monk Journal Templates:")
+           ("md" "Monk Journal - Daily Journal (Plan)" entry
+            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-daily-plan.org")
+            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
+            :unnarrowed t)
+           ("mf" "Monk Journal - Daily Journal (Reflect)" entry
+            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-daily-reflect.org")
+            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
+            :unnarrowed t)
+           ("mw" "Monk Journal - Weekly Journal (Plan)" entry
+            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-weekly-plan.org")
+            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
+            :unnarrowed t)
+           ("me" "Monk Journal - Weekly Journal (Reflect)" entry
+            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-weekly-reflect.org")
+            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
+            :unnarrowed t)
+           ("mc" "Monk Journal - Monthly Journal (Plan)" entry
+            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-monthly-plan.org")
+            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
+            :unnarrowed t)
+           ("mv" "Monk Journal - Daily Journal (Reflect)" entry
+            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-monthly-reflect.org")
+            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
+            :unnarrowed t)
+           ("mn" "Monk Journal - Notes" entry
+            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-notes.org")
+            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
+            :unnarrowed t))))
+  :bind (("C-c n c" . org-roam-capture)
+         ("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-graph)
+         ("C-c n i" . org-roam-node-insert)
+         ("C-c n I" . org-roam-node-insert-immediate)
+         ;; Dailies
+         ("C-c n j" . org-roam-dailies-capture-today)
+         :map org-mode-map
+         ("C-M-i" . completion-at-point)
+         :map org-roam-dailies-map
+         ("Y" . org-roam-dailies-capture-yesterday)
+         ("T" . org-roam-dailies-capture-tomorrow)
+         )
+  :bind-keymap ("C-c n d" . org-roam-dailies-map)
+  :config
+  (require 'org-roam-dailies) ;; Ensure the keymap is available
+  (org-roam-setup)
+  ;; If you're using a vertical completion framework, you might want a more informative completion interface
+  ;; (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+  (org-roam-db-autosync-mode))
+
+;; Bind this to C-c n I
+(defun org-roam-node-insert-immediate (arg &rest args)
+  (interactive "P")
+  (let ((args (cons arg args))
+        (org-roam-capture-templates (list (append (car org-roam-capture-templates)
+                                                  '(:immediate-finish t)))))
+    (apply #'org-roam-node-insert args)))
+
+
+
+
