@@ -1,6 +1,6 @@
 (let ((directory "~/.emacs.d/.init.d/packages/"))
-  (dolist (filename '(display ;; for display enhancements to emacs
-                      exports ;; most of org-mode configurations here
+  (dolist (filename '(org ;; most of org-mode configurations here
+                      display ;; for display enhancements to emacs
                       editing ;; aids editing of texts/codes
                       writing ;; configs for writing modes and environments
                       programming ;; configs for programming modes and environments
