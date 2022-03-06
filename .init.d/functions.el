@@ -27,7 +27,7 @@
   (interactive)
   (setq org-agenda-files (quote ("~/.emacs.d/.personal.d/org/notes/working-memory.org"
                                  "~/.emacs.d/.personal.d/org/notes/brain/personal/projects"
-                                 "~/.emacs.d/.personal.d/org/notes/journal.org"))))
+                                 "~/.emacs.d/.personal.d/org/notes/monk-journal.org"))))
 (defun org-all-files-refresh ()
   "refresh the contents of org agenda"
   (interactive)

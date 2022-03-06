@@ -45,6 +45,50 @@
                               ("\\.xlsx\\'" . default))))
   ;; capture
   (setq org-default-notes-file "~/.emacs.d/.personal.d/org/notes/capture.org")
+  (setq org-capture-templates
+        (quote (
+                ("t" "Task" entry
+                 (file+headline "" "Tasks")
+                 "* TODO %?\n  %u\n  %a")
+                ("j" "Journal")
+                ;; collection of monk templates
+                ("jm" "Monk Journalling Templates")
+                ("jmd" "Daily Journal (Plan)" entry
+                 (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
+                 (file "~/.emacs.d/.personal.d/org/templates/monk-journal-daily-plan.org")
+                 :tree-type day
+                 :unnarrowed t)
+                ("jmf" "Daily Journal (Reflect)" entry
+                 (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
+                 (file "~/.emacs.d/.personal.d/org/templates/monk-journal-daily-reflect.org")
+                 :tree-type day
+                 :unnarrowed t)
+                ("jmw" "Weekly Journal (Plan)" entry
+                 (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
+                 (file "~/.emacs.d/.personal.d/org/templates/monk-journal-weekly-plan.org")
+                 :tree-type day
+                 :unnarrowed t)
+                ("jme" "Weekly Journal (Reflect)" entry
+                 (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
+                 (file "~/.emacs.d/.personal.d/org/templates/monk-journal-weekly-reflect.org")
+                 :tree-type day
+                 :unnarrowed t)
+                ("jmc" "Monthly Journal (Plan)" entry
+                 (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
+                 (file "~/.emacs.d/.personal.d/org/templates/monk-journal-monthly-plan.org")
+                 :tree-type day
+                 :unnarrowed t)
+                ("jmv" "Monthly Journal (Reflect)" entry
+                 (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
+                 (file "~/.emacs.d/.personal.d/org/templates/monk-journal-monthly-reflect.org")
+                 :tree-type day
+                 :unnarrowed t)
+                ("jmn" "Notes" entry
+                 (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
+                 (file "~/.emacs.d/.personal.d/org/templates/monk-journal-notes.org")
+                 :tree-type day
+                 :unnarrowed t)
+                )))
   ;; refiling
   (setq org-refile-targets (quote ((nil :maxlevel . 5))))
   ;; refile includes full file name, for clarity
@@ -112,8 +156,7 @@
                               ("")
                               (:endgrouptag)
 
-                              (:endgroup))))
-  )
+                              (:endgroup)))))
 
 ;; exporting
 ;; pretty html
@@ -204,36 +247,7 @@
            ;; default template
            ("d" "default" entry "* %<%I:%M %p>:\n %?" :target
             (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))
-           ;; collection of monk templates
-           ("m" "Monk Journal Templates:")
-           ("md" "Monk Journal - Daily Journal (Plan)" entry
-            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-daily-plan.org")
-            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
-            :unnarrowed t)
-           ("mf" "Monk Journal - Daily Journal (Reflect)" entry
-            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-daily-reflect.org")
-            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
-            :unnarrowed t)
-           ("mw" "Monk Journal - Weekly Journal (Plan)" entry
-            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-weekly-plan.org")
-            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
-            :unnarrowed t)
-           ("me" "Monk Journal - Weekly Journal (Reflect)" entry
-            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-weekly-reflect.org")
-            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
-            :unnarrowed t)
-           ("mc" "Monk Journal - Monthly Journal (Plan)" entry
-            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-monthly-plan.org")
-            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
-            :unnarrowed t)
-           ("mv" "Monk Journal - Daily Journal (Reflect)" entry
-            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-monthly-reflect.org")
-            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
-            :unnarrowed t)
-           ("mn" "Monk Journal - Notes" entry
-            (file "~/.emacs.d/.personal.d/org/notes/brain/roam/templates/monk-journal-notes.org")
-            :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")
-            :unnarrowed t))))
+           )))
   :bind (("C-c n c" . org-roam-capture)
          ("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
