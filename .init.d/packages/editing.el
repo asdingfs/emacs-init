@@ -158,3 +158,5 @@
   :config
   (setq edit-server-new-frame nil)
   (edit-server-start))
+
+(use-package writeroom-mode)
