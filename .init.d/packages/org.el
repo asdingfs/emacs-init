@@ -28,7 +28,12 @@
   ;; general
   (org-all-files-refresh)
   (org-agenda-files-refresh)
+  (setq org-startup-indented t)
+  (setq org-pretty-entities t)
+  (setq org-hide-leading-stars t)
+  (setq org-ellipsis "⤵")
   (setq org-hide-emphasis-markers t) ;; show content only
+  (setq org-startup-with-inline-images t)
   (setq org-image-actual-width '(300)) ;; restrict image display to display size
   (setq org-log-done t)
   (setq org-goto-auto-isearch nil)
@@ -185,14 +190,17 @@
 
 
 ;; display
-(use-package org-bullets ;; bullets
+(use-package org-superstar
   :after (org)
-  :init
-  (setq org-bullets-bullet-list
-        '("►" ">" "●" "○" "*" "+" "~" "-"
-          "•" "•" "•" "•" "•" "•" "•" "•"))
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  :defer t)
+  :custom
+  (org-superstar-headline-bullets-list '("✱" "◉" "●" "○" "◆" "◇" "➤" "►" "▻" "*" "+" "~" "-" "•"))
+  (org-superstar-cycle-headline-bullets nil)
+  (org-superstar-leading-bullet ?\s)
+  (org-superstar-lightweight-lists t)
+  (org-superstar-prettify-item-bullets nil)
+  (org-superstar-leading-bullet "")
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 
 (use-package org-download ;; drag and drop file into emacs buffer & upload as attachments
   :config
@@ -278,6 +286,7 @@
                                                   '(:immediate-finish t)))))
     (apply #'org-roam-node-insert args)))
 
-
-
-
+;; show hidden emphasis markers
+(use-package org-appear
+  :diminish t
+  :hook (org-mode . org-appear-mode))
