@@ -34,3 +34,4 @@ transient*
 .files.d/zsh/.zsh_sessions/*
 request/*
 server/*
+var/*

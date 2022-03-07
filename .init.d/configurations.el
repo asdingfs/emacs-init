@@ -22,7 +22,18 @@
 (setq column-number-mode t) ;; show column number
 (setq-default line-spacing 1) ;; standardise line-spacing
 (global-hl-line-mode t) ;; highlight currently active line
-(add-to-list 'default-frame-alist '(font . "Inconsolata-14")) ;; set font to use
+(add-to-list 'default-frame-alist '(font . "Iosevka Term-15")) ;; set font to use
+(set-frame-font "Iosevka Term-15" nil t)
+
+;; required for unicode-fonts
+(use-package font-utils
+  :ensure t)
+(use-package ucs-utils
+  :ensure t)
+(use-package list-utils
+  :ensure t)
+(use-package persistent-soft
+  :ensure t)
 
 ;; behaviours
 (defalias 'yes-or-no-p 'y-or-n-p)
