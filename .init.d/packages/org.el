@@ -28,10 +28,26 @@
   ;; general
   (org-all-files-refresh)
   (org-agenda-files-refresh)
-  (setq org-startup-indented t)
   (setq org-pretty-entities t)
   (setq org-hide-leading-stars t)
   (setq org-ellipsis "⤵")
+  (let* ((serif-font-family '(:family "Baskerville"))
+         (sans-serif-font-family '(:family "Iosevka Aile"))
+         (monospaced-font-family '(:family "Iosevka Term"))
+         (headline `(,@monospaced-font-family)))
+    (custom-theme-set-faces
+     'user
+     `(org-level-8 ((t (,@headline :foreground "bisque3"))))
+     `(org-level-7 ((t (,@headline :foreground "bisque3"))))
+     `(org-level-6 ((t (,@headline))))
+     `(org-level-5 ((t (,@headline))))
+     `(org-level-4 ((t (,@headline))))
+     `(org-level-3 ((t (,@headline))))
+     `(org-level-2 ((t (,@headline))))
+     `(org-level-1 ((t (,@headline))))
+     `(org-document-title ((t (:height 1.2))))
+     ))
+  (setq org-cycle-level-faces nil)
   (setq org-hide-emphasis-markers t) ;; show content only
   (setq org-startup-with-inline-images t)
   (setq org-image-actual-width '(300)) ;; restrict image display to display size
@@ -193,12 +209,13 @@
 (use-package org-superstar
   :after (org)
   :custom
-  (org-superstar-headline-bullets-list '("✱" "◉" "●" "○" "◆" "◇" "➤" "►" "▻" "*" "+" "~" "-" "•"))
+  (org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "◇" "►" "➤" "▻" "*" "+" "~" "-" "•"))
   (org-superstar-cycle-headline-bullets nil)
   (org-superstar-leading-bullet ?\s)
   (org-superstar-lightweight-lists t)
   (org-superstar-prettify-item-bullets nil)
   (org-superstar-leading-bullet "")
+  (set-face-attribute 'org-superstar-header-bullet nil :height 1.25)
   :config
   (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 
