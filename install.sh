@@ -28,7 +28,7 @@ exec zsh
 # packages to install in this script
 BREW_PACKAGES=(wget curl gpg z ripgrep ag w3m pandoc git python postgres redis node kubernetes-cli kubectx imagemagick@6 svn)
 # TODO: additional brew packages: texinfo
-CASK_PACKAGES=(1password paragon-ntfs omnidisksweeper onyx appcleaner emacs iterm2 karabiner-elements shiftit scroll-reverser font-inconsolata font-latin-modern-math fluid dropbox google-drive firefox franz telegram skype discord zoom flume tunnelblick spotify dash postman docker android-file-transfer android-studio vysor google-chrome blender figma sketch gimp inkscape handbrake mediahuman-audio-converter mediahuman-youtube-downloader musicbrainz-picard pdf-expert musescore sequential send-to-kindle calibre flux vlc swinsian elmedia-player reflector parsec jump-desktop-connect steam openemu transmission alfred)
+CASK_PACKAGES=(1password paragon-ntfs omnidisksweeper onyx appcleaner emacs iterm2 karabiner-elements shiftit scroll-reverser font-inconsolata font-latin-modern-math fluid dropbox google-drive firefox franz telegram skype discord zoom flume tunnelblick spotify dash postman docker android-file-transfer android-studio vysor google-chrome blender figma sketch gimp inkscape handbrake mediahuman-audio-converter mediahuman-youtube-downloader musicbrainz-picard pdf-expert musescore sequential send-to-kindle calibre flux vlc swinsian elmedia-player reflector duet parsec jump-desktop-connect steam openemu transmission alfred)
 # TODO: additional cask packages: mactex
 PIP_PACKAGES=(awscli)
 
