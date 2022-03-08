@@ -39,6 +39,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil) ;; Use spaces for indentations
+(setq-default sentence-end-double-space nil)
 
 ;; customs
 (setq bookmark-default-file "~/.emacs.d/.personal.d/locals/bookmarks")
