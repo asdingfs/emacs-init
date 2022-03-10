@@ -302,8 +302,3 @@
         (org-roam-capture-templates (list (append (car org-roam-capture-templates)
                                                   '(:immediate-finish t)))))
     (apply #'org-roam-node-insert args)))
-
-;; show hidden emphasis markers
-(use-package org-appear
-  :diminish t
-  :hook (org-mode . org-appear-mode))
