@@ -159,4 +159,8 @@
   (setq edit-server-new-frame nil)
   (edit-server-start))
 
-(use-package writeroom-mode)
+(use-package writeroom-mode
+  :init
+  (add-hook 'writeroom-mode-hook #'(lambda () (text-scale-100%) (text-scale-increase 2)))
+  :custom
+  (writeroom-width 64))
