@@ -78,31 +78,37 @@
                  (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
                  (file "~/.emacs.d/.personal.d/org/templates/monk-journal-daily-plan.org")
                  :tree-type day
+                 :jump-to-captured t
                  :unnarrowed t)
                 ("jmf" "Daily Journal (Reflect)" entry
                  (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
                  (file "~/.emacs.d/.personal.d/org/templates/monk-journal-daily-reflect.org")
                  :tree-type day
+                 :jump-to-captured t
                  :unnarrowed t)
                 ("jmw" "Weekly Journal (Plan)" entry
                  (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
                  (file "~/.emacs.d/.personal.d/org/templates/monk-journal-weekly-plan.org")
                  :tree-type day
+                 :jump-to-captured t
                  :unnarrowed t)
                 ("jme" "Weekly Journal (Reflect)" entry
                  (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
                  (file "~/.emacs.d/.personal.d/org/templates/monk-journal-weekly-reflect.org")
                  :tree-type day
+                 :jump-to-captured t
                  :unnarrowed t)
                 ("jmc" "Monthly Journal (Plan)" entry
                  (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
                  (file "~/.emacs.d/.personal.d/org/templates/monk-journal-monthly-plan.org")
                  :tree-type day
+                 :jump-to-captured t
                  :unnarrowed t)
                 ("jmv" "Monthly Journal (Reflect)" entry
                  (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
                  (file "~/.emacs.d/.personal.d/org/templates/monk-journal-monthly-reflect.org")
                  :tree-type day
+                 :jump-to-captured t
                  :unnarrowed t)
                 ("jmn" "Notes" entry
                  (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
