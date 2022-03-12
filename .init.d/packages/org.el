@@ -71,6 +71,17 @@
                 ("t" "Task" entry
                  (file+headline "" "Tasks")
                  "* TODO %?\n  %u\n  %a")
+                ("l" "Action Logs")
+                ("ls" "Success Logs" entry
+                 (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/time-logging.org")
+                 (file "~/.emacs.d/.personal.d/org/templates/time-logging-success.org")
+                 :tree-type day
+                 :unnarrowed t)
+                ("lf" "Failure Logs" entry
+                 (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/time-logging.org")
+                 (file "~/.emacs.d/.personal.d/org/templates/time-logging-failure.org")
+                 :tree-type day
+                 :unnarrowed t)
                 ("j" "Journal")
                 ;; collection of monk templates
                 ("jm" "Monk Journalling Templates")
@@ -114,8 +125,7 @@
                  (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
                  (file "~/.emacs.d/.personal.d/org/templates/monk-journal-notes.org")
                  :tree-type day
-                 :unnarrowed t)
-                )))
+                 :unnarrowed t))))
   ;; refiling
   (setq org-refile-targets (quote ((nil :maxlevel . 5))))
   ;; refile includes full file name, for clarity
