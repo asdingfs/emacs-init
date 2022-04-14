@@ -98,27 +98,27 @@
                  :jump-to-captured t
                  :unnarrowed t)
                 ("jmw" "Weekly Journal (Plan)" entry
-                 (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
+                 (file+olp-datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
                  (file "~/.emacs.d/.personal.d/org/templates/monk-journal-weekly-plan.org")
-                 :tree-type day
+                 :tree-type month
                  :jump-to-captured t
                  :unnarrowed t)
                 ("jme" "Weekly Journal (Reflect)" entry
                  (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
                  (file "~/.emacs.d/.personal.d/org/templates/monk-journal-weekly-reflect.org")
-                 :tree-type day
+                 :tree-type month
                  :jump-to-captured t
                  :unnarrowed t)
                 ("jmc" "Monthly Journal (Plan)" entry
                  (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
                  (file "~/.emacs.d/.personal.d/org/templates/monk-journal-monthly-plan.org")
-                 :tree-type day
+                 :tree-type month
                  :jump-to-captured t
                  :unnarrowed t)
                 ("jmv" "Monthly Journal (Reflect)" entry
                  (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/monk-journal.org" "Entries")
                  (file "~/.emacs.d/.personal.d/org/templates/monk-journal-monthly-reflect.org")
-                 :tree-type day
+                 :tree-type month
                  :jump-to-captured t
                  :unnarrowed t)
                 ("jmn" "Notes" entry
@@ -273,7 +273,7 @@
   (org-roam-completion-everywhere t)
   (org-roam-capture-templates
    (quote (
-           ;; default tempalte
+           ;; default template
            ("d" "default" plain
             "%?"
             :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n\n")
