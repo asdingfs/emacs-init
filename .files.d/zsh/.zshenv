@@ -13,6 +13,10 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
 # Python
 export PATH="/usr/local/opt/python/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv/"
+if command -v pyenv 1>/dev/null 2>&1; then
+    export PATH="$PYENV_ROOT/bin:$PATH"
+fi
 
 # RVM & Rubies
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
