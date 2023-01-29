@@ -31,10 +31,10 @@ then
     if [[ $# -eq 0 ]]; then
         echo "Creating frame & running (magit-on-init-dir)..."
         # Create a frame and run (magit-on-init-dir) function
-        emacsclient -a "" -cqnu -e "(magit-on-init-dir)"
+        emacsclient -a "" -cqnu -e "(magit-on-init-dir)" -d localhost:0
     else
         # Create a frame and open the file within it
-        emacsclient -a "" -cqn $1
+        emacsclient -a "" -cqn $1 -d localhost:0
     fi
 else
     # if no argument is supplied
@@ -44,6 +44,6 @@ else
         osascript "$HOME/.emacs.d/.files.d/emacs/Emacs Toggle.app"
     else
          # Open the file in the existing frame
-        emacsclient -qn $1 -e "(frame-visible-p (selected-frame))"
+        emacsclient -qn $1 -e "(frame-visible-p (selected-frame))" -d localhost:0
     fi
 fi
