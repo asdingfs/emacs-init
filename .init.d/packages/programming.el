@@ -53,15 +53,16 @@
                   nil)
                  (t
                   '(display-buffer-same-window))))))
-  (magit-define-popup-switch 'magit-log-popup
-    ?m "Omit merge commits" "--no-merges")
-  (magit-define-popup-switch 'magit-push-popup
-    ?t "Follow tags" "--follow-tags")
-  (magit-define-popup-action 'magit-merge-popup
-    ?u "Merge updates from upstream"
-    (lambda ()
-      (interactive)
-      (magit-merge "@{upstream}" `("--ff" "--ff-only")))))
+  ;; (magit-define-popup-switch 'magit-log-popup
+  ;;   ?m "Omit merge commits" "--no-merges")
+  ;; (magit-define-popup-switch 'magit-push-popup
+  ;;   ?t "Follow tags" "--follow-tags")
+  ;; (magit-define-popup-action 'magit-merge-popup
+  ;;   ?u "Merge updates from upstream"
+  ;;   (lambda ()
+  ;;     (interactive)
+  ;;     (magit-merge "@{upstream}" `("--ff" "--ff-only"))))
+  )
 
 ;; extensions for gitflow
 (use-package magit-gitflow
