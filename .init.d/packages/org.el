@@ -269,7 +269,7 @@
   :init
   (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory "~/.emacs.d/.personal.d/org/notes/brain/roam")
+  (org-roam-directory "~/.emacs.d/.personal.d/org/notes/brain/org-roam")
   (org-roam-completion-everywhere t)
   (org-roam-capture-templates
    (quote (
