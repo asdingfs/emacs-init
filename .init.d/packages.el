@@ -6,7 +6,9 @@
                       writing ;; configs for writing modes and environments
                       programming ;; configs for programming modes and environments
                       finders ;; finders for things you seek (projectile, ivy, etc)
-                      movements)) ;; movements, temporal and spatial
+                      movements ;; movements, temporal and spatial
+                      org-roam-logseq ;; org-roam integration with logseq (make sure to place this last as this is custom library)
+                      ))
     (load (format "%s%s" directory filename)))) ;; load each packages declared above
 
 (require 'unicode-fonts)

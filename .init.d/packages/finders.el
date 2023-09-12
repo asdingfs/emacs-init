@@ -167,3 +167,6 @@
    w3m-output-coding-system 'utf-8
    w3m-terminal-coding-system 'utf-8)
   (setq w3m-search-default-engine "google"))
+
+;; file managers
+(use-package f)
