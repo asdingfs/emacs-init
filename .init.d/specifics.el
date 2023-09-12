@@ -1,5 +1,20 @@
+;;;; Linux
+(when (eq system-type 'gnu/linux)
+  (setq shell-file-name "/home/linuxbrew/.linuxbrew/bin/zsh")
+  (setq explicit-shell-file-name "/home/linuxbrew/.linuxbrew/bin/zsh")
+  (setenv "SHELL" shell-file-name)
+  (setenv "ESHELL" shell-file-name)
+
+  (use-package exec-path-from-shell
+    :config
+    (exec-path-from-shell-copy-env "GEM_PATH")
+    (exec-path-from-shell-copy-env "GEM_HOME")
+    (exec-path-from-shell-initialize)
+    (message "Initialized PATH and other variables from SHELL"))
+)
+
 ;;;; MACOSX
-(when (featurep 'ns)
+(when (eq system-type 'darwin)
   ;; modifier keys
   (setq ns-pop-up-frames nil)     ;; always open file on same emacs frame
   (setq ns-option-modifier 'meta)
@@ -34,7 +49,6 @@
     (setq ls-lisp-use-insert-directory-program nil))
 
   (use-package exec-path-from-shell
-    :if (memq window-system '(mac ns x nil))
     :config
     (exec-path-from-shell-copy-env "GEM_PATH")
     (exec-path-from-shell-copy-env "GEM_HOME")
