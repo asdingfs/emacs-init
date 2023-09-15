@@ -269,7 +269,7 @@
   :init
   (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory "~/.emacs.d/.personal.d/org/notes/brain/org-roam")
+  (org-roam-directory "~/.emacs.d/.personal.d/org/notes/brain/logseq-brain/")
   (org-roam-completion-everywhere t)
   (org-roam-capture-templates
    (quote (
@@ -277,8 +277,7 @@
            ("d" "default" plain
             "%?"
             :target (file+head "pages/${slug}.org" "#+title: ${title}\n\n")
-            :unnarrowed t)
-           )))
+            :unnarrowed t))))
   (org-roam-dailies-directory "journals/")
   (org-roam-dailies-capture-templates
    (quote (
