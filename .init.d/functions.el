@@ -18,6 +18,11 @@
   "immediately jump to my capture org file"
   (interactive)
   (find-file "~/.emacs.d/.personal.d/org/notes/capture.org"))
+(defun jump-to-logseq ()
+  "immediately jump to logseq"
+  (interactive)
+  (find-file "~/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents/Brain"))
+
 (defun magit-on-init-dir ()
   "immediately run magit-status on emacs init directory .emacs.d"
   (interactive)

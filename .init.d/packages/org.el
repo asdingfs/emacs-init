@@ -276,18 +276,15 @@
            ;; default template
            ("d" "default" plain
             "%?"
-            :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n\n")
+            :target (file+head "pages/${slug}.org" "#+title: ${title}\n\n")
             :unnarrowed t)
-           ("i" "inbox" plain
-            "* %?"
-            :target (file+head "inbox.org" "#+title: inbox\n"))
            )))
-  (org-roam-dailies-directory "journal/")
+  (org-roam-dailies-directory "journals/")
   (org-roam-dailies-capture-templates
    (quote (
            ;; default template
-           ("d" "default" entry "* %<%I:%M %p>:\n %?" :target
-            (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))
+           ("d" "default" entry "* [EMACS] %<%I:%M %p>:\n %?"
+            :target (file+head "%<%Y_%m_%d>.org" "#+title: %<%Y-%m-%d>\n"))
            )))
   :bind (("C-c n c" . org-roam-capture)
          ("C-c n l" . org-roam-buffer-toggle)
