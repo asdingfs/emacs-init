@@ -28,7 +28,6 @@
   (add-hook 'org-mode-hook (lambda () (org-cycle-hide-drawers 'all)))
   (add-hook 'org-mode-hook (lambda () (org-indent-mode 't)))
   (add-hook 'org-mode-hook (lambda () (visual-line-mode 't)))
-  (add-hook 'org-mode-hook (lambda () (olivetti-mode 't)))
   :config
   ;; general
   (org-all-files-refresh)

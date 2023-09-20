@@ -179,4 +179,11 @@
   :custom
   (writeroom-width 64))
 
-(use-package olivetti)
+(use-package olivetti
+  :after (org)
+  :init
+  (add-hook 'org-mode-hook (lambda () (olivetti-mode 't)))
+  :config
+  (setq olivetti-style 'fancy
+        olivetti-margin-width 3)
+  )
