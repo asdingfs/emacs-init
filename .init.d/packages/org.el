@@ -24,6 +24,7 @@
    ("H-C-{"  . org-shiftcontrolup))
   :init
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+  (add-hook 'org-mode-hook (lambda () (org-cycle-hide-drawers 'all)))
   :config
   ;; general
   (org-all-files-refresh)
