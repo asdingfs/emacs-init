@@ -53,7 +53,11 @@
     (exec-path-from-shell-copy-env "GEM_PATH")
     (exec-path-from-shell-copy-env "GEM_HOME")
     (exec-path-from-shell-initialize)
-    (message "Initialized PATH and other variables from SHELL")))
+    (message "Initialized PATH and other variables from SHELL"))
+
+  ;; configure title bar
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  )
 
 ;;;; WINDOWS
 (when (featurep 'w32)
