@@ -27,8 +27,8 @@
                 (newline-mark 10 [182 10]) ;; 10 LINE FEED to 「¶」
                 (tab-mark 9 [9655 9] [92 9])))) ;; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
   (setq whitespace-style (quote (face trailing spaces tabs newline newline space-mark tab-mark newline-mark)))
-  (set-face-attribute 'whitespace-space nil :background 'unspecified :foreground "gray30")
+  (set-face-attribute 'whitespace-space nil :background 'unspecified :foreground "gray35")
   ;; since font breaks for Magit, disable for Magit buffers
-  (defun prevent-whitespace-mode-for-magit ()
-    (not (derived-mode-p 'magit-mode)))
-  (add-function :before-while whitespace-enable-predicate 'prevent-whitespace-mode-for-magit))
+  (defun prevent-whitespace-mode ()
+    (not (or (derived-mode-p 'magit-mode) (derived-mode-p 'org-mode))))
+  (add-function :before-while whitespace-enable-predicate 'prevent-whitespace-mode))

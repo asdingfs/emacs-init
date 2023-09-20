@@ -8,6 +8,8 @@
  '(custom-file "~/.emacs.d/.personal.d/custom-file.el")
  '(dumb-jump-mode t)
  '(flycheck-javascript-flow-args nil)
+ '(org-agenda-files
+   '("/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/brain-vr.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/decluttering.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/iexp.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/personal-workflow.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/risuto.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/supahero-vb.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/sutd-vb2.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/taiwan-move.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/vrl-rb.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/monk-journal.org"))
  '(org-pandoc-menu-entry
    '((109 "to man and open." org-pandoc-export-to-man-and-open)
      (77 "as man." org-pandoc-export-as-man)
