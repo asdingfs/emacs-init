@@ -24,10 +24,11 @@
    ("H-C-{"  . org-shiftcontrolup))
   :init
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+  (add-hook 'org-mode-hook (lambda () (setq line-spacing 0.15)))
   (add-hook 'org-mode-hook (lambda () (org-cycle-hide-drawers 'all)))
   (add-hook 'org-mode-hook (lambda () (org-indent-mode 't)))
   (add-hook 'org-mode-hook (lambda () (visual-line-mode 't)))
-  (add-hook 'org-mode-hook (lambda () (setq line-spacing 0.15)))
+  (add-hook 'org-mode-hook (lambda () (olivetti-mode 't)))
   :config
   ;; general
   (org-all-files-refresh)

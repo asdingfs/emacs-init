@@ -172,8 +172,11 @@
   (setq edit-server-new-frame nil)
   (edit-server-start))
 
+;; for writing
 (use-package writeroom-mode
   :init
   (add-hook 'writeroom-mode-hook #'(lambda () (text-scale-100%) (text-scale-increase 2)))
   :custom
   (writeroom-width 64))
+
+(use-package olivetti)
