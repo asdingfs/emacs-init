@@ -35,3 +35,9 @@ transient*
 request/*
 server/*
 var/*
+
+
+# ignore org-roam.db (as it's only used to improve performance)
+# build cache later
+org-roam.db
+org-persist/*
