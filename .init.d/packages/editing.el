@@ -63,18 +63,31 @@
    ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
 ;; code folding
-(use-package origami
-  :init
-  (add-hook 'prog-mode-hook (lambda () (origami-mode 1)))
+(use-package hideshow
+  :config
+  (defun toggle-selective-display (column)
+      (interactive "P")
+      (set-selective-display
+       (or column
+           (unless selective-display
+             (1+ (current-column))))))
+  (defun toggle-hiding (column)
+      (interactive "P")
+      (if hs-minor-mode
+          (if (condition-case nil
+                  (hs-toggle-hiding)
+                (error t))
+              (hs-show-all))
+        (toggle-selective-display column)))
+  (add-hook 'prog-mode-hook (lambda () (hs-minor-mode t)))
   :bind
-  (("C-c h a" . origami-open-all-nodes)
-   ("C-c h h" . origami-toggle-node)
-   :map origami-mode-map
-   ("C-c h o" . origami-show-only-node)
-   ("C-c h s" . origami-open-node-recursively)
-   ("C-c h <tab>" . origami-recursively-toggle-node)
-   ("C-c h /" . origami-undo)
-   ("C-c h \\" . origami-redo)))
+  ("C-c h t" . 'toggle-hiding)
+  ("C-c h d" . 'toggle-selective-display)
+  ("C-c h h" . 'hs-hide-block)
+  ("C-c h s" . 'hs-show-block)
+  ("C-c h H" . 'hs-hide-all)
+  ("C-c h S" . 'hs-show-all)
+  )
 
 ;; code completions
 (use-package company
