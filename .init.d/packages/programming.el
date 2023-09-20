@@ -201,3 +201,10 @@
   :mode
   (("\\.env.sample\\'" . conf-mode)
    ("\\.env\\'" . conf-mode)))
+
+;; python
+(use-package python
+  :config
+  (setq python-indent-offset 2) ;; default is 4
+  (setq python-indent-guess-indent-offset nil) ;; default is t
+  )
