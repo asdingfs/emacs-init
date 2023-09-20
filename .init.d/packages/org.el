@@ -237,6 +237,12 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 
+(use-package org-modern
+  :config
+  (add-hook 'org-mode-hook #'org-modern-mode)
+  (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+  )
+
 (use-package org-download ;; drag and drop file into emacs buffer & upload as attachments
   :config
   (add-hook 'org-mode-hook 'org-download-enable)
