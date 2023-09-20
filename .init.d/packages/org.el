@@ -48,6 +48,7 @@
      `(org-document-title ((t (:height 1.2))))
      ))
   (setq org-cycle-level-faces nil)
+  (setq org-cycle-hide-drawer-startup nil)
   (setq org-hide-emphasis-markers t) ;; show content only
   (setq org-startup-with-inline-images t)
   (setq org-image-actual-width '(300)) ;; restrict image display to display size
