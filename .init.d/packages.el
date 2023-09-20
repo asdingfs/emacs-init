@@ -1,3 +1,6 @@
+(use-package gnu-elpa-keyring-update
+  :ensure t)
+
 (let ((directory "~/.emacs.d/.init.d/packages/"))
   (dolist (filename '(org ;; most of org-mode configurations here
                       display ;; for display enhancements to emacs
