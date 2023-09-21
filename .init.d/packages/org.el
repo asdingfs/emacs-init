@@ -103,6 +103,11 @@
                  (file "~/.emacs.d/.personal.d/org/templates/time-logging-failure.org")
                  :tree-type day
                  :unnarrowed t)
+                ("ln" "Any Logs" entry
+                 (file+olp+datetree "~/.emacs.d/.personal.d/org/notes/time-logging.org")
+                 (file "~/.emacs.d/.personal.d/org/templates/time-logging-neutral.org")
+                 :tree-type day
+                 :unnarrowed t)
                 ("j" "Journal")
                 ;; collection of monk templates
                 ("jm" "Monk Journalling Templates")
