@@ -188,7 +188,7 @@
     "Face used for the line delimiting the end of source blocks.")
   ;; todos
   (setq org-todo-keywords (quote ((sequence "INBOX(i)" "TODO(t)" "NEXT(n)" "|" "DONE(v)" "CLOSED(c)")
-                                  (sequence "WAITING(w)" "|" "DEFER(d)")
+                                  (sequence "WAITING(w)" "|" "MOVED(m)" "DEFER(d)")
                                   (sequence "|" "FAILED(f)"))))
   ;; tags
   (setq org-tag-alist (quote ((:startgroup)
