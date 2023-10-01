@@ -24,6 +24,7 @@
 (global-hl-line-mode t) ;; highlight currently active line
 (add-to-list 'default-frame-alist '(font . "Iosevka Term-15")) ;; set font to use
 (set-frame-font "Iosevka Term-15" nil t)
+(set-language-environment "UTF-8")
 
 ;; required for unicode-fonts
 (use-package font-utils
