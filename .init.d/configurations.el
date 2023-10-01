@@ -22,8 +22,8 @@
 (setq column-number-mode t) ;; show column number
 (setq-default line-spacing 1) ;; standardise line-spacing
 (global-hl-line-mode t) ;; highlight currently active line
-(add-to-list 'default-frame-alist '(font . "Iosevka Term-15")) ;; set font to use
-(set-frame-font "Iosevka Term-15" nil t)
+(add-to-list 'default-frame-alist '(font . "Iosevka Term-14")) ;; set font to use
+(set-frame-font "Iosevka Term-14" nil t)
 (set-language-environment "UTF-8")
 
 ;; required for unicode-fonts
