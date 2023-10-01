@@ -19,8 +19,8 @@
   (setq ns-pop-up-frames nil)     ;; always open file on same emacs frame
   (setq ns-option-modifier 'meta)
   (setq ns-command-modifier 'super)
-  (setq ns-right-command-modifier 'super)
-  (setq ns-right-option-modifier 'hyper)
+  (setq ns-right-command-modifier 'hyper)
+  (setq ns-right-option-modifier 'super)
 
   ;; behaviour
   (defun ns-raise-emacs ()
@@ -64,10 +64,9 @@
   ;; modifier keys
   (setq w32-pass-rwindow-to-system nil)
   (setq w32-pass-alt-to-system nil)
-  (setq w32-rwindow-modifier 'super) ;; Right Windows keys
+  (setq w32-rwindow-modifier 'hyper) ;; Right Windows keys
   ;; NOTE: need to set the following Autohotkey Configuration
   ;; Also, turn on FILTER KEYS in Ease Access>Keyboard
-  (bind-key "<f24>" 'event-apply-hyper-modifier function-key-map);;
   (w32-register-hot-key [s-])
   (w32-register-hot-key [H-])
   ;; set to use git bash for shell
