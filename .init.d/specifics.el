@@ -11,7 +11,7 @@
     (exec-path-from-shell-copy-env "GEM_HOME")
     (exec-path-from-shell-initialize)
     (message "Initialized PATH and other variables from SHELL"))
-)
+  )
 
 ;;;; MACOSX
 (when (eq system-type 'darwin)
@@ -77,5 +77,4 @@
   (setenv "ESHELL" shell-file-name)
   ;; set ssh_askpass executable so Magit doesn't throw error
   (setq ssh-askpass-executables "c:/Program Files/Git/mingw64/libexec/git-core/git-askpass.exe")
-  (setenv "SSH_ASKPASS" ssh-askpass-executables)
-  )
+  (setenv "SSH_ASKPASS" ssh-askpass-executables))
