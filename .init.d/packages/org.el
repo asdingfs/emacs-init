@@ -35,10 +35,10 @@
   (setq org-pretty-entities 't)
   (setq org-hide-leading-stars 't)
   (setq org-ellipsis "⤵")
-  (let* ((serif-font-family '(:family "Baskerville"))
-         (sans-serif-font-family '(:family "Avenir" :weight regular))
+  (let* ((serif-font-family '(:family "Lora" :weight medium))
+         (sans-serif-font-family '(:family "Montserrat" :weight regular))
          (monospaced-font-family '(:family "Iosevka Term"))
-         (variable-tuple `(,@sans-serif-font-family))
+         (variable-tuple `(,@serif-font-family))
          (headline `(,@monospaced-font-family)))
     (custom-theme-set-faces
      'user
@@ -54,7 +54,7 @@
      ))
   (set-face-attribute 'default nil :family "Iosevka Term")
   (set-face-attribute 'fixed-pitch nil :family "Iosevka Term")
-  (set-face-attribute 'variable-pitch nil :family "Avenir")
+  (set-face-attribute 'variable-pitch nil :family "Montserrat")
   (custom-theme-set-faces
    'user
    '(org-block ((t (:inherit fixed-pitch))))
