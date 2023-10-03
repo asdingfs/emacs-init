@@ -57,6 +57,10 @@
 
   ;; configure title bar
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+
+  ;; set fonts to use
+  (add-to-list 'default-frame-alist '(font . "Iosevka Term-15"))
+  (set-frame-font "Iosevka Term-15" nil t)
   )
 
 ;;;; WINDOWS
@@ -76,4 +80,8 @@
   (setenv "ESHELL" shell-file-name)
   ;; set ssh_askpass executable so Magit doesn't throw error
   (setq ssh-askpass-executables "c:/Program Files/Git/mingw64/libexec/git-core/git-askpass.exe")
-  (setenv "SSH_ASKPASS" ssh-askpass-executables))
+  (setenv "SSH_ASKPASS" ssh-askpass-executables)
+  ;; set fonts to use
+  (add-to-list 'default-frame-alist '(font . "Iosevka Term-11"))
+  (set-frame-font "Iosevka Term-11" nil t)
+  )
