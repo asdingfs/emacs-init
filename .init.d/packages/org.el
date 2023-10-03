@@ -35,7 +35,7 @@
   (setq org-pretty-entities 't)
   (setq org-hide-leading-stars 't)
   (setq org-ellipsis "⤵")
-  (let* ((serif-font-family '(:family "Lora" :weight medium))
+  (let* ((serif-font-family '(:family "Lora" :weight regular))
          (sans-serif-font-family '(:family "Montserrat" :weight regular))
          (monospaced-font-family '(:family "Iosevka Term"))
          (variable-tuple `(,@serif-font-family))
