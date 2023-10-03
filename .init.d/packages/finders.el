@@ -151,6 +151,7 @@
 
 ;; web surfing
 (use-package w3m
+  :disabled t
   :bind
   (("H-s" . w3m-search)
    ("H-b" . w3m-browse-url))
