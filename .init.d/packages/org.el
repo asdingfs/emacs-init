@@ -167,6 +167,7 @@
   (setq org-export-with-sub-superscripts nil)
   (setq org-export-backends '(ascii html icalendar latex odt md))
   ;; looks
+  (setq org-use-sub-superscripts nil) ;; disable superscript & subscript display
   (setq org-indent-indentation-per-level 2) ;; set indentation level to 2 (avoid Iosevka Term's compactness)
   (setq org-adapt-indentation nil)
   (customize-set-variable 'org-blank-before-new-entry
