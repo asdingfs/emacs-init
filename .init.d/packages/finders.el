@@ -32,7 +32,10 @@
   :ensure t
   :diminish projectile-mode
   :init
-  (projectile-mode +1)
+  (when (fboundp 'projectile-mode)
+    (projectile-mode +1))
+  :hook
+  (emacs-startup . projectile-load-known-projects)
   :bind
   (("M-s" . projectile-command-map))
   :config
