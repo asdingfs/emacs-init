@@ -181,7 +181,11 @@
 
 (use-package rjsx-mode
   :mode
-  (("\\/.*\\.js\\'" . rjsx-mode)))
+  (("\\/.*\\.jsx\\'" . rjsx-mode)))
+
+(use-package jtsx
+  :mode
+  (("\\/.*\\.tsx\\'" . jtsx-jsx-mode)))
 
 (use-package flow-minor-mode
   :config
@@ -213,3 +217,8 @@
   :mode
   (("\\.kt" . kotlin-mode)
    ("\\.kts" . kotlin-mode)))
+
+;; processing
+(use-package processing-mode
+  :mode
+  (("\\.pde" . processing-mode)))

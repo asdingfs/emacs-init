@@ -92,7 +92,8 @@
 ;; code completions
 (use-package company
   :diminish company-mode
-  :config
+  :ensure t
+  :config (global-company-mode 1)
   (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package flycheck-flow
