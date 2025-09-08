@@ -11,6 +11,12 @@
 (global-set-key (kbd "H-'") 'windmove-right)
 (global-set-key (kbd "H-/") 'windmove-down)
 (global-set-key (kbd "H-;") 'windmove-left)
+(global-set-key (kbd "H-<prior>") 'previous-buffer)
+(global-set-key (kbd "H-<next>") 'next-buffer)
+(global-set-key (kbd "H-<up>") 'windmove-up)
+(global-set-key (kbd "H-<down>") 'windmove-down)
+(global-set-key (kbd "H-<left>") 'windmove-left)
+(global-set-key (kbd "H-<right>") 'windmove-right)
 (global-set-key (kbd "s-w") 'kill-buffer-and-window)
 
 ;; commands
