@@ -20,7 +20,8 @@
   (setq ns-option-modifier 'meta)
   (setq ns-command-modifier 'super)
   (setq ns-right-command-modifier 'hyper)
-  (setq ns-right-option-modifier 'super)
+  (setq mac-right-command-modifier 'hyper)
+  (setq ns-right-option-modifier 'meta)
 
   ;; behaviour
   (defun ns-raise-emacs ()
