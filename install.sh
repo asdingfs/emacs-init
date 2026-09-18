@@ -11,7 +11,10 @@ export HOME=${ROOT}/Users/$(whoami)
 cd ~/
 
 # install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# to uninstall, run the following
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+
 
 # tap 3rd party packages
 brew update
@@ -23,36 +26,27 @@ brew install zsh
 # restarts zsh to use the brew version
 exec zsh
 
+# load brew env & run ZSH
+eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+
 # note in MacOSX CATALINA, you need to grant full disk access to the terminal app that you're running
 
 # packages to install in this script
-BREW_PACKAGES=(wget curl gpg z ripgrep ag w3m pandoc git python postgres redis node kubernetes-cli kubectx imagemagick@6 svn)
+BREW_PACKAGES=(wget curl gpg z ripgrep ag w3m pandoc git python postgres redis yt-dlp awscli)
 # TODO: additional brew packages: texinfo
-CASK_PACKAGES=(1password paragon-ntfs omnidisksweeper onyx appcleaner emacs iterm2 karabiner-elements shiftit scroll-reverser font-inconsolata font-latin-modern-math fluid dropbox google-drive firefox franz telegram skype discord zoom flume tunnelblick spotify dash postman docker android-file-transfer android-studio vysor google-chrome blender figma sketch gimp inkscape handbrake mediahuman-audio-converter mediahuman-youtube-downloader musicbrainz-picard pdf-expert musescore sequential send-to-kindle calibre flux vlc swinsian elmedia-player reflector duet parsec jump-desktop-connect steam openemu transmission alfred)
-# TODO: additional cask packages: mactex
-PIP_PACKAGES=(awscli)
+CASK_PACKAGES=(1password paragon-ntfs onyx appcleaner emacs iterm2 karabiner-elements font-inconsolata font-latin-modern-math dropbox firefox telegram discord zoom tunnelblick spotify postman docker android-file-transfer android-studio vysor google-chrome blender figma gimp inkscape musicbrainz-picard pdf-expert musescore calibre vlc reflector duet parsec jump-desktop jump-desktop-connect steam openemu transmission alfred)
 
 # apps to install manually:
-# 1. Use Fluid to build native app out of web pages:
-#     - Asana
 # 2. Download from AppStore:
-#     - Snap (shortcuts)
-#     - Magnet (like ShiftIt)
-#     - Monity: https://monityapp.com/ (MacOSX Status Monitoring)
-#     - Battery Monitor: Health, Info (Battery Health & Display)
-#     - Clocker (timezone)
-#     - JIRA Cloud App
 #     - Relax Melodies Premium
-#     - Typesy/Typist
-#.    - Spark
+#.    - Canary
 # 3. Manually download & install from websites:
 #     - Affinity Photo
 #     - Affinity Designer
 #     - Capture One
 #     - Google Drive
 #     - Palette Master Element (BENQ Monitor hardware calibration)
-#     - TeamViewer
-#     - Discord
+#     - TeamViewer (when needed)
 # 4. Install later on brew/cask if needed:
 #     - visit: https://formulae.brew.sh/cask/ for full list of casks
 #     - brew install texinfo/brew cask install mactex
@@ -62,9 +56,6 @@ alias pip=pip3
 brew install "${BREW_PACKAGES[@]}"
 brew install --cask "${CASK_PACKAGES[@]}"
 pip install "${PIP_PACKAGES[@]}"
-
-# force link some weird packages
-brew link --force imagemagick@6
 
 # install emacs file & system configuration files
 git clone https://github.com/asdingfs/macosx-emacs-init.git .emacs.d/
