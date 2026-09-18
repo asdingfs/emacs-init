@@ -34,11 +34,12 @@ eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 # packages to install in this script
 BREW_PACKAGES=(wget curl gpg z ripgrep ag w3m pandoc git python postgres redis yt-dlp awscli)
 # TODO: additional brew packages: texinfo
-CASK_PACKAGES=(1password paragon-ntfs onyx appcleaner emacs iterm2 karabiner-elements font-inconsolata font-latin-modern-math dropbox firefox telegram discord zoom tunnelblick spotify postman docker android-file-transfer android-studio vysor google-chrome blender figma gimp inkscape musicbrainz-picard pdf-expert musescore calibre vlc reflector duet parsec jump-desktop jump-desktop-connect steam openemu transmission alfred rectangle-pro calendar-366 clocker)
+CASK_PACKAGES=(1password paragon-ntfs onyx appcleaner emacs iterm2 karabiner-elements font-inconsolata font-latin-modern-math dropbox firefox telegram discord zoom tunnelblick spotify postman docker android-file-transfer android-studio vysor google-chrome blender figma gimp inkscape musicbrainz-picard pdf-expert musescore calibre vlc reflector duet parsec jump-desktop jump-desktop-connect steam openemu transmission alfred rectangle-pro clocker)
 
 # apps to install manually:
 # 2. Download from AppStore:
 #     - Relax Melodies Premium
+#     - Calendar 366 (the one in brew seems outdated as of 18 Sep 2026)
 #.    - Canary
 # 3. Manually download & install from websites:
 #     - Affinity Photo
