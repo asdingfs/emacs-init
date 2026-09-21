@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; main org configurations
 (use-package org
   :commands (ox-md ox-twbs ox-pandoc htmlize)

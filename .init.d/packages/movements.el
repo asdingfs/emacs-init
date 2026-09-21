@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;;;;;;;;;;;;;;; temporal ;;;;;;;;;;;;;;;;
 ;; winner mode: splitting configurations
 (when (fboundp 'winner-mode)
@@ -25,4 +26,3 @@
    ("H-\"" . buf-move-right)
    ("H-{" . buf-move-up)
    ("H-?" . buf-move-down)))
-

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;;; Linux
 (when (eq system-type 'gnu/linux)
   (setq shell-file-name "/home/linuxbrew/.linuxbrew/bin/zsh")
@@ -15,6 +16,8 @@
 
 ;;;; MACOSX
 (when (eq system-type 'darwin)
+  ;; specific environment necessary for MacOS 27
+  (setenv "MACOSX_DEPLOYMENT_TARGET" "27.0")  
   ;; modifier keys
   (setq ns-pop-up-frames nil)     ;; always open file on same emacs frame
   (setq ns-option-modifier 'meta)
@@ -40,8 +43,11 @@
     (ns-raise-emacs))
 
   ;; shell configuration & envs
-  (setq shell-file-name "/usr/local/bin/zsh")
-  (setq explicit-shell-file-name "/usr/local/bin/zsh")
+  ;; Resolve zsh from PATH so both Intel (/usr/local) and Apple Silicon
+  ;; (/opt/homebrew) installations work.
+  (let ((zsh (or (executable-find "zsh") "/bin/zsh")))
+    (setq shell-file-name zsh)
+    (setq explicit-shell-file-name zsh))
   (setenv "SHELL" shell-file-name)
   (setenv "ESHELL" shell-file-name)
 

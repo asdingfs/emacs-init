@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; define-word
 (use-package mw-thesaurus
   :bind

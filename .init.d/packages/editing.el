@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; autopairs
 ;; deletion, movement, modification
 ;;    for deletions, if S is defined, force overwrite the sp-command (i.e. use the normal command)

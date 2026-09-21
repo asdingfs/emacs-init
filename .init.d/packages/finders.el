@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; fuzzy matching
 (use-package flx
   :defer t)

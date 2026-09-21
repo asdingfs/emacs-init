@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;;;;;;;;;;;;;;; Keybindings ;;;;;;;;;;;;;;;;
 ;; frames
 (global-unset-key (kbd "C-z"))
@@ -60,4 +61,3 @@
 (global-set-key (kbd "H-K") 'dired-remote-kubectl-alias)
 (global-set-key (kbd "H-)") 'eshell)
 (global-set-key (kbd "H-(") 'term)
-

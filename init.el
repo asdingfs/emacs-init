@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;;;;;;;;;;;;;;; Package Archives ;;;;;;;;;;;;;;;;
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -41,6 +42,7 @@
   ;; (load-theme 'base16-ocean t)
   ;; (load-theme 'base16-eighties t)
   )
+(setenv "MACOSX_DEPLOYMENT_TARGET" "27.0")
 
 ;;;;;;;;;;;;;;;; Packages and Customizations ;;;;;;;;;;;;;;;;
 (let ((directory "~/.emacs.d/.init.d/"))

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;;;;;;;;;;;;;;; Auto Generated Custom Variables ;;;;;;;;;;;;;;;;
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -9,7 +10,17 @@
  '(dumb-jump-mode t)
  '(flycheck-javascript-flow-args nil)
  '(org-agenda-files
-   '("~/.emacs.d/.personal.d/org/notes/brain/logseq-brain/pages/oct_09_prj_vital_refactoring_secrets_out_of_source_code.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/brain-vr.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/decluttering.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/iexp.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/personal-workflow.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/risuto.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/supahero-vb.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/sutd-vb2.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/taiwan-move.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/vrl-rb.org" "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/monk-journal.org"))
+   '("~/.emacs.d/.personal.d/org/notes/brain/logseq-brain/pages/oct_09_prj_vital_refactoring_secrets_out_of_source_code.org"
+     "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/brain-vr.org"
+     "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/decluttering.org"
+     "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/iexp.org"
+     "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/personal-workflow.org"
+     "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/risuto.org"
+     "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/supahero-vb.org"
+     "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/sutd-vb2.org"
+     "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/taiwan-move.org"
+     "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/brain/personal/projects/vrl-rb.org"
+     "/System/Volumes/Data/Users/asdingfs/.emacs.d/.personal.d/org/notes/monk-journal.org"))
  '(org-pandoc-menu-entry
    '((109 "to man and open." org-pandoc-export-to-man-and-open)
      (77 "as man." org-pandoc-export-as-man)
@@ -20,7 +31,22 @@
      (120 "to docx and open." org-pandoc-export-to-docx-and-open)
      (88 "to docx." org-pandoc-export-to-docx)))
  '(package-selected-packages
-   '(processing-mode jtsx kotlin-mode olivetti org-modern tramp-container org-superstar writeroom-mode persistent-soft ucs-utils font-utils org-roam bundler mw-thesaurus org-download kubernetes edit-server buffer-move rubocop multiple-cursors flycheck-flow flycheck flow-minor-mode hippie-expand react-snippets yasnippet-snippets rjsx-mode company xref-js2 js2-refactor js2-mode git-timemachine counsel swiper ivy projectile smart-mode-line diminish nlinum-relative linum-relative pandoc-mode wgrep dumb-jump magit-gitflow transpose-frame w3m markdown-preview-mode expand-region json-mode markdown-mode ox-pandoc highlight-indent-guides web-mode rvm gitignore-mode git-modes magit ag rspec-mode yasnippet ssh-config-mode ssh yaml-mode htmlize dash-at-point ox-twbs smartparens enh-ruby-mode projectile-rails counsel-projectile flx exec-path-from-shell helm base16-theme zenburn-theme use-package)))
+   '(ag base16-theme buffer-move company counsel
+        counsel-projectile dash-at-point diminish dumb-jump
+        edit-server enh-ruby-mode exec-path-from-shell expand-region
+        flow-minor-mode flx flycheck flycheck-flow font-utils
+        git-modes git-timemachine gitignore-mode helm
+        highlight-indent-guides hippie-expand htmlize ivy js2-mode
+        js2-refactor json-mode jtsx kotlin-mode kubernetes
+        linum-relative magit magit-gitflow markdown-mode
+        markdown-preview-mode multiple-cursors mw-thesaurus
+        nlinum-relative olivetti org-download org-modern org-roam
+        org-superstar ox-pandoc ox-twbs pandoc-mode persistent-soft
+        processing-mode projectile projectile-rails react-snippets
+        rjsx-mode rspec-mode rubocop rvm smart-mode-line smartparens
+        ssh ssh-config-mode swiper tramp-container transpose-frame
+        ucs-utils use-package w3m web-mode wgrep writeroom-mode
+        xref-js2 yaml-mode yasnippet yasnippet-snippets zenburn-theme)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -41,7 +67,7 @@
  '(org-level-7 ((t (:family "Iosevka Term" :family "Avenir" :weight regular :height 1 :foreground "bisque3"))))
  '(org-level-8 ((t (:family "Iosevka Term" :family "Avenir" :weight regular :height 1 :foreground "bisque3"))))
  '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
- '(org-property-value ((t (:inherit fixed-pitch))) t)
+ '(org-property-value ((t (:inherit fixed-pitch))))
  '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
  '(org-table ((t (:inherit fixed-pitch))))
  '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold))))

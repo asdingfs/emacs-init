@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;  BACK UP YOUR LOGSEQ DIR BEFORE RUNNING THIS!

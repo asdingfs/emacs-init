@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;;;;;;;;;;;;;;; Views ;;;;;;;;;;;;;;;;
 (defun text-scale-100% ()
   "Scale current buffer to 100%"

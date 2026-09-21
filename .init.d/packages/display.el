@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; show line number
 (use-package nlinum-relative
   :config

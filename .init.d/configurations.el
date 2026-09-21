@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;;;;;;;;;;;;;;; Personal Data ;;;;;;;;;;;;;;;;
 ;; username
 (setq user-full-name "Anthony S. 丁富胜"
